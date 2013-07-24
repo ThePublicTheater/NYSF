@@ -1,0 +1,211 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Tessitura", "Nysf.Tessitura\Nysf.Tessitura.csproj", "{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Utility", "Nysf.Utility\Nysf.Utility.csproj", "{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.UserControls", "Nysf.UserControls\Nysf.UserControls.csproj", "{ECB748DB-5737-472F-BCDB-6074ECE33ECA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Types", "Nysf.Types\Nysf.Types.csproj", "{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.TicketScanning", "Nysf.TicketScanning\Nysf.TicketScanning.csproj", "{2B692433-7063-4931-B065-FF904240D50E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Elmah", "Nysf.Elmah\Nysf.Elmah.csproj", "{90A7B959-0314-455D-97D4-2CD8AF8D0D16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Apps.Utr", "Nysf.Apps.Utr\Nysf.Apps.Utr.csproj", "{E851076E-3F88-43E8-8DDF-770193C9F491}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "join.publictheater.org", "http://localhost:49309", "{6D6B0E68-8BD4-4994-A16C-499BA9192B86}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/join.publictheater.org"
+		Debug.AspNetCompiler.PhysicalPath = "Sites\join.publictheater.org\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\join.publictheater.org\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/join.publictheater.org"
+		Release.AspNetCompiler.PhysicalPath = "Sites\join.publictheater.org\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\join.publictheater.org\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Sites\join.publictheater.org\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "memberships.publictheater.org", "http://localhost:49417", "{8247EBA4-4F46-47A8-8FB2-D2018542AC9A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/memberships.publictheater.org"
+		Debug.AspNetCompiler.PhysicalPath = "Sites\memberships.publictheater.org\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\memberships.publictheater.org\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/memberships.publictheater.org"
+		Release.AspNetCompiler.PhysicalPath = "Sites\memberships.publictheater.org\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\memberships.publictheater.org\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Sites\memberships.publictheater.org\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "tickets.joespub.com", "http://localhost:52281", "{9B27F291-28B1-40BB-95F8-7D253C7BC7E8}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/tickets.joespub.com"
+		Debug.AspNetCompiler.PhysicalPath = "Sites\tickets.joespub.com\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\tickets.joespub.com\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/tickets.joespub.com"
+		Release.AspNetCompiler.PhysicalPath = "Sites\tickets.joespub.com\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\tickets.joespub.com\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Sites\tickets.joespub.com\"
+		StartServerOnDebug = "false"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "giving.publictheater.org", "http://localhost:56768", "{D7BE4C3D-0C43-4B5B-AF16-75A762D7F112}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56768"
+		Debug.AspNetCompiler.PhysicalPath = "giving.publictheater.org\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56768\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56768"
+		Release.AspNetCompiler.PhysicalPath = "giving.publictheater.org\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56768\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "giving.publictheater.org\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ambitus", "Ambitus\Ambitus.csproj", "{359304A3-B19A-41B0-81E6-E31CE55E3AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Apps.Giving", "Nysf.Apps.Giving\Nysf.Apps.Giving.csproj", "{3EA6BF5E-1757-46A6-A5A7-19573D080F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Apps.OldStyleTickets", "Nysf.Apps.OldStyleCalendar\Nysf.Apps.OldStyleTickets.csproj", "{005D9C2A-80BA-434A-8CA4-8B751F38552D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joes-Pub-MVC-4", "Joes-Pub-MVC-4\Joes-Pub-MVC-4\Joes-Pub-MVC-4.csproj", "{E150A284-0C01-45F4-86B8-EEC882CE6E05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Web", "Nysf.Web\Nysf.Web.csproj", "{4B64BCB1-E74B-481D-8C7A-8148676136F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nysf.Web.UserControls", "Nysf.Web.UserControls\Nysf.Web.UserControls.csproj", "{1BA8AC7A-7477-4629-823A-95B45ABB72CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tickets", "ticketing\tickets\tickets.csproj", "{5783E3FE-FE23-4CFD-AC7B-8ED286230A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLine", "Virtual Lottery\VLine\VLine\VLine.csproj", "{4186DD99-84BD-4D06-AC11-CAAC5ECF5F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wbd.Utilities", "Wbd.Utility\Wbd.Utilities.csproj", "{BB34930C-5587-4D09-AE92-F324D6185AED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB748DB-5737-472F-BCDB-6074ECE33ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB748DB-5737-472F-BCDB-6074ECE33ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB748DB-5737-472F-BCDB-6074ECE33ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB748DB-5737-472F-BCDB-6074ECE33ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B692433-7063-4931-B065-FF904240D50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B692433-7063-4931-B065-FF904240D50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B692433-7063-4931-B065-FF904240D50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B692433-7063-4931-B065-FF904240D50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A7B959-0314-455D-97D4-2CD8AF8D0D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A7B959-0314-455D-97D4-2CD8AF8D0D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A7B959-0314-455D-97D4-2CD8AF8D0D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A7B959-0314-455D-97D4-2CD8AF8D0D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E851076E-3F88-43E8-8DDF-770193C9F491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E851076E-3F88-43E8-8DDF-770193C9F491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E851076E-3F88-43E8-8DDF-770193C9F491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E851076E-3F88-43E8-8DDF-770193C9F491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6B0E68-8BD4-4994-A16C-499BA9192B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6B0E68-8BD4-4994-A16C-499BA9192B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6B0E68-8BD4-4994-A16C-499BA9192B86}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6B0E68-8BD4-4994-A16C-499BA9192B86}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8247EBA4-4F46-47A8-8FB2-D2018542AC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8247EBA4-4F46-47A8-8FB2-D2018542AC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8247EBA4-4F46-47A8-8FB2-D2018542AC9A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8247EBA4-4F46-47A8-8FB2-D2018542AC9A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9B27F291-28B1-40BB-95F8-7D253C7BC7E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B27F291-28B1-40BB-95F8-7D253C7BC7E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B27F291-28B1-40BB-95F8-7D253C7BC7E8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B27F291-28B1-40BB-95F8-7D253C7BC7E8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D7BE4C3D-0C43-4B5B-AF16-75A762D7F112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7BE4C3D-0C43-4B5B-AF16-75A762D7F112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7BE4C3D-0C43-4B5B-AF16-75A762D7F112}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7BE4C3D-0C43-4B5B-AF16-75A762D7F112}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{359304A3-B19A-41B0-81E6-E31CE55E3AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359304A3-B19A-41B0-81E6-E31CE55E3AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359304A3-B19A-41B0-81E6-E31CE55E3AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359304A3-B19A-41B0-81E6-E31CE55E3AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA6BF5E-1757-46A6-A5A7-19573D080F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA6BF5E-1757-46A6-A5A7-19573D080F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA6BF5E-1757-46A6-A5A7-19573D080F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA6BF5E-1757-46A6-A5A7-19573D080F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005D9C2A-80BA-434A-8CA4-8B751F38552D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005D9C2A-80BA-434A-8CA4-8B751F38552D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005D9C2A-80BA-434A-8CA4-8B751F38552D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005D9C2A-80BA-434A-8CA4-8B751F38552D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E150A284-0C01-45F4-86B8-EEC882CE6E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E150A284-0C01-45F4-86B8-EEC882CE6E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E150A284-0C01-45F4-86B8-EEC882CE6E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E150A284-0C01-45F4-86B8-EEC882CE6E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B64BCB1-E74B-481D-8C7A-8148676136F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B64BCB1-E74B-481D-8C7A-8148676136F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B64BCB1-E74B-481D-8C7A-8148676136F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B64BCB1-E74B-481D-8C7A-8148676136F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA8AC7A-7477-4629-823A-95B45ABB72CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA8AC7A-7477-4629-823A-95B45ABB72CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA8AC7A-7477-4629-823A-95B45ABB72CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA8AC7A-7477-4629-823A-95B45ABB72CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5783E3FE-FE23-4CFD-AC7B-8ED286230A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5783E3FE-FE23-4CFD-AC7B-8ED286230A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5783E3FE-FE23-4CFD-AC7B-8ED286230A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5783E3FE-FE23-4CFD-AC7B-8ED286230A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4186DD99-84BD-4D06-AC11-CAAC5ECF5F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4186DD99-84BD-4D06-AC11-CAAC5ECF5F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4186DD99-84BD-4D06-AC11-CAAC5ECF5F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4186DD99-84BD-4D06-AC11-CAAC5ECF5F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB34930C-5587-4D09-AE92-F324D6185AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB34930C-5587-4D09-AE92-F324D6185AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB34930C-5587-4D09-AE92-F324D6185AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB34930C-5587-4D09-AE92-F324D6185AED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

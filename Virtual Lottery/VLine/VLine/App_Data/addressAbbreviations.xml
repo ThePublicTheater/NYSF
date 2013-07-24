@@ -1,0 +1,860 @@
+﻿<addressAbbreviations>
+  <states>
+    <state name="ALABAMA" abbrev="AL" />
+    <state name="ALASKA" abbrev="AK" />
+    <state name="AMERICAN SAMOA" abbrev="AS" />
+    <state name="ARIZONA" abbrev="AZ" />
+    <state name="ARKANSAS" abbrev="AR" />
+    <state name="CALIFORNIA" abbrev="CA" />
+    <state name="COLORADO" abbrev="CO" />
+    <state name="CONNECTICUT" abbrev="CT" />
+    <state name="DELAWARE" abbrev="DE" />
+    <state name="DISTRICT OF COLUMBIA" abbrev="DC" />
+    <state name="FEDERATED STATES OF MICRONESIA" abbrev="FM" />
+    <state name="FLORIDA" abbrev="FL" />
+    <state name="GEORGIA" abbrev="GA" />
+    <state name="GUAM" abbrev="GU" />
+    <state name="HAWAII" abbrev="HI" />
+    <state name="IDAHO" abbrev="ID" />
+    <state name="ILLINOIS" abbrev="IL" />
+    <state name="INDIANA" abbrev="IN" />
+    <state name="IOWA" abbrev="IA" />
+    <state name="KANSAS" abbrev="KS" />
+    <state name="KENTUCKY" abbrev="KY" />
+    <state name="LOUISIANA" abbrev="LA" />
+    <state name="MAINE" abbrev="ME" />
+    <state name="MARSHALL ISLANDS" abbrev="MH" />
+    <state name="MARYLAND" abbrev="MD" />
+    <state name="MASSACHUSETTS" abbrev="MA" />
+    <state name="MICHIGAN" abbrev="MI" />
+    <state name="MINNESOTA" abbrev="MN" />
+    <state name="MISSISSIPPI" abbrev="MS" />
+    <state name="MISSOURI" abbrev="MO" />
+    <state name="MONTANA" abbrev="MT" />
+    <state name="NEBRASKA" abbrev="NE" />
+    <state name="NEVADA" abbrev="NV" />
+    <state name="NEW HAMPSHIRE" abbrev="NH" />
+    <state name="NEW JERSEY" abbrev="NJ" />
+    <state name="NEW MEXICO" abbrev="NM" />
+    <state name="NEW YORK" abbrev="NY" />
+    <state name="NORTH CAROLINA" abbrev="NC" />
+    <state name="NORTH DAKOTA" abbrev="ND" />
+    <state name="NORTHERN MARIANA ISLANDS" abbrev="MP" />
+    <state name="OHIO" abbrev="OH" />
+    <state name="OKLAHOMA" abbrev="OK" />
+    <state name="OREGON" abbrev="OR" />
+    <state name="PALAU" abbrev="PW" />
+    <state name="PENNSYLVANIA" abbrev="PA" />
+    <state name="PUERTO RICO" abbrev="PR" />
+    <state name="RHODE ISLAND" abbrev="RI" />
+    <state name="SOUTH CAROLINA" abbrev="SC" />
+    <state name="SOUTH DAKOTA" abbrev="SD" />
+    <state name="TENNESSEE" abbrev="TN" />
+    <state name="TEXAS" abbrev="TX" />
+    <state name="UTAH" abbrev="UT" />
+    <state name="VERMONT" abbrev="VT" />
+    <state name="VIRGIN ISLANDS" abbrev="VI" />
+    <state name="VIRGINIA" abbrev="VA" />
+    <state name="WASHINGTON" abbrev="WA" />
+    <state name="WEST VIRGINIA" abbrev="WV" />
+    <state name="WISCONSIN" abbrev="WI" />
+    <state name="WYOMING" abbrev="WY" />
+    <state name="ARMED FORCES AFRICA" abbrev="AE" />
+    <state name="ARMED FORCES AMERICAS" note="except Canada" abbrev="AA" />
+    <state name="ARMED FORCES CANADA" abbrev="AE" />
+    <state name="ARMED FORCES EUROPE" abbrev="AE" />
+    <state name="ARMED FORCES MIDDLE EAST" abbrev="AE" />
+    <state name="ARMED FORCES PACIFIC" abbrev="AP" />
+  </states>
+  <streetSuffixes>
+    <suffix abbrev="ALY">
+      <alt>ALLEY</alt>
+      <alt>ALLEE</alt>
+      <alt>ALLY</alt>
+    </suffix>
+    <suffix abbrev="ANX">
+      <alt>ANNEX</alt>
+      <alt>ANEX</alt>
+      <alt>ANNX</alt>
+    </suffix>
+    <suffix abbrev="ARC">
+      <alt>ARCADE</alt>
+    </suffix>
+    <suffix abbrev="AVE">
+      <alt>AVENUE</alt>
+      <alt>AV</alt>
+      <alt>AVEN</alt>
+      <alt>AVENU</alt>
+      <alt>AVN</alt>
+      <alt>AVNUE</alt>
+    </suffix>
+    <suffix abbrev="BYU">
+      <alt>BAYOO</alt>
+      <alt>BAYOU</alt>
+    </suffix>
+    <suffix abbrev="BCH">
+      <alt>BEACH</alt>
+    </suffix>
+    <suffix abbrev="BND">
+      <alt>BEND</alt>
+    </suffix>
+    <suffix abbrev="BLF">
+      <alt>BLUFF</alt>
+      <alt>BLUF</alt>
+    </suffix>
+    <suffix abbrev="BLFS">
+      <alt>BLUFFS</alt>
+    </suffix>
+    <suffix abbrev="BTM">
+      <alt>BOTTOM</alt>
+      <alt>BOT</alt>
+      <alt>BOTTM</alt>
+    </suffix>
+    <suffix abbrev="BLVD">
+      <alt>BOULEVARD</alt>
+      <alt>BOUL</alt>
+      <alt>BOULV</alt>
+    </suffix>
+    <suffix abbrev="BR">
+      <alt>BRANCH</alt>
+      <alt>BRNCH</alt>
+    </suffix>
+    <suffix abbrev="BRG">
+      <alt>BRIDGE</alt>
+      <alt>BRDGE</alt>
+    </suffix>
+    <suffix abbrev="BRK">
+      <alt>BROOK</alt>
+    </suffix>
+    <suffix abbrev="BRKS">
+      <alt>BROOKS</alt>
+    </suffix>
+    <suffix abbrev="BG">
+      <alt>BURG</alt>
+    </suffix>
+    <suffix abbrev="BGS">
+      <alt>BURGS</alt>
+    </suffix>
+    <suffix abbrev="BYP">
+      <alt>BYPASS</alt>
+      <alt>BYPA</alt>
+      <alt>BYPAS</alt>
+      <alt>BYPS</alt>
+    </suffix>
+    <suffix abbrev="CP">
+      <alt>CAMP</alt>
+      <alt>CMP</alt>
+    </suffix>
+    <suffix abbrev="CYN">
+      <alt>CANYON</alt>
+      <alt>CANYN</alt>
+      <alt>CNYN</alt>
+    </suffix>
+    <suffix abbrev="CPE">
+      <alt>CAPE</alt>
+    </suffix>
+    <suffix abbrev="CSWY">
+      <alt>CAUSEWAY</alt>
+      <alt>CAUSWAY</alt>
+    </suffix>
+    <suffix abbrev="CTR">
+      <alt>CENTER</alt>
+      <alt>CEN</alt>
+      <alt>CENT</alt>
+      <alt>CENTR</alt>
+      <alt>CENTRE</alt>
+      <alt>CNTER</alt>
+      <alt>CNTR</alt>
+    </suffix>
+    <suffix abbrev="CTRS">
+      <alt>CENTERS</alt>
+    </suffix>
+    <suffix abbrev="CIR">
+      <alt>CIRCLE</alt>
+      <alt>CIRC</alt>
+      <alt>CIRCL</alt>
+      <alt>CRCL</alt>
+      <alt>CRCLE</alt>
+    </suffix>
+    <suffix abbrev="CIRS">
+      <alt>CIRCLES</alt>
+    </suffix>
+    <suffix abbrev="CLF">
+      <alt>CLIFF</alt>
+    </suffix>
+    <suffix abbrev="CLFS">
+      <alt>CLIFFS</alt>
+    </suffix>
+    <suffix abbrev="CLB">
+      <alt>CLUB</alt>
+    </suffix>
+    <suffix abbrev="CMN">
+      <alt>COMMON</alt>
+    </suffix>
+    <suffix abbrev="CMNS">
+      <alt>COMMONS</alt>
+    </suffix>
+    <suffix abbrev="COR">
+      <alt>CORNER</alt>
+    </suffix>
+    <suffix abbrev="CORS">
+      <alt>CORNERS</alt>
+    </suffix>
+    <suffix abbrev="CRSE">
+      <alt>COURSE</alt>
+    </suffix>
+    <suffix abbrev="CT">
+      <alt>COURT</alt>
+    </suffix>
+    <suffix abbrev="CTS">
+      <alt>COURTS</alt>
+    </suffix>
+    <suffix abbrev="CV">
+      <alt>COVE</alt>
+    </suffix>
+    <suffix abbrev="CVS">
+      <alt>COVES</alt>
+    </suffix>
+    <suffix abbrev="CRK">
+      <alt>CREEK</alt>
+    </suffix>
+    <suffix abbrev="CRES">
+      <alt>CRESCENT</alt>
+      <alt>CRSENT</alt>
+      <alt>CRSNT</alt>
+    </suffix>
+    <suffix abbrev="CRST">
+      <alt>CREST</alt>
+    </suffix>
+    <suffix abbrev="XING">
+      <alt>CROSSING</alt>
+      <alt>CRSSING</alt>
+      <alt>CRSSNG</alt>
+    </suffix>
+    <suffix abbrev="XRD">
+      <alt>CROSSROAD</alt>
+    </suffix>
+    <suffix abbrev="XRDS">
+      <alt>CROSSROADS</alt>
+    </suffix>
+    <suffix abbrev="CURV">
+      <alt>CURVE</alt>
+    </suffix>
+    <suffix abbrev="DL">
+      <alt>DALE</alt>
+    </suffix>
+    <suffix abbrev="DM">
+      <alt>DAM</alt>
+    </suffix>
+    <suffix abbrev="DV">
+      <alt>DIVIDE</alt>
+      <alt>DIV</alt>
+      <alt>DVD</alt>
+    </suffix>
+    <suffix abbrev="DR">
+      <alt>DRIVE</alt>
+      <alt>DRIV</alt>
+      <alt>DRV</alt>
+    </suffix>
+    <suffix abbrev="DRS">
+      <alt>DRIVES</alt>
+    </suffix>
+    <suffix abbrev="EST">
+      <alt>ESTATE</alt>
+    </suffix>
+    <suffix abbrev="ESTS">
+      <alt>ESTATES</alt>
+    </suffix>
+    <suffix abbrev="EXPY">
+      <alt>EXPRESSWAY</alt>
+      <alt>EXP</alt>
+      <alt>EXPR</alt>
+      <alt>EXPRESS</alt>
+      <alt>EXPW</alt>
+    </suffix>
+    <suffix abbrev="EXT">
+      <alt>EXTENSION</alt>
+      <alt>EXTN</alt>
+      <alt>EXTNSN</alt>
+    </suffix>
+    <suffix abbrev="EXTS">
+      <alt>EXTENSIONS</alt>
+    </suffix>
+    <suffix abbrev="FALL">
+      <alt>FALL</alt>
+    </suffix>
+    <suffix abbrev="FLS">
+      <alt>FALLS</alt>
+    </suffix>
+    <suffix abbrev="FRY">
+      <alt>FERRY</alt>
+      <alt>FRRY</alt>
+    </suffix>
+    <suffix abbrev="FLD">
+      <alt>FIELD</alt>
+    </suffix>
+    <suffix abbrev="FLDS">
+      <alt>FIELDS</alt>
+    </suffix>
+    <suffix abbrev="FLT">
+      <alt>FLAT</alt>
+    </suffix>
+    <suffix abbrev="FLTS">
+      <alt>FLATS</alt>
+    </suffix>
+    <suffix abbrev="FRD">
+      <alt>FORD</alt>
+    </suffix>
+    <suffix abbrev="FRDS">
+      <alt>FORDS</alt>
+    </suffix>
+    <suffix abbrev="FRST">
+      <alt>FOREST</alt>
+      <alt>FORESTS</alt>
+    </suffix>
+    <suffix abbrev="FRG">
+      <alt>FORGE</alt>
+      <alt>FORG</alt>
+    </suffix>
+    <suffix abbrev="FRGS">
+      <alt>FORGES</alt>
+    </suffix>
+    <suffix abbrev="FRK">
+      <alt>FORK</alt>
+    </suffix>
+    <suffix abbrev="FRKS">
+      <alt>FORKS</alt>
+    </suffix>
+    <suffix abbrev="FT">
+      <alt>FORT</alt>
+      <alt>FRT</alt>
+    </suffix>
+    <suffix abbrev="FWY">
+      <alt>FREEWAY</alt>
+      <alt>FREEWY</alt>
+      <alt>FRWAY</alt>
+      <alt>FRWY</alt>
+    </suffix>
+    <suffix abbrev="GDN">
+      <alt>GARDEN</alt>
+      <alt>GARDN</alt>
+      <alt>GRDEN</alt>
+      <alt>GRDN</alt>
+    </suffix>
+    <suffix abbrev="GDNS">
+      <alt>GARDENS</alt>
+      <alt>GRDNS</alt>
+    </suffix>
+    <suffix abbrev="GTWY">
+      <alt>GATEWAY</alt>
+      <alt>GATEWY</alt>
+      <alt>GATWAY</alt>
+      <alt>GTWAY</alt>
+    </suffix>
+    <suffix abbrev="GLN">
+      <alt>GLEN</alt>
+    </suffix>
+    <suffix abbrev="GLNS">
+      <alt>GLENS</alt>
+    </suffix>
+    <suffix abbrev="GRN">
+      <alt>GREEN</alt>
+    </suffix>
+    <suffix abbrev="GRNS">
+      <alt>GREENS</alt>
+    </suffix>
+    <suffix abbrev="GRV">
+      <alt>GROVE</alt>
+      <alt>GROV</alt>
+    </suffix>
+    <suffix abbrev="GRVS">
+      <alt>GROVES</alt>
+    </suffix>
+    <suffix abbrev="HBR">
+      <alt>HARBOR</alt>
+      <alt>HARB</alt>
+      <alt>HARBR</alt>
+      <alt>HRBOR</alt>
+    </suffix>
+    <suffix abbrev="HBRS">
+      <alt>HARBORS</alt>
+    </suffix>
+    <suffix abbrev="HVN">
+      <alt>HAVEN</alt>
+    </suffix>
+    <suffix abbrev="HTS">
+      <alt>HEIGHTS</alt>
+      <alt>HT</alt>
+    </suffix>
+    <suffix abbrev="HWY">
+      <alt>HIGHWAY</alt>
+      <alt>HIGHWY</alt>
+      <alt>HIWAY</alt>
+      <alt>HIWY</alt>
+      <alt>HWAY</alt>
+    </suffix>
+    <suffix abbrev="HL">
+      <alt>HILL</alt>
+    </suffix>
+    <suffix abbrev="HLS">
+      <alt>HILLS</alt>
+    </suffix>
+    <suffix abbrev="HOLW">
+      <alt>HOLLOW</alt>
+      <alt>HLLW</alt>
+      <alt>HOLLOWS</alt>
+      <alt>HOLWS</alt>
+    </suffix>
+    <suffix abbrev="INLT">
+      <alt>INLET</alt>
+    </suffix>
+    <suffix abbrev="IS">
+      <alt>ISLAND</alt>
+      <alt>ISLND</alt>
+    </suffix>
+    <suffix abbrev="ISS">
+      <alt>ISLANDS</alt>
+      <alt>ISLNDS</alt>
+    </suffix>
+    <suffix abbrev="ISLE">
+      <alt>ISLES</alt>
+    </suffix>
+    <suffix abbrev="JCT">
+      <alt>JUNCTION</alt>
+      <alt>JCTION</alt>
+      <alt>JCTN</alt>
+      <alt>JUNCTN</alt>
+      <alt>JUNCTON</alt>
+    </suffix>
+    <suffix abbrev="JCTS">
+      <alt>JUNCTIONS</alt>
+      <alt>JCTNS</alt>
+    </suffix>
+    <suffix abbrev="KY">
+      <alt>KEY</alt>
+    </suffix>
+    <suffix abbrev="KYS">
+      <alt>KEYS</alt>
+    </suffix>
+    <suffix abbrev="KNL">
+      <alt>KNOLL</alt>
+      <alt>KNOL</alt>
+    </suffix>
+    <suffix abbrev="KNLS">
+      <alt>KNOLLS</alt>
+    </suffix>
+    <suffix abbrev="LK">
+      <alt>LAKE</alt>
+    </suffix>
+    <suffix abbrev="LKS">
+      <alt>LAKES</alt>
+    </suffix>
+    <suffix abbrev="LNDG">
+      <alt>LANDING</alt>
+      <alt>LNDNG</alt>
+    </suffix>
+    <suffix abbrev="LAND">
+      <alt>LAND</alt>
+    </suffix>
+    <suffix abbrev="LN">
+      <alt>LANE</alt>
+    </suffix>
+    <suffix abbrev="LGT">
+      <alt>LIGHT</alt>
+    </suffix>
+    <suffix abbrev="LGTS">
+      <alt>LIGHTS</alt>
+    </suffix>
+    <suffix abbrev="LF">
+      <alt>LOAF</alt>
+    </suffix>
+    <suffix abbrev="LCK">
+      <alt>LOCK</alt>
+    </suffix>
+    <suffix abbrev="LCKS">
+      <alt>LOCKS</alt>
+    </suffix>
+    <suffix abbrev="LDG">
+      <alt>LODGE</alt>
+      <alt>LDGE</alt>
+      <alt>LODG</alt>
+    </suffix>
+    <suffix abbrev="LOOP">
+      <alt>LOOPS</alt>
+    </suffix>
+    <suffix abbrev="MALL">
+      <alt>MALL</alt>
+    </suffix>
+    <suffix abbrev="MNR">
+      <alt>MANOR</alt>
+    </suffix>
+    <suffix abbrev="MNRS">
+      <alt>MANORS</alt>
+    </suffix>
+    <suffix abbrev="MDW">
+      <alt>MEADOW</alt>
+    </suffix>
+    <suffix abbrev="MDWS">
+      <alt>MEADOWS</alt>
+      <alt>MEDOWS</alt>
+    </suffix>
+    <suffix abbrev="MEWS">
+      <alt>MEWS</alt>
+    </suffix>
+    <suffix abbrev="ML">
+      <alt>MILL</alt>
+    </suffix>
+    <suffix abbrev="MLS">
+      <alt>MILLS</alt>
+    </suffix>
+    <suffix abbrev="MSN">
+      <alt>MISSION</alt>
+      <alt>MISSN</alt>
+      <alt>MSSN</alt>
+    </suffix>
+    <suffix abbrev="MTWY">
+      <alt>MOTORWAY</alt>
+    </suffix>
+    <suffix abbrev="MT">
+      <alt>MOUNT</alt>
+      <alt>MNT</alt>
+    </suffix>
+    <suffix abbrev="MTN">
+      <alt>MOUNTAIN</alt>
+      <alt>MNTAIN</alt>
+      <alt>MNTN</alt>
+      <alt>MOUNTIN</alt>
+      <alt>MTIN</alt>
+    </suffix>
+    <suffix abbrev="MTNS">
+      <alt>MOUNTAINS</alt>
+      <alt>MNTNS</alt>
+    </suffix>
+    <suffix abbrev="NCK">
+      <alt>NECK</alt>
+    </suffix>
+    <suffix abbrev="ORCH">
+      <alt>ORCHARD</alt>
+      <alt>ORCHRD</alt>
+    </suffix>
+    <suffix abbrev="OVAL">
+      <alt>OVL</alt>
+    </suffix>
+    <suffix abbrev="OPAS">
+      <alt>OVERPASS</alt>
+    </suffix>
+    <suffix abbrev="PARK">
+      <alt>PRK</alt>
+      <alt>PARKS</alt>
+    </suffix>
+    <suffix abbrev="PASS">
+      <alt>PASS</alt>
+    </suffix>
+    <suffix abbrev="PKWY">
+      <alt>PARKWAY</alt>
+      <alt>PARKWY</alt>
+      <alt>PKWAY</alt>
+      <alt>PKY</alt>
+      <alt>PARKWAYS</alt>
+      <alt>PKWYS</alt>
+    </suffix>
+    <suffix abbrev="PSGE">
+      <alt>PASSAGE</alt>
+    </suffix>
+    <suffix abbrev="PATH">
+      <alt>PATHS</alt>
+    </suffix>
+    <suffix abbrev="PIKE">
+      <alt>PIKES</alt>
+    </suffix>
+    <suffix abbrev="PNE">
+      <alt>PINE</alt>
+    </suffix>
+    <suffix abbrev="PNES">
+      <alt>PINES</alt>
+    </suffix>
+    <suffix abbrev="PL">
+      <alt>PLACE</alt>
+    </suffix>
+    <suffix abbrev="PLN">
+      <alt>PLAIN</alt>
+    </suffix>
+    <suffix abbrev="PLNS">
+      <alt>PLAINS</alt>
+    </suffix>
+    <suffix abbrev="PLZ">
+      <alt>PLAZA</alt>
+      <alt>PLZA</alt>
+    </suffix>
+    <suffix abbrev="PT">
+      <alt>POINT</alt>
+    </suffix>
+    <suffix abbrev="PTS">
+      <alt>POINTS</alt>
+    </suffix>
+    <suffix abbrev="PRT">
+      <alt>PORT</alt>
+    </suffix>
+    <suffix abbrev="PRTS">
+      <alt>PORTS</alt>
+    </suffix>
+    <suffix abbrev="PR">
+      <alt>PRAIRIE</alt>
+      <alt>PRR</alt>
+    </suffix>
+    <suffix abbrev="RADL">
+      <alt>RADIAL</alt>
+      <alt>RAD</alt>
+      <alt>RADIEL</alt>
+    </suffix>
+    <suffix abbrev="RAMP">
+      <alt>RAMP</alt>
+    </suffix>
+    <suffix abbrev="RNCH">
+      <alt>RANCH</alt>
+      <alt>RANCHES</alt>
+      <alt>RNCHS</alt>
+    </suffix>
+    <suffix abbrev="RPD">
+      <alt>RAPID</alt>
+    </suffix>
+    <suffix abbrev="RPDS">
+      <alt>RAPIDS</alt>
+    </suffix>
+    <suffix abbrev="RST">
+      <alt>REST</alt>
+    </suffix>
+    <suffix abbrev="RDG">
+      <alt>RIDGE</alt>
+      <alt>RDGE</alt>
+    </suffix>
+    <suffix abbrev="RDGS">
+      <alt>RIDGES</alt>
+    </suffix>
+    <suffix abbrev="RIV">
+      <alt>RIVER</alt>
+      <alt>RIVR</alt>
+      <alt>RVR</alt>
+    </suffix>
+    <suffix abbrev="RD">
+      <alt>ROAD</alt>
+    </suffix>
+    <suffix abbrev="RDS">
+      <alt>ROADS</alt>
+    </suffix>
+    <suffix abbrev="ROW">
+      <alt>ROW</alt>
+    </suffix>
+    <suffix abbrev="RTE">
+      <alt>ROUTE</alt>
+    </suffix>
+    <suffix abbrev="RUE">
+      <alt>RUE</alt>
+    </suffix>
+    <suffix abbrev="RUN">
+      <alt>RUN</alt>
+    </suffix>
+    <suffix abbrev="SHL">
+      <alt>SHOAL</alt>
+    </suffix>
+    <suffix abbrev="SHLS">
+      <alt>SHOALS</alt>
+    </suffix>
+    <suffix abbrev="SHR">
+      <alt>SHORE</alt>
+      <alt>SHOAR</alt>
+    </suffix>
+    <suffix abbrev="SHRS">
+      <alt>SHORES</alt>
+      <alt>SHOARS</alt>
+    </suffix>
+    <suffix abbrev="SKWY">
+      <alt>SKYWAY</alt>
+    </suffix>
+    <suffix abbrev="SPG">
+      <alt>SPRING</alt>
+      <alt>SPNG</alt>
+      <alt>SPRNG</alt>
+    </suffix>
+    <suffix abbrev="SPGS">
+      <alt>SPRINGS</alt>
+      <alt>SPNGS</alt>
+      <alt>SPRNGS</alt>
+    </suffix>
+    <suffix abbrev="SPUR">
+      <alt>SPURS</alt>
+    </suffix>
+    <suffix abbrev="SQ">
+      <alt>SQUARE</alt>
+      <alt>SQR</alt>
+      <alt>SQRE</alt>
+      <alt>SQU</alt>
+    </suffix>
+    <suffix abbrev="SQS">
+      <alt>SQUARES</alt>
+      <alt>SQRS</alt>
+    </suffix>
+    <suffix abbrev="STA">
+      <alt>STATION</alt>
+      <alt>STATN</alt>
+      <alt>STN</alt>
+    </suffix>
+    <suffix abbrev="STRA">
+      <alt>STRAVENUE</alt>
+      <alt>STRAV</alt>
+      <alt>STRAVEN</alt>
+      <alt>STRAVN</alt>
+      <alt>STRVN</alt>
+      <alt>STRVNUE</alt>
+    </suffix>
+    <suffix abbrev="STRM">
+      <alt>STREAM</alt>
+      <alt>STREME</alt>
+    </suffix>
+    <suffix abbrev="ST">
+      <alt>STREET</alt>
+      <alt>STR</alt>
+      <alt>STRT</alt>
+    </suffix>
+    <suffix abbrev="STS">
+      <alt>STREETS</alt>
+    </suffix>
+    <suffix abbrev="SMT">
+      <alt>SUMMIT</alt>
+      <alt>SUMIT</alt>
+      <alt>SUMITT</alt>
+    </suffix>
+    <suffix abbrev="TER">
+      <alt>TERRACE</alt>
+      <alt>TERR</alt>
+    </suffix>
+    <suffix abbrev="TRWY">
+      <alt>THROUGHWAY</alt>
+    </suffix>
+    <suffix abbrev="TRCE">
+      <alt>TRACE</alt>
+      <alt>TRACES</alt>
+    </suffix>
+    <suffix abbrev="TRAK">
+      <alt>TRACK</alt>
+      <alt>TRACKS</alt>
+      <alt>TRK</alt>
+      <alt>TRKS</alt>
+    </suffix>
+    <suffix abbrev="TRFY">
+      <alt>TRAFFICWAY</alt>
+    </suffix>
+    <suffix abbrev="TRL">
+      <alt>TRAIL</alt>
+      <alt>TRAILS</alt>
+      <alt>TRLS</alt>
+    </suffix>
+    <suffix abbrev="TRLR">
+      <alt>TRAILER</alt>
+      <alt>TRLRS</alt>
+    </suffix>
+    <suffix abbrev="TUNL">
+      <alt>TUNNEL</alt>
+      <alt>TUNEL</alt>
+      <alt>TUNLS</alt>
+      <alt>TUNNELS</alt>
+      <alt>TUNNL</alt>
+    </suffix>
+    <suffix abbrev="TPKE">
+      <alt>TURNPIKE</alt>
+      <alt>TRNPK</alt>
+      <alt>TURNPK</alt>
+    </suffix>
+    <suffix abbrev="UPAS">
+      <alt>UNDERPASS</alt>
+    </suffix>
+    <suffix abbrev="UN">
+      <alt>UNION</alt>
+    </suffix>
+    <suffix abbrev="UNS">
+      <alt>UNIONS</alt>
+    </suffix>
+    <suffix abbrev="VLY">
+      <alt>VALLEY</alt>
+      <alt>VALLY</alt>
+      <alt>VLLY</alt>
+    </suffix>
+    <suffix abbrev="VLYS">
+      <alt>VALLEYS</alt>
+    </suffix>
+    <suffix abbrev="VIA">
+      <alt>VIADUCT</alt>
+      <alt>VDCT</alt>
+      <alt>VIADCT</alt>
+    </suffix>
+    <suffix abbrev="VW">
+      <alt>VIEW</alt>
+    </suffix>
+    <suffix abbrev="VWS">
+      <alt>VIEWS</alt>
+    </suffix>
+    <suffix abbrev="VLG">
+      <alt>VILLAGE</alt>
+      <alt>VILL</alt>
+      <alt>VILLAG</alt>
+      <alt>VILLG</alt>
+      <alt>VILLIAGE</alt>
+    </suffix>
+    <suffix abbrev="VLGS">
+      <alt>VILLAGES</alt>
+    </suffix>
+    <suffix abbrev="VL">
+      <alt>VILLE</alt>
+    </suffix>
+    <suffix abbrev="VIS">
+      <alt>VISTA</alt>
+      <alt>VIST</alt>
+      <alt>VST</alt>
+      <alt>VSTA</alt>
+    </suffix>
+    <suffix abbrev="WALK">
+      <alt>WALKS</alt>
+    </suffix>
+    <suffix abbrev="WALL">
+      <alt>WALL</alt>
+    </suffix>
+    <suffix abbrev="WAY">
+      <alt>WY</alt>
+    </suffix>
+    <suffix abbrev="WAYS">
+      <alt>WAYS</alt>
+    </suffix>
+    <suffix abbrev="WL">
+      <alt>WELL</alt>
+    </suffix>
+    <suffix abbrev="WLS">
+      <alt>WELLS</alt>
+    </suffix>
+  </streetSuffixes>
+  <secondaryUnits>
+    <unit name="APARTMENT" abbrev="APT" />
+    <unit name="BASEMENT" abbrev="BSMT" />
+    <unit name="BUILDING" abbrev="BLDG" />
+    <unit name="DEPARTMENT" abbrev="DEPT" />
+    <unit name="FLOOR" abbrev="FL" />
+    <unit name="FRONT" abbrev="FRNT" />
+    <unit name="HANGAR" abbrev="HNGR" />
+    <unit name="KEY" abbrev="KEY" />
+    <unit name="LOBBY" abbrev="LBBY" />
+    <unit name="LOT" abbrev="LOT" />
+    <unit name="LOWER" abbrev="LOWR" />
+    <unit name="OFFICE" abbrev="OFC" />
+    <unit name="PENTHOUSE" abbrev="PH" />
+    <unit name="PIER" abbrev="PIER" />
+    <unit name="REAR" abbrev="REAR" />
+    <unit name="ROOM" abbrev="RM" />
+    <unit name="SIDE" abbrev="SIDE" />
+    <unit name="SLIP" abbrev="SLIP" />
+    <unit name="SPACE" abbrev="SPC" />
+    <unit name="STOP" abbrev="STOP" />
+    <unit name="SUITE" abbrev="STE" />
+    <unit name="TRAILER" abbrev="TRLR" />
+    <unit name="UNIT" abbrev="UNIT" />
+    <unit name="UPPER" abbrev="UPPR" />
+  </secondaryUnits>
+</addressAbbreviations>

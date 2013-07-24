@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Virtual Lottery";
+}
+
+<div class="container">
+    <form action="/Home/LotteryEntry" method="post" enctype="multipart/form-data">
+        <div style="margin-left: 290px; margin-top: 120px">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Full Name" style="width: 290px" name="FullName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Street Address" style="width: 290px" name="Address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="SeatingPref" style="width: 303px">
+                            <option value="0">Choose Seating</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+            <p>Disclaimer Text</p>
+            <div style="margin-left: 140px">
+                <span style="vertical-align: middle">I Agree</span>
+                <input type="radio" style="vertical-align: middle" name="agreement" />
+                &nbsp;&nbsp;&nbsp;
+                <span style="vertical-align: middle">I Disagree</span>
+                <input type="radio" style="vertical-align: middle" name="agreement" />
+            </div>
+            <input type="submit" value="Enter Lottery" class="btn" style="margin-left: 110px; margin-top: 40px" />
+        </div>
+    </form>
+</div>

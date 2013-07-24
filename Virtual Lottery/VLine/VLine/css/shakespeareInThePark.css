@@ -1,0 +1,22 @@
+﻿body {
+    font: normal normal normal 16px/1.4em Helvetica, Arial, sans-serif;
+font-family: Helvetica, Arial, sans-serif;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+line-height: 1.4em;
+}
+input[type="submit"], .ui-dialog .ui-dialog-buttonpane button
+{
+    background-color: #444;
+    font-size: 1.75em;
+    color: White;
+    text-transform: uppercase;
+    padding: 2px;
+    border: 0;
+}
+
+    input[type="submit"]:hover, .ui-dialog .ui-dialog-buttonpane button:hover
+    {
+        background-color: #666;
+    }

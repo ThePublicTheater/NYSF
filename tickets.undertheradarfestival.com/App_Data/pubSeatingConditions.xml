@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pubSeatingConditions>
+  <section id="21" description="Tables">
+    Please note there is a $12 food minimum per person at this location. Joe's Pub seating is
+    communal, which means you may have other guests at your table should you chose a table with more
+    seats than the number in your party. As a courtesy to the artists we recommend arriving no later
+    than thirty minutes before show time.
+  </section>
+  <section id="31" description="Counter">
+    Please note there is a $12 food minimum or two drink minimum for all counter seating. As a
+    courtesy to the artists we recommend arriving no later than thirty minutes before show time.
+  </section>
+  <section id="22" description="Barstool">
+    Please note there is a $12 food minimum or two drink minimum for all barstool seating. As a
+    courtesy to the artists we recommend arriving no later than thirty minutes before show time.
+  </section>
+  <section id="30" description="Stage">
+    Please note there is a $12 food minimum or two drink minimum for all stage seating. As a
+    courtesy to the artists we recommend arriving no later than thirty minutes before show time.
+  </section>
+  <section id="-1" description="Standing Room">
+    Please note there is a $12 food minimum or two drink minimum for all standing room locations. As
+    a courtesy to the artists we recommend arriving no later than thirty minutes before show time.
+  </section>
+</pubSeatingConditions>

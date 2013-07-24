@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" %>
+<%@ Register TagPrefix="nysf" TagName="SessionHandler" Src="~/usercontrols/SessionHandler.ascx" %>
+<%@ Register TagPrefix="nysf" TagName="AccountWidget" Src="~/usercontrols/AccountWidget.ascx"
+%><!doctype html>
+<asp:ContentPlaceHolder ID="SessionHandlerPlaceHolder" runat="server">
+	<nysf:SessionHandler runat="server" />
+</asp:ContentPlaceHolder>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Public Theater Schedule and Tickets</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="/css/style.css">
+	<asp:ContentPlaceHolder ID="EndOfHeadPlaceHolder" runat="server" />
+</head>
+<body id="<asp:ContentPlaceHolder ID="BodyIdPlaceHolder" runat="server" />">
+	<ul id="SkipLinks">
+		<li>
+			<a href="#MainContent" accesskey="c">Skip to main content
+					(<kbd>c</kbd>)</a>
+		</li>
+		<li>
+			<a href="#AccountControls" accesskey="a">Skip to account
+					controls (<kbd>a</kbd>)</a>
+		</li>
+	</ul>
+	<div id="Container">
+		<header>
+			<hgroup>
+				<h1>
+					<a href="/" title="UTR Pak Homepage">Under the Radar Festival</a>
+				</h1>
+				<h2>A festival tracking new theater from around the world</h2>
+			</hgroup>
+		</header>
+		<aside>
+			<nav>
+				<ul>
+					<%--<li>
+						<a href="/order">Order UTR Paks</a>
+					</li>--%>
+					<li>
+						<a href="http://www.undertheradarfestival.com/">Return to main
+								site</a>
+					</li>
+				</ul>
+			</nav>
+			<%--<nav id="AccountControls">
+				<h3 class="SelfEvident">Account Controls</h3>
+				<nysf:AccountWidget ShowGreeting="false" ShowPromoLink="false" ShowCartLink="false"
+						runat="server" />
+			</nav>--%>
+		</aside>
+		<article id="MainContent" class="Content">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+		</article>
+		<footer>
+            <section>
+                <h3>Related Sites</h3>
+                <ul>
+                    <li>
+                        <a href="http://www.facebook.com/pages/Under-The-Radar-Festival/131413542757"
+								title="Our Facebook Page">Our Facebook Page</a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/UTRFestival" title="Our Twitter Feed">Our Twitter Feed</a>
+                    </li>
+                    <li>
+                        <a href="http://www.vimeo.com/user900093/videos" title="Our Vimeo Videos">Our Vimeo
+								Videos</a>
+                    </li>
+                </ul>
+            </section>
+			<section>
+                <h3>Credits</h3>
+				<a href="http://www.publictheater.org" title="The Public Theater homepage"><img
+						src="/media/unmanaged/images/logos/PublicTheater.gif" alt="The Public
+						Theater logo" /></a>
+                <small>Under The Radar Festival 2012 is produced by <a href="http://www.publictheater.org"
+						>The Public Theater</a>, Festival
+						Producer Mark Russell. Major funding is provided by the Andrew W. Mellon
+						Foundation and the Ford Foundation. Under The Radar Symposium is also
+						supported by Association of Performing Arts Presenters, and is held in
+						conjunction with APAP Conference NYC 2012.</small>
+			</section>
+		</footer>
+   	</div>
+    <asp:ContentPlaceHolder ID="EndOfBodyPlaceholder" runat="server" />
+</body>
+</html>

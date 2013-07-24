@@ -1,0 +1,770 @@
+﻿a:link { color: Blue; }
+a:visited { color: Purple; }
+a:hover, a:active { color: Red; }
+
+address
+{
+    display: inline;
+}
+
+address ul
+{
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+}
+
+address li
+{
+    display: inline;
+    padding-right: .5em;
+    margin-right: .25em;
+    border-right: 1px solid white;
+}
+
+body
+{
+    background-color: Black;
+    font: 12px Arial, Helvetica, Sans-Serif;
+    margin-bottom: 1em;
+}
+
+dd input[type="submit"]
+{
+    font-size: .75em;
+}
+
+fieldset
+{
+    clear: right;
+}
+
+footer
+{
+    margin-top: 2.5em;
+    color: #ddd;
+    text-align: center;
+}
+
+footer section
+{
+    display: inline;
+}
+
+footer section h3
+{
+        margin: 0;
+        padding: 0;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+}
+
+footer small
+{
+    font-size: inherit;
+}
+
+form table
+{
+    width: auto;
+    margin: 1em auto 0 auto;
+}
+
+form th, form td
+{
+    padding: .5em 1em .5em 1em;
+    width: auto;
+}
+
+h1 a
+{
+    display: block;
+    width: 137px;
+    height: 40px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url("/media/unmanaged/images/logos/PublicTheater.png");
+    margin-top: 14px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+input[type="submit"], .ui-dialog .ui-dialog-buttonpane button
+{
+    background-color: #444;
+    font-size: 1.75em;
+    color: White;
+    text-transform: uppercase;
+    padding: 2px;
+    border: 0;
+}
+
+    input[type="submit"]:hover, .ui-dialog .ui-dialog-buttonpane button:hover
+    {
+        background-color: #666;
+    }
+
+p
+{
+    padding-top: 1em;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+table, td, th
+{
+    border: 1px solid #808080;
+}
+
+td
+{
+    background-color: #c0c0c0;
+    padding: .5em;
+    text-align: center;
+    color: Black;
+}
+
+th
+{
+    color: White;
+    background-color: #444;
+    text-transform: uppercase;
+    width: 14.28%;
+}
+
+.CartSummary
+{
+    padding-top: 1em;
+}
+
+    .CartSummary li
+    {
+        text-align: center;
+    }
+
+.CommandLink
+{
+    display: block;
+    float: left;
+    margin-top: 2em;
+    background-color: #444;
+    font-size: 1.75em;
+    color: White;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2px;
+}
+
+    .CommandLink + *
+    {
+        clear: left;
+    }
+    
+    .CommandLink:link, .CommandLink:visited { color: White; }
+    .CommandLink:hover { background-color: #666; }
+    .CommandLink:active { color: White; }
+
+.Date
+{
+    display: block;
+    width: 0;
+    height: 4em;
+    float: left;
+    overflow: visible;
+    font-size: 16px;
+}
+
+    .Date + *
+    {
+        margin-top: 2em;
+    }
+
+.JP, .JP a:link, .JP a:visited
+{
+    color: Blue;
+}
+
+.LinkMenu .CommandLink
+{
+    float: none;
+    display: inline;
+    margin: 0;
+}
+
+.MajorNavLink
+{
+    float: left;
+    background-color: #E00;
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1em;
+    padding: 10px 45px;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .MajorNavLink:link, .MajorNavLink:visited { color: White; }
+    .MajorNavLink:hover, .MajorNavLink:active { background-color: #a62006; }
+
+.OutOfMonthDay
+{
+    background-color: #888;
+}
+
+.PT, .PT a:link, .PT a:visited
+{
+    color: Red;
+}
+
+.SITP, .SITP a:link, .SITP a:visited
+{
+    color: #060;
+}
+
+.JP a:hover, .JP a:active, .SITP a:hover, .SITP a:active, .PT a:hover, .PT a:active
+{
+    color: Black;
+}
+
+#CalendarControl
+{
+    position: relative;
+    bottom: 17px;
+}
+
+    #CalendarControl ul
+    {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    #CalendarControl li
+    {
+        float: left;
+        width: 49%;
+    }
+    
+        #CalendarControl li a
+        {
+            float: right;
+            margin-right: 5em;
+            display: block;
+            text-indent: -9999px;
+            overflow: hidden;
+            width: 18px;
+            height: 15px;
+            background-image: url("/media/unmanaged/images/buttons/Button-LeftArrow.png");
+        }
+    
+    #CalendarControl li + li
+    {
+        float: right;
+    }
+        
+        #CalendarControl li + li a
+        {
+            float: left;
+            margin-left: 5em;
+            background-image: url("/media/unmanaged/images/buttons/Button-RightArrow.png");
+        }
+        
+#CartView p
+{
+    text-align: center;
+}
+
+#CartView table
+{
+    width: auto;
+    margin: 0 auto;
+    font-size: 1.25em;
+}
+
+#CartView td
+{
+    border-color: White;
+    background-color: #ccc;
+}
+    
+    #CartView td[colspan="3"]
+    {
+        text-align: right;
+    }
+
+#CartView th
+{
+    width: auto;
+    border-color: White;
+    padding: .5em;
+    background-color: #999;
+}
+    
+#CartView input[type="submit"]
+{
+    font-size: .75em;
+    padding: 0;
+}
+    
+#CartView .TotalRow
+{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#CommPrefs .OrgPrefSection
+{
+	float: right;
+	clear: right;
+	width: 49%;
+	padding-top: 1em;
+}
+
+#CommPrefs .OrgPrefSection ul
+{
+	margin-top: 1em;
+	margin-left: 3em;
+}
+
+
+
+#Container
+{
+    width: 85%;
+    min-width: 700px;
+    margin: 0 auto;
+}
+
+    #Container > header > nav
+    {
+        float: right;
+        position: relative;
+        bottom: 40px;
+        color: White;
+        text-align: right;
+    }
+    
+    #Container > header > nav a:link { color: White; }
+    #Container > header > nav a:visited { color: White; }
+    #Container > header > nav a:hover { color: Yellow; text-decoration: underline; }
+    #Container > header > nav a:active { color: White; }
+    
+    #Container > header > nav > div
+    {
+        clear: both;
+        
+    }
+    
+    #Container > header > nav li
+    {
+        float: left;
+    }
+    
+        #Container > header > nav li + li
+        {
+            padding-left: 1em;
+        }
+        
+    #Container > header > nav p
+    {
+        color: White;
+        text-align: right;
+        padding: 0;
+    }
+
+#MainContent
+{
+    background-color: White;
+    margin-top: 33px;
+    padding: 1.5em;
+    min-width: 800px;
+}
+
+    #MainContent aside
+    {
+        margin-top: 1em;
+    }
+
+    #MainContent aside, #MainContent h3
+    {
+        font-size: 16px;
+        font-weight: bold;
+        /*margin-top: 2.5em;*/
+    }
+    
+    #MainContent aside ul
+    {
+        width: 14em;
+        margin: 0 auto;
+        list-style: square inside;
+        position: relative;
+        bottom: .5em;
+        left: .5em;
+    }
+    
+    #MainContent h3
+    {
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: Black;
+        margin-top: .5em;
+    }
+    
+#OrderWizard
+{
+    color: black;
+}
+
+    #OrderWizard form > aside
+    {
+        text-align: center;
+        color: Black;
+    }
+
+    #OrderWizard h3
+    {
+        text-align: center;
+    }
+
+        #OrderWizard h3 i
+        {
+            font-style: italic;
+        }
+    #OrderWizard p
+    {
+        text-align: center;
+    }
+    
+    #OrderWizard .Review
+    {
+        padding: .25em;
+        width: 65%;
+    }
+    
+        #OrderWizard .Review dt
+        {
+            display: inline;
+            width: auto;
+            clear: none;
+            text-align: left;
+            float: none;
+        }
+    
+        #OrderWizard .Review dd
+        {
+            display: inline;
+            text-align: left;
+            width: auto;
+            float: none;
+        }
+        
+        #OrderWizard .Review dd + dt
+        {
+            margin-left: 3em;
+        }
+        
+#ProdDetails
+{
+    margin: 3em 9em;
+    color: Black;
+}
+
+    #ProdDetails h3
+    {
+        text-align: left;
+        text-transform: none;
+    }
+    
+    #ProdDetails aside
+    {
+        margin: 0;
+        font-weight: normal;
+    }
+    
+    #ProdDetails b
+    {
+        font-weight: bold;
+    }
+    
+    #ProdDetails h3
+    {
+        font-size: 1.4em;
+    }
+    
+    #ProdDetails i
+    {
+        font-style: italic;
+    }
+    
+    #ProdDetails .Unvalidated
+    {
+        padding-top: 2.75em;
+        font-size: 1.25em;
+    }
+    
+    #ProdDetails .Unvalidated > b
+    {
+        font-size: 1.15em;
+    }
+    
+    #ProdDetails .Unvalidated h3
+    {
+        padding-top: 1em;
+        font-size: 1.25em;
+    }
+    
+    #ProdDetails .Unvalidated .artists ul, #ProdDetails .Unvalidated .genres ul
+    {
+        margin-top: 1em;
+    }
+    
+    #ProdDetails .Unvalidated .jp_more_info
+    {
+        display: block;
+        float: left;
+        margin-top: 1.5em;
+    }
+    
+    #ProdDetails .Unvalidated .jp_more_info + *
+    {
+        clear: left;
+    }
+    
+    #ProdDetails #AssistancePrompt
+    {
+        padding-top: 3em;
+        font-size: 1.25em;
+    }
+
+#RelatedSitesSection
+{
+    position: absolute;
+    background-color: White;
+    top: 61px;
+    left: 3em;
+    padding: 6px 5px;
+}
+
+    #RelatedSitesSection a
+    {
+        font-family: Tahoma, Geneva, sans-serif;
+        letter-spacing: -1px;
+        background-color: #e02400;
+        text-decoration: none;
+        padding: 3px 10px;
+    }
+
+    #RelatedSitesSection a:link, #RelatedSitesSection a:visited
+    {
+        color: White;
+    }
+    
+    #RelatedSitesSection a:hover
+    {
+        color: White;
+        background-color: #a62006;
+    }
+    
+    #RelatedSitesSection a:active
+    {
+        color: White;
+    }
+
+    #RelatedSitesSection li
+    {
+        display: inline;
+        text-transform: uppercase;
+    }
+    
+    #RelatedSitesSection li + li
+    {
+        padding-left: 2px;
+    }
+    
+    #RelatedSitesSection ul
+    {
+        list-style-type: none;
+        margin-left: 0;
+    }
+    
+    #RelatedSitesSection .Deemphasized
+    {
+        text-transform: lowercase;
+    }
+    
+/* SYOS NO-JAVASCRIPT VERSION STYLES */
+
+.SyosLegend
+{
+    border: 1px solid black;
+    float: right;
+    padding: .5em;
+    width: 100px;
+}
+
+.SyosLegend ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.SyosLegend li
+{
+    margin: 0;
+    padding: 1em 0 0 1em;
+}
+
+.SyosLegend li + li
+{
+    padding-top: .25em;
+}
+
+.SyosLegend h4
+{
+    text-align: center;
+}
+
+.SyosSection h4
+{
+    font-size: 2em;
+}
+
+.SyosSection div, .SyosSection dl
+{
+    margin-left: 3em;
+    padding-top: 1em;
+}
+
+.SyosSection h5
+{
+    font-size: 1.5em;
+}
+
+.SyosZone dt
+{
+    float: none;
+    text-align: left;
+    width: auto;
+    margin: auto;
+    clear: none;
+}
+
+.SyosZone dt + dd
+{
+    padding-top: 1em;
+}
+
+.SyosZone dd + dt
+{
+    padding-top: 1em;
+}
+
+
+.SyosZone + .SyosZone
+{
+    padding-top: 2em;
+}
+
+.SyosZones
+{
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.SyosZones h5
+{
+    position: absolute;
+    text-indent: -9999px;
+}
+
+.SyosSeat
+{
+    float: none;
+    margin: auto;
+    width: auto;
+    margin-left: 3em;
+    padding-top: 2px;
+}
+
+.SyosSeat label
+{
+    position: relative;
+    top: 1px;
+    margin-left: 1em;
+}
+
+.SyosSeatTaken
+{
+    color: grey;
+}
+
+.SyosSeatInCart
+{
+    color: Blue;
+}
+
+.SyosPriceScaleX0
+{
+    color: #006600;
+}
+
+.SyosPriceScaleX1
+{
+    color: #006600;
+}
+
+.SyosPriceScaleX2
+{
+    color: #006600;
+}
+
+.SyosPriceScaleX3
+{
+    color: #999900;
+}
+
+.SyosPriceScaleX4
+{
+    color: #999900;
+}
+
+.SyosPriceScaleX5
+{
+    color: #999900;
+}
+
+.SyosPriceScaleX6
+{
+    color: #996600;
+}
+
+.SyosPriceScaleX7
+{
+    color: #996600;
+}
+
+.SyosPriceScaleX8
+{
+    color: #996600;
+}
+
+.SyosPriceScaleX9
+{
+    color: #990000;
+}

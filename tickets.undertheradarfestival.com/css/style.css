@@ -1,0 +1,413 @@
+﻿/***************************************************************************************************
+Reset
+***************************************************************************************************/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* cite 1 */
+
+
+/***************************************************************************************************
+Tricks
+***************************************************************************************************/
+
+
+.SelfEvident, #SkipLinks, #Container > footer section:first-child h3,
+#Container > footer section + section h3
+{
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* cite 2 */
+
+h1 a, #Container > footer section:first-child a
+{
+	display: block;
+	border: 0;
+	text-indent: -999em;
+	overflow: hidden;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+
+/* cite 3 */
+
+
+/***************************************************************************************************
+Generic elements
+***************************************************************************************************/
+
+
+a
+{
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+body
+{
+	color: White;
+	background-color: rgb(66,66,66);
+	font-family: Arial, Helvetica, Sans-Serif;
+}
+
+#Container
+{
+	width: 886px;
+	margin: auto;
+}
+
+#Container > aside
+{
+	width: 176px;
+	float: left;
+	clear: left;
+	padding-top: 2em;
+}
+
+#Container > aside a:link, #Container > aside a:visited { color: White; }
+#Container > aside a:hover { color: rgb(227,74,39); text-decoration: none; }
+#Container > aside a:active, #Container > aside a:focus { color: White; }
+
+#Container > aside li
+{
+	line-height: 24px;
+}
+
+#Container > aside li a
+{
+	font-size: 2em;
+	position: relative;
+	top: .25em;
+	letter-spacing: 0.035em;
+	outline: none;
+}
+
+#Container > aside ul
+{
+	color: rgb(227,74,39);
+	font-size: .5em;
+	list-style-type: disc;
+	margin-left: 15px;
+}
+
+#Container > header hgroup h2
+{
+	text-transform: uppercase;
+	padding-top: 69px;
+	letter-spacing: 0.045em;
+	padding-left: 176px;
+	padding-bottom: 17px;
+	border-bottom: 4px solid white;
+}
+
+#Container > footer section:first-child
+{
+	position: absolute;
+	width: 886px;
+	top: 69px;
+	text-align: right;
+	height: 0px;
+}
+
+#Container > footer section:first-child a
+{
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin-left: 12px;
+}
+
+#Container > footer section:first-child a[title="Our Facebook Page"]
+{
+	background-image: url("/media/unmanaged/images/icons/Facebook.png");
+}
+
+#Container > footer section:first-child a[title="Our Twitter Feed"]
+{
+	background-image: url("/media/unmanaged/images/icons/Twitter.png");
+}
+
+#Container > footer section:first-child a[title="Our Vimeo Videos"]
+{
+	background-image: url("/media/unmanaged/images/icons/Vimeo.png");
+}
+
+#Container > footer section:first-child li
+{
+	display: inline;
+}
+
+#Container > footer section:first-child ul
+{
+	float: right;
+}
+
+#Container > footer section + section
+{
+	margin-top: 2em;
+}
+
+#Container > footer section + section img
+{
+	float: left;
+	margin-right: .5em;
+}
+
+#Container > footer small
+{
+	color: rgb(153,153,153);
+	font-size: 10px;
+	letter-spacing: 0.035em;
+}
+
+#Container > footer small a { color: rgb(241,103,34); }
+
+fieldset
+{
+	margin-top: 2em;
+}
+
+form dl
+{
+	margin-top: 1em;
+}
+
+form dd
+{
+	line-height: 3em;
+}
+
+form dd div
+{
+	font-size: .8em;
+	line-height: normal;
+	margin-left: 13em;
+	position: relative;
+	bottom: 1.5em;
+}
+
+form dt
+{
+	float: left;
+	min-width: 9em;
+	text-align: right;
+	margin-right: 1em;
+	line-height: 3em;
+}
+
+h1 a
+{
+	background-image: url("/media/unmanaged/images/logos/Utr.gif");
+	width: 149px;
+	height: 149px;
+	float: left;
+	margin-top: 30px;
+}
+
+i
+{
+	font-style: italic;
+}
+
+legend
+{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#MainContent
+{
+	margin: 4.5em 0 1em 176px;
+	background-color: White;
+	color: rgb(70,70,70);
+	line-height: 16px;
+	font-size: 13px;
+	letter-spacing: 0.035em;
+	padding: 26px 26px 6em 26px;
+}
+
+#MainContent aside
+{
+	float: right;
+	background-color: rgb(241,103,34);
+	padding: 5px;
+	font-size: 2.5em;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+#MainContent aside a
+{
+	display: block;
+	border: 2px solid white;
+	padding: .5em;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#MainContent aside a:link, #MainContent aside a:visited { color: white; }
+#MainContent aside a:hover, #MainContent aside a:hover { background-color: white; color: rgb(241,103,34); }
+
+#MainContent div
+{
+	margin-top: 1em;
+}
+
+#MainContent footer
+{
+	margin-top: 3em;
+}
+
+#MainContent h2
+{
+	color: rgb(241,103,34);
+	font-size: 40px;
+	font-weight: bold;
+	line-height: normal;
+	margin-bottom: .25em;
+}
+
+#MainContent h3
+{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+#MainContent li > a
+{
+	display: block;
+	margin-top: 1em;
+}
+
+#MainContent ul
+{
+	margin-top: 1em;
+}
+
+nav p
+{
+	font-size: .75em;
+	margin-left: 1em;
+	margin-bottom: .5em;
+}
+
+p
+{
+	margin-top: 1em;
+}
+
+p + input, p + select
+{
+	margin-top: 1em;
+}
+
+section + section p
+{
+	font-style: italic;
+}
+
+small
+{
+	font-style:  italic;
+}
+
+
+/***************************************************************************************************
+Special Classes
+***************************************************************************************************/
+
+
+.InputRow
+{
+	margin-top: 2em;
+}
+
+.Prompt
+{
+	font-weight: bold;
+}
+
+.Warning
+{
+	color: red;
+	font-weight: bold;
+}
+
+.SuccessMessage
+{
+	color: green;
+	font-weight: bold;
+}
+
+
+/***************************************************************************************************
+Citations
+****************************************************************************************************
+
+
+1	Eric Meyer's reset.css
+2	visuallyhidden from Html5Boilerplate 2.0
+3	ir from Html5Boilerplate 2.0

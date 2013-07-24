@@ -1,0 +1,332 @@
+﻿.SyosDisclaimers
+{
+    clear: both;
+    margin-top: 1em;
+}
+
+.ui-dialog-content .SyosDisclaimers
+{
+    width: auto;
+    text-indent: 0;
+    height: auto;
+}
+
+.SyosMap .SyosLegend
+{
+    background-color: White;
+    margin-right: 4.5em;
+}
+
+.SyosMap .SyosLegend h4
+{
+    height: auto;
+    width: auto;
+    text-indent: 0;
+}
+
+.SyosMap
+{
+    width: 800px;
+    height: 673px;
+    background-image: url(/media/unmanaged/images/info/syos_maps/joespub.png);
+    margin: 1em auto 0 auto;
+    clear: left;
+    position: relative;
+}
+
+.SyosMap h4, .SyosMap h6, .SyosMap dt, .SyosMap dd *, div.SyosDisclaimers
+{
+    display: block;
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.SyosMap input
+{
+    visibility: hidden;
+}
+
+.SyosMap .SyosSeat
+{
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    margin: 0;
+    padding: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    top: 0px;
+    left: 0px;
+}
+
+.SyosMap .SyosSeatAvail:hover, .SyosMap .SyosZone .SyosClickedSeat
+{
+    border: 3px solid cyan;
+    height: 8px;
+    width: 8px;
+}
+
+.SyosSeat.SyosSeatTaken
+{
+    background-color: grey;
+}
+
+.SyosSeat.SyosSeatLocation047010 { left: 88px; top: 399px; }
+.SyosSeat.SyosSeatLocation044007 { left: 137px; top: 456px; }
+.SyosSeat.SyosSeatLocation046009 { left: 105px; top: 418px; }
+.SyosSeat.SyosSeatLocation045008 { left: 121px; top: 437px; }
+.SyosSeat.SyosSeatLocation037005 { left: 214px; top: 523px; }
+.SyosSeat.SyosSeatLocation036004 { left: 235px; top: 537px; }
+.SyosSeat.SyosSeatLocation035003 { left: 257px; top: 549px; }
+.SyosSeat.SyosSeatLocation034002 { left: 281px; top: 560px; }
+.SyosSeat.SyosSeatLocation033001 { left: 306px; top: 569px; }
+.SyosSeat.SyosSeatLocation031001 { left: 330px; top: 577px; }
+.SyosSeat.SyosSeatLocation029001 { left: 356px; top: 580px; }
+.SyosSeat.SyosSeatLocation027001 { left: 382px; top: 580px; }
+.SyosSeat.SyosSeatLocation025001 { left: 407px; top: 580px; }
+.SyosSeat.SyosSeatLocation023001 { left: 432px; top: 580px; }
+.SyosSeat.SyosSeatLocation021001 { left: 457px; top: 580px; }
+.SyosSeat.SyosSeatLocation019001 { left: 482px; top: 580px; }
+.SyosSeat.SyosSeatLocation017001 { left: 507px; top: 580px; }
+.SyosSeat.SyosSeatLocation015001 { left: 532px; top: 580px; }
+.SyosSeat.SyosSeatLocation013001 { left: 557px; top: 580px; }
+.SyosSeat.SyosSeatLocation011001 { left: 582px; top: 580px; }
+.SyosSeat.SyosSeatLocation007016 { left: 567px; top: 263px; }
+.SyosSeat.SyosSeatLocation011022 { left: 398px; top: 65px; }
+.SyosSeat.SyosSeatLocation006017 { left: 543px; top: 256px; }
+.SyosSeat.SyosSeatLocation008017 { left: 519px; top: 246px; }
+.SyosSeat.SyosSeatLocation007018 { left: 496px; top: 234px; }
+.SyosSeat.SyosSeatLocation009018 { left: 476px; top: 219px; }
+.SyosSeat.SyosSeatLocation008019 { left: 457px; top: 202px; }
+.SyosSeat.SyosSeatLocation010019 { left: 440px; top: 181px; }
+.SyosSeat.SyosSeatLocation009020 { left: 425px; top: 159px; }
+.SyosSeat.SyosSeatLocation011020 { left: 414px; top: 137px; }
+.SyosSeat.SyosSeatLocation010021 { left: 406px; top: 112px; }
+.SyosSeat.SyosSeatLocation012021 { left: 400px; top: 87px; }
+.SyosSeat.SyosSeatLocation023007 { left: 406px; top: 444px; }
+.SyosSeat.SyosSeatLocation022008 { left: 388px; top: 438px; }
+.SyosSeat.SyosSeatLocation024008 { left: 369px; top: 427px; }
+.SyosSeat.SyosSeatLocation023009 { left: 353px; top: 411px; }
+.SyosSeat.SyosSeatLocation025009 { left: 335px; top: 395px; }
+.SyosSeat.SyosSeatLocation024010 { left: 315px; top: 384px; }
+.SyosSeat.SyosSeatLocation026010 { left: 297px; top: 368px; }
+.SyosSeat.SyosSeatLocation025011 { left: 284px; top: 348px; }
+.SyosSeat.SyosSeatLocation027011 { left: 267px; top: 332px; }
+.SyosSeat.SyosSeatLocation026012 { left: 249px; top: 317px; }
+.SyosSeat.SyosSeatLocation028012 { left: 236px; top: 298px; }
+.SyosSeat.SyosSeatLocation029013 { left: 229px; top: 277px; }
+.SyosSeat.SyosSeatLocation031015 { left: 207px; top: 218px; }
+.SyosSeat.SyosSeatLocation032016 { left: 195px; top: 199px; }
+.SyosSeat.SyosSeatLocation033017 { left: 188px; top: 177px; }
+.SyosSeat.SyosSeatLocation034018 { left: 187px; top: 154px; }
+.SyosSeat.SyosSeatLocation035019 { left: 191px; top: 132px; }
+.SyosSeat.SyosSeatLocation036020 { left: 184px; top: 109px; }
+.SyosSeat.SyosSeatLocation035021 { left: 181px; top: 87px; }
+.SyosSeat.SyosSeatLocation041001 { left: 209px; top: 601px; }
+.SyosSeat.SyosSeatLocation043001 { left: 193px; top: 585px; }
+.SyosSeat.SyosSeatLocation042002 { left: 177px; top: 569px; }
+.SyosSeat.SyosSeatLocation044002 { left: 161px; top: 553px; }
+.SyosSeat.SyosSeatLocation044004 { left: 110px; top: 503px; }
+.SyosSeat.SyosSeatLocation046004 { left: 94px; top: 487px; }
+.SyosSeat.SyosSeatLocation045005 { left: 78px; top: 471px; }
+.SyosSeat.SyosSeatLocation047005 { left: 62px; top: 455px; }
+.SyosSeat.SyosSeatLocation022021 { left: 347px; top: 102px; }
+.SyosSeat.SyosSeatLocation023021 { left: 306px; top: 113px; }
+.SyosSeat.SyosSeatLocation022020 { left: 353px; top: 124px; }
+.SyosSeat.SyosSeatLocation023020 { left: 312px; top: 135px; }
+.SyosSeat.SyosSeatLocation019019 { left: 376px; top: 185px; }
+.SyosSeat.SyosSeatLocation020019 { left: 357px; top: 147px; }
+.SyosSeat.SyosSeatLocation020018 { left: 355px; top: 194px; }
+.SyosSeat.SyosSeatLocation021018 { left: 336px; top: 156px; }
+.SyosSeat.SyosSeatLocation021017 { left: 333px; top: 204px; }
+.SyosSeat.SyosSeatLocation022017 { left: 315px; top: 165px; }
+.SyosSeat.SyosSeatLocation016017 { left: 424px; top: 248px; }
+.SyosSeat.SyosSeatLocation017017 { left: 396px; top: 216px; }
+.SyosSeat.SyosSeatLocation017016 { left: 406px; top: 263px; }
+.SyosSeat.SyosSeatLocation018016 { left: 378px; top: 231px; }
+.SyosSeat.SyosSeatLocation018015 { left: 389px; top: 278px; }
+.SyosSeat.SyosSeatLocation019015 { left: 360px; top: 246px; }
+.SyosSeat.SyosSeatLocation014015 { left: 469px; top: 286px; }
+.SyosSeat.SyosSeatLocation015015 { left: 436px; top: 260px; }
+.SyosSeat.SyosSeatLocation016013 { left: 432px; top: 330px; }
+.SyosSeat.SyosSeatLocation017013 { left: 400px; top: 308px; }
+.SyosSeat.SyosSeatLocation017014 { left: 421px; top: 278px; }
+.SyosSeat.SyosSeatLocation016014 { left: 452px; top: 301px; }
+.SyosSeat.SyosSeatLocation013011 { left: 497px; top: 344px; }
+.SyosSeat.SyosSeatLocation014012 { left: 485px; top: 293px; }
+.SyosSeat.SyosSeatLocation014011 { left: 465px; top: 325px; }
+.SyosSeat.SyosSeatLocation013012 { left: 516px; top: 313px; }
+.SyosSeat.SyosSeatLocation007010 { left: 613px; top: 347px; }
+.SyosSeat.SyosSeatLocation008010 { left: 588px; top: 347px; }
+.SyosSeat.SyosSeatLocation006011 { left: 613px; top: 315px; }
+.SyosSeat.SyosSeatLocation006013 { left: 615px; top: 286px; }
+.SyosSeat.SyosSeatLocation006014 { left: 615px; top: 263px; }
+.SyosSeat.SyosSeatLocation037021 { left: 185px; top: 65px; }
+.SyosSeat.SyosSeatLocation005014 { left: 656px; top: 265px; }
+.SyosSeat.SyosSeatLocation005013 { left: 656px; top: 295px; }
+.SyosSeat.SyosSeatLocation005012 { left: 656px; top: 322px; }
+.SyosSeat.SyosSeatLocation005011 { left: 656px; top: 348px; }
+.SyosSeat.SyosSeatLocation005009 { left: 656px; top: 369px; }
+.SyosSeat.SyosSeatLocation006009 { left: 649px; top: 382px; }
+.SyosSeat.SyosSeatLocation005010 { left: 635px; top: 388px; }
+.SyosSeat.SyosSeatLocation007009 { left: 615px; top: 388px; }
+.SyosSeat.SyosSeatLocation008009 { left: 588px; top: 388px; }
+.SyosSeat.SyosSeatLocation009009 { left: 561px; top: 388px; }
+.SyosSeat.SyosSeatLocation010009 { left: 537px; top: 388px; }
+.SyosSeat.SyosSeatLocation010010 { left: 536px; top: 346px; }
+.SyosSeat.SyosSeatLocation009010 { left: 566px; top: 346px; }
+.SyosSeat.SyosSeatLocation019010 { left: 419px; top: 409px; }
+.SyosSeat.SyosSeatLocation020010 { left: 395px; top: 402px; }
+.SyosSeat.SyosSeatLocation021011 { left: 377px; top: 381px; }
+.SyosSeat.SyosSeatLocation020011 { left: 398px; top: 357px; }
+.SyosSeat.SyosSeatLocation019011 { left: 421px; top: 363px; }
+.SyosSeat.SyosSeatLocation022012 { left: 355px; top: 364px; }
+.SyosSeat.SyosSeatLocation023012 { left: 333px; top: 355px; }
+.SyosSeat.SyosSeatLocation024013 { left: 319px; top: 334px; }
+.SyosSeat.SyosSeatLocation023013 { left: 342px; top: 309px; }
+.SyosSeat.SyosSeatLocation022013 { left: 364px; top: 318px; }
+.SyosSeat.SyosSeatLocation025014 { left: 295px; top: 305px; }
+.SyosSeat.SyosSeatLocation026014 { left: 274px; top: 290px; }
+.SyosSeat.SyosSeatLocation027015 { left: 266px; top: 265px; }
+.SyosSeat.SyosSeatLocation026015 { left: 293px; top: 248px; }
+.SyosSeat.SyosSeatLocation025015 { left: 313px; top: 262px; }
+.SyosSeat.SyosSeatLocation028017 { left: 233px; top: 190px; }
+.SyosSeat.SyosSeatLocation029017 { left: 222px; top: 167px; }
+.SyosSeat.SyosSeatLocation030018 { left: 224px; top: 142px; }
+.SyosSeat.SyosSeatLocation029018 { left: 260px; top: 139px; }
+.SyosSeat.SyosSeatLocation028018 { left: 270px; top: 161px; }
+.SyosSeat.SyosSeatLocation031020 { left: 225px; top: 115px; }
+.SyosSeat.SyosSeatLocation032020 { left: 217px; top: 90px; }
+.SyosSeat.SyosSeatLocation033021 { left: 224px; top: 65px; }
+.SyosSeat.SyosSeatLocation032021 { left: 261px; top: 70px; }
+.SyosSeat.SyosSeatLocation031021 { left: 265px; top: 92px; }
+.SyosSeat.SyosSeatLocation007007 { left: 634px; top: 422px; }
+.SyosSeat.SyosSeatLocation008007 { left: 596px; top: 422px; }
+.SyosSeat.SyosSeatLocation008006 { left: 596px; top: 459px; }
+.SyosSeat.SyosSeatLocation007006 { left: 634px; top: 459px; }
+.SyosSeat.SyosSeatLocation011006 { left: 572px; top: 459px; }
+.SyosSeat.SyosSeatLocation011007 { left: 572px; top: 422px; }
+.SyosSeat.SyosSeatLocation012006 { left: 535px; top: 459px; }
+.SyosSeat.SyosSeatLocation012007 { left: 535px; top: 422px; }
+.SyosSeat.SyosSeatLocation012004 { left: 587px; top: 509px; }
+.SyosSeat.SyosSeatLocation012003 { left: 587px; top: 546px; }
+.SyosSeat.SyosSeatLocation013003 { left: 550px; top: 546px; }
+.SyosSeat.SyosSeatLocation013004 { left: 550px; top: 509px; }
+.SyosSeat.SyosSeatLocation023003 { left: 407px; top: 535px; }
+.SyosSeat.SyosSeatLocation025003 { left: 386px; top: 535px; }
+.SyosSeat.SyosSeatLocation017004 { left: 520px; top: 523px; }
+.SyosSeat.SyosSeatLocation017003 { left: 520px; top: 546px; }
+.SyosSeat.SyosSeatLocation018003 { left: 473px; top: 546px; }
+.SyosSeat.SyosSeatLocation018004 { left: 473px; top: 523px; }
+.SyosSeat.SyosSeatLocation028007 { left: 309px; top: 451px; }
+.SyosSeat.SyosSeatLocation029007 { left: 277px; top: 432px; }
+.SyosSeat.SyosSeatLocation029008 { left: 295px; top: 400px; }
+.SyosSeat.SyosSeatLocation028008 { left: 327px; top: 418px; }
+.SyosSeat.SyosSeatLocation031009 { left: 268px; top: 373px; }
+.SyosSeat.SyosSeatLocation032009 { left: 241px; top: 396px; }
+.SyosSeat.SyosSeatLocation032010 { left: 215px; top: 368px; }
+.SyosSeat.SyosSeatLocation031010 { left: 243px; top: 345px; }
+.SyosSeat.SyosSeatLocation034011 { left: 230px; top: 319px; }
+.SyosSeat.SyosSeatLocation035011 { left: 203px; top: 342px; }
+.SyosSeat.SyosSeatLocation035012 { left: 177px; top: 314px; }
+.SyosSeat.SyosSeatLocation034012 { left: 205px; top: 290px; }
+.SyosSeat.SyosSeatLocation038014 { left: 171px; top: 238px; }
+.SyosSeat.SyosSeatLocation039014 { left: 134px; top: 242px; }
+.SyosSeat.SyosSeatLocation039015 { left: 129px; top: 207px; }
+.SyosSeat.SyosSeatLocation038015 { left: 165px; top: 202px; }
+.SyosSeat.SyosSeatLocation039017 { left: 157px; top: 173px; }
+.SyosSeat.SyosSeatLocation040017 { left: 120px; top: 177px; }
+.SyosSeat.SyosSeatLocation040018 { left: 115px; top: 142px; }
+.SyosSeat.SyosSeatLocation039018 { left: 151px; top: 137px; }
+.SyosSeat.SyosSeatLocation040020 { left: 129px; top: 107px; }
+.SyosSeat.SyosSeatLocation041020 { left: 129px; top: 67px; }
+.SyosSeat.SyosSeatLocation041021 { left: 149px; top: 87px; }
+.SyosSeat.SyosSeatLocation044015 { left: 52px; top: 257px; }
+.SyosSeat.SyosSeatLocation044016 { left: 61px; top: 220px; }
+.SyosSeat.SyosSeatLocation043015 { left: 88px; top: 266px; }
+.SyosSeat.SyosSeatLocation043016 { left: 97px; top: 229px; }
+.SyosSeat.SyosSeatLocation043011 { left: 144px; top: 359px; }
+.SyosSeat.SyosSeatLocation044011 { left: 119px; top: 380px; }
+.SyosSeat.SyosSeatLocation044012 { left: 92px; top: 350px; }
+.SyosSeat.SyosSeatLocation043012 { left: 118px; top: 328px; }
+.SyosSeat.SyosSeatLocation028004 { left: 362px; top: 522px; }
+.SyosSeat.SyosSeatLocation028003 { left: 357px; top: 543px; }
+.SyosSeat.SyosSeatLocation029003 { left: 311px; top: 533px; }
+.SyosSeat.SyosSeatLocation029004 { left: 316px; top: 512px; }
+.SyosSeat.SyosSeatLocation032006 { left: 284px; top: 498px; }
+.SyosSeat.SyosSeatLocation032005 { left: 272px; top: 517px; }
+.SyosSeat.SyosSeatLocation033005 { left: 232px; top: 492px; }
+.SyosSeat.SyosSeatLocation033006 { left: 244px; top: 473px; }
+.SyosSeat.SyosSeatLocation041008 { left: 183px; top: 422px; }
+.SyosSeat.SyosSeatLocation042008 { left: 166px; top: 437px; }
+.SyosSeat.SyosSeatLocation042009 { left: 135px; top: 402px; }
+.SyosSeat.SyosSeatLocation041009 { left: 152px; top: 387px; }
+.SyosSeat.SyosSeatLocation018011 { left: 437px; top: 379px; }
+.SyosSeat.SyosSeatLocation021013 { left: 377px; top: 337px; }
+.SyosSeat.SyosSeatLocation024015 { left: 321px; top: 284px; }
+.SyosSeat.SyosSeatLocation027018 { left: 266px; top: 184px; }
+.SyosSeat.SyosSeatLocation030021 { left: 258px; top: 114px; }
+.SyosSeat.SyosSeatLocation048011 { left: 73px; top: 381px; }
+.SyosSeat.SyosSeatLocation057018 { left: 349px; top: 582px; }
+.SyosSeat.SyosSeatLocation058018 { left: 369px; top: 582px; }
+.SyosSeat.SyosSeatLocation059018 { left: 389px; top: 582px; }
+.SyosSeat.SyosSeatLocation060018 { left: 409px; top: 582px; }
+.SyosSeat.SyosSeatLocation061018 { left: 429px; top: 582px; }
+.SyosSeat.SyosSeatLocation062018 { left: 449px; top: 582px; }
+.SyosSeat.SyosSeatLocation063018 { left: 469px; top: 582px; }
+.SyosSeat.SyosSeatLocation064018 { left: 489px; top: 582px; }
+.SyosSeat.SyosSeatLocation065018 { left: 509px; top: 582px; }
+.SyosSeat.SyosSeatLocation066018 { left: 529px; top: 582px; }
+.SyosSeat.SyosSeatLocation057019 { left: 549px; top: 582px; }
+.SyosSeat.SyosSeatLocation058019 { left: 569px; top: 582px; }
+.SyosSeat.SyosSeatLocation059019 { left: 589px; top: 582px; }
+.SyosSeat.SyosSeatLocation060019 { left: 609px; top: 582px; }
+.SyosSeat.SyosSeatLocation061019 { left: 629px; top: 582px; }
+.SyosSeat.SyosSeatLocation062019 { left: 349px; top: 602px; }
+.SyosSeat.SyosSeatLocation063019 { left: 369px; top: 602px; }
+.SyosSeat.SyosSeatLocation064019 { left: 389px; top: 602px; }
+.SyosSeat.SyosSeatLocation065019 { left: 409px; top: 602px; }
+.SyosSeat.SyosSeatLocation066019 { left: 429px; top: 602px; }
+.SyosSeat.SyosSeatLocation057020 { left: 449px; top: 602px; }
+.SyosSeat.SyosSeatLocation058020 { left: 469px; top: 602px; }
+.SyosSeat.SyosSeatLocation059020 { left: 489px; top: 602px; }
+.SyosSeat.SyosSeatLocation060020 { left: 509px; top: 602px; }
+.SyosSeat.SyosSeatLocation061020 { left: 529px; top: 602px; }
+.SyosSeat.SyosSeatLocation062020 { left: 549px; top: 602px; }
+.SyosSeat.SyosSeatLocation063020 { left: 569px; top: 602px; }
+.SyosSeat.SyosSeatLocation064020 { left: 589px; top: 602px; }
+.SyosSeat.SyosSeatLocation065020 { left: 609px; top: 602px; }
+.SyosSeat.SyosSeatLocation066020 { left: 629px; top: 602px; }
+.SyosSeatInfo
+{
+    margin-left: 1em;
+}
+
+    .SyosSeatInfo dt
+    {
+        float: left;
+        clear: both;
+        font-weight: bold;
+        width: 5em;
+    }
+    
+    .SyosSeatInfo dd
+    {
+        float: left;
+        margin-left: 2em;
+    }
+    
+    .SyosSeatInfo dl + *
+    {
+        clear: both;
+        padding-top: 1em;
+    }
+    
+.SyosSection
+{
+    width: 0;
+    height: 0;
+}

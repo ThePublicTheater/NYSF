@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="VLine.WebForms.Site1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="/css/Html5Boilerplate-1.0-Start.css" media="screen and (min-width:569px) "/>
+    <link rel="stylesheet" href="/css/NYSFStandard.css" type="text/css" />
+    <link rel="stylesheet" href="/css/Html5Boilerplate-1.0-End.css" type="text/css" />
+    <link rel="stylesheet" href="/css/shakespeareInThePark" type="text/css" />
+    <link rel="stylesheet" href="/css/mobile.css"   media="handheld, only screen and (max-width:568px)"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div style="width:100%" id="outer">
+    <div id="inner" class="inner" >
+
+       
+        <asp:Panel ID="message" runat="server" CssClass="messageDiv">
+
+        </asp:Panel>
+
+        <asp:Panel ID="isUser" runat="server" CssClass="userDiv">
+              Welcome,
+                <asp:Literal ID="UsernameLabel" runat="server"></asp:Literal><br />
+                <a href="/logout">Logout</a>
+        </asp:Panel>
+
+        <asp:Panel ID="noUser" runat="server" Visible="false" CssClass="noUserDiv">
+            <a href="/login?referer=/" style="margin-right: 12px;">Login</a>
+            <a href="/register">Register</a>
+        </asp:Panel>
+     
+        <div class="headerImageDiv">
+            <a href="http:\\www.publictheater.org">
+                <img src="../Images/public.png" class="headerImage1"/></a>
+            
+            <a href="http:\\www.shakespeareinthepark.org">
+                <img src="../Images/public2.png" class="headerImage2" /></a>
+        </div>
+        <div style="text-align: center;">
+            <span style="font-size: 18px; font-weight: bold">FREE SHAKESPEARE IN THE PARK </span><span class="notMobile"><br /></span>
+                 <span style="font-size: 18px; font-weight: bold">VIRTUAL TICKETING</span>
+        </div>
+        <br />
+        <br />
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+
+    <script type="text/javascript">
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+        }
+
+        var message = getParameterByName("message");
+        if (message != null) {
+            $("#message").html(message);
+            $("#message").fadeTo(1000, 1).delay(4000).fadeTo(3000, 0);
+        }
+    </script>
+</body>
+</html>
