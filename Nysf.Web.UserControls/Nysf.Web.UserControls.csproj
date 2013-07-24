@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BA8AC7A-7477-4629-823A-95B45ABB72CE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nysf.Web.UserControls</RootNamespace>
+    <AssemblyName>Nysf.Web.UserControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Recaptcha">
+      <HintPath>..\..\Libraries\recaptcha-dotnet-1.0.5.0-binary\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Notes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AccountWidget.ascx.cs">
+      <DependentUpon>AccountWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AccountWidget.ascx.designer.cs">
+      <DependentUpon>AccountWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ActivateForm.ascx.cs">
+      <DependentUpon>ActivateForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ActivateForm.ascx.designer.cs">
+      <DependentUpon>ActivateForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CartForm.ascx.cs">
+      <DependentUpon>CartForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CartForm.ascx.designer.cs">
+      <DependentUpon>CartForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CheckoutForm.ascx.cs">
+      <DependentUpon>CheckoutForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CheckoutForm.ascx.designer.cs">
+      <DependentUpon>CheckoutForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoginForm.ascx.cs">
+      <DependentUpon>LoginForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LoginForm.ascx.designer.cs">
+      <DependentUpon>LoginForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LogoutHandler.ascx.cs">
+      <DependentUpon>LogoutHandler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LogoutHandler.ascx.designer.cs">
+      <DependentUpon>LogoutHandler.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RecoverForm.ascx.cs">
+      <DependentUpon>RecoverForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RecoverForm.ascx.designer.cs">
+      <DependentUpon>RecoverForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RegisterForm.ascx.cs">
+      <DependentUpon>RegisterForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RegisterForm.ascx.designer.cs">
+      <DependentUpon>RegisterForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SessionHandler.ascx.cs">
+      <DependentUpon>SessionHandler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SessionHandler.ascx.designer.cs">
+      <DependentUpon>SessionHandler.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SessionTransferHandler.ascx.cs">
+      <DependentUpon>SessionTransferHandler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SessionTransferHandler.ascx.designer.cs">
+      <DependentUpon>SessionTransferHandler.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\AccountWidget.ascx" />
+    <Content Include="UserControls\ActivateForm.ascx" />
+    <Content Include="UserControls\CartForm.ascx" />
+    <Content Include="UserControls\CheckoutForm.ascx" />
+    <Content Include="UserControls\LoginForm.ascx" />
+    <Content Include="UserControls\LogoutHandler.ascx" />
+    <Content Include="UserControls\RecoverForm.ascx" />
+    <Content Include="UserControls\RegisterForm.ascx" />
+    <Content Include="UserControls\SessionHandler.ascx" />
+    <Content Include="UserControls\SessionTransferHandler.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ambitus\Ambitus.csproj">
+      <Project>{359304A3-B19A-41B0-81E6-E31CE55E3AC7}</Project>
+      <Name>Ambitus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nysf.Web\Nysf.Web.csproj">
+      <Project>{4B64BCB1-E74B-481D-8C7A-8148676136F2}</Project>
+      <Name>Nysf.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57888</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

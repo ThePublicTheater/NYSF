@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SessionTransferHandler.ascx.cs" Inherits="Nysf.Web.UserControls.SessionTransferHandler" %>

@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LogoutHandler.ascx.cs" Inherits="Nysf.Web.UserControls.LogoutHandler" %>

@@ -1,0 +1,47 @@
+﻿using Ambitus.Web;
+using System.Web;
+
+namespace Nysf.Web
+{
+	public static class NysfContext
+	{
+		private static HttpContext Context
+		{
+			get
+			{
+				return HttpContext.Current;
+			}
+		}
+
+		public static void Maintain(bool allowAnonymous, bool allowAuthenticated,
+				bool allowTemporary, bool requireSsl, int? newSessionSourceId, bool setLastPage)
+		{
+			BrowserContext.MaintainBrowserSession(requireSsl, setLastPage);
+			NysfSessionOld session = BrowserContext.GetTessSession<NysfSessionOld>();
+			if (session == null)
+			{
+				session = NysfSessionOld.Query(Context.Request.UserHostAddress);
+				if (newSessionSourceId != null)
+				{
+					session.DefaultSourceId = newSessionSourceId.Value;
+				}
+				BrowserContext.RegisterTessSession(session);
+			}
+			BrowserContext.MaintainTessSession(true, true, allowTemporary);
+			if (!allowAuthenticated && !session.IsAnonymous)
+			{
+				BrowserContext.RedirectToLastPage();
+			}
+			if (!allowAnonymous && session.IsAnonymous)
+			{
+				string url = Ambitus.Web.Internals.ConfigSection.Settings.StandardPages.Login;
+				Context.Response.Redirect(url);
+			}
+		}
+
+		public static void Logout()
+		{
+			BrowserContext.Logout();
+		}
+	}
+}

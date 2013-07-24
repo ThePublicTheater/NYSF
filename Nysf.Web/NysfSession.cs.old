@@ -1,0 +1,60 @@
+﻿using Ambitus;
+using Ambitus.Web;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Nysf.Web
+{
+	public class NysfSessionOld : TessSessionOld
+	{
+		#region Instance members
+
+		public bool IsAnonymous { get; private set; }
+		//public Donorship Donorship { get; private set; }
+
+		private NysfSessionOld(string ip, int? businessUnit) : base(ip, businessUnit)
+		{
+			LoginAnonymous();
+		}
+
+		public void LoginAnonymous()
+		{
+			LoginResult result = base.Login(ConfigSection.Settings.AnonymousUsername,
+					ConfigSection.Settings.AnonymousPassword);
+			if (result == LoginResult.BadCredentials)
+			{
+				throw new ApplicationException(
+						"The anonymous username and/or password was invalid.");
+			}
+			IsAnonymous = true;
+		}
+
+		public LoginResult Login(string username, string password)
+		{
+			return Login(username, password, null);
+		}
+
+		public LoginResult Login(string username, string password, string promoCode)
+		{
+			LoginResult result = Login(username, password, promoCode);
+			if (result == LoginResult.BadCredentials)
+			{
+				LoginAnonymous();
+			}
+			return result;
+		}
+
+		#endregion
+
+		#region Static members
+
+		public static NysfSessionOld Query(string ip)
+		{
+			return new NysfSessionOld(ip, null);
+		}
+
+		#endregion
+	}
+}
