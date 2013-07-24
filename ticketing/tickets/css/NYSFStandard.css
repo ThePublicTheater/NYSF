@@ -1,0 +1,202 @@
+﻿form dl + *
+{
+    clear: both;
+    padding-top: 1em;
+}
+
+form dt
+{
+    margin-top: 1em;
+    width: 49%;
+    float: left;
+    clear: both;
+    text-align: right;
+}
+
+form dd
+{
+    margin-top: 1em;
+    width: 49%;
+    float: right;
+    text-align: left;
+}
+
+form ul
+{
+    list-style-position: inside;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+form li
+{
+    margin-top: .5em;
+}
+
+form section
+{
+    margin-top: 1em auto 0 auto;
+}
+
+form section ul
+{
+    list-style: circle inside;
+}
+
+form section li
+{
+    text-indent: -1em;
+    margin-left: 1.5em;  
+}
+
+section + fieldset
+{
+    margin-top: 1em;
+}
+
+legend
+{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.InputRow
+{
+    padding-top: 1.5em;
+    clear: both;
+    text-align: center;
+}
+
+.InputRow input + input
+{
+    margin-left: 2em;
+}
+
+.FieldScaleX1  { width: 1em;  }
+.FieldScaleX2  { width: 2em;  }
+.FieldScaleX3  { width: 3em;  }
+.FieldScaleX4  { width: 4em;  }
+.FieldScaleX5  { width: 5em;  }
+.FieldScaleX6  { width: 6em;  }
+.FieldScaleX7  { width: 7em;  }
+.FieldScaleX8  { width: 8em;  }
+.FieldScaleX9  { width: 9em;  }
+.FieldScaleX10 { width: 10em; }
+.FieldScaleX11 { width: 11em; }
+.FieldScaleX12 { width: 12em; }
+.FieldScaleX13 { width: 13em; }
+.FieldScaleX14 { width: 14em; }
+.FieldScaleX15 { width: 15em; }
+.FieldScaleX16 { width: 16em; }
+.FieldScaleX17 { width: 17em; }
+.FieldScaleX18 { width: 18em; }
+.FieldScaleX19 { width: 19em; }
+.FieldScaleX20 { width: 20em; }
+
+.FieldSubtext
+{
+    font-size: 85%;
+}
+
+.LinkMenu
+{
+    padding-top: 1em;
+    list-style-position: inside;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.LinkMenu li
+{
+    padding-top: 1em;
+    text-align: center;
+}
+
+.Prompt
+{
+    clear: both;
+    text-align: center;
+}
+
+.RadioButtonMenu
+{
+    width: 35%;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Review
+{
+    font-size: .75em;
+    background-color: #ddd;
+    border: 1px solid black;
+    padding: 1em;
+    width: 50%;
+    margin: 0 auto;
+}
+
+    .Review p
+    {
+        padding-top: 0;
+    }
+
+    .Review p, .Review dl
+    {
+        font-size: .75em;
+    }
+    
+    .Review dd
+    {
+        font-weight: normal;
+    }
+    
+.SecuritySeal
+{
+    text-align: center;
+}
+
+    .SecuritySeal table
+    {
+        border-style: none;
+    }
+    
+    .SecuritySeal td
+    {
+        padding: 0;
+        border-style: none;
+        background-color: inherit;
+    }
+
+.SelfEvident, .SkipLink
+{
+    margin: 0;
+    padding: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.SuccessMessage
+{
+    text-align: center;
+    color: Green;
+}
+
+.Warning
+{
+    color: Red;
+    text-align: center;
+}
+
+#recaptcha_area
+{
+    padding-top: 1em;
+    margin: 0 auto;
+    clear: both;
+}
+.smallerButton {
+    padding: 2px 4px !important;
+    font-size:12px !important;
+}

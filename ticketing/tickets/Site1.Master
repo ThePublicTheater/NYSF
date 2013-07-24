@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="tickets.Site1" %>
+
+<%@ Register TagPrefix="nysf" TagName="SessionHandler" Src="~/usercontrols/SessionHandler.ascx" %>
+<%@ Register TagPrefix="nysf" TagName="AccountWidget" Src="~/usercontrols/AccountWidget.ascx" %>
+<%@ Register TagPrefix="nysf" TagName="CartCountdown" Src="~/usercontrols/CartCountdown.ascx"%>
+
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="nol-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <asp:ContentPlaceHolder ID="SessionHandlerPlaceHolder" runat="server">  
+      <nysf:SessionHandler runat="server" id="SessionHandler" /></asp:ContentPlaceHolder>
+<head>
+    
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Public Theater Schedule and Tickets</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+	<link rel="stylesheet" href="/css/Html5Boilerplate-1.0-Start.css" type="text/css" />
+	<link rel="stylesheet" href="/css/NYSFStandard.css" type="text/css" />
+	<link rel="stylesheet" href="/css/OldStyleTickets.css" type="text/css" />
+	<link rel="stylesheet" href="/css/Html5Boilerplate-1.0-End.css" type="text/css" />
+    <link href="css/NewTickets.css" rel="stylesheet" />
+	<script src="js/modernizr-1.7.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/libs/jQuery/jquery-ui-1.8.14.custom.min.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-22943198-9', 'publictheater.org');
+        ga('send', 'pageview');
+
+</script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-22943198-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+
+    <asp:ContentPlaceHolder ID="EndOfHeadPlaceHolder" runat="server" />
+
+</head>
+<body>
+	<div id="Container">
+        <a href="#MainContent" title="Main Content" class="SkipLink">Skip to
+            main content</a>
+		<header>
+            <h1>
+                <a href="http://www.publictheater.org/" title="The Public Theater Homepage">The
+                    Public Theater</a>
+            </h1>
+            <nav>
+                <h3 class="SelfEvident">Account Controls</h3>
+                <nysf:AccountWidget runat="server" ID="AccountWidget" />
+                <div>
+                    <nysf:CartCountdown runat="server" />
+                </div>
+            </nav>
+		</header>
+		<article id="MainContent" class="Content clearfix">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+		</article>
+		<footer>
+            <section id="RelatedSitesSection">
+                <h3>Related Sites</h3>
+                <ul>
+                    <li>
+                        <a href="http://www.publictheater.org"
+                            title="The Public Theater Homepage">The Public Theater 425 Lafayette</a>
+                    </li>
+                    <li>
+                        <a href="http://www.joespub.com"
+                            title="Joe's Pub Homepage">Joe's Pub</a>
+                    </li>
+                    <li>
+                        <a href="http://www.shakespeareinthepark.org"
+                            title="Shakespeare in the Park Homepage">Shakespeare <span
+                            class="Deemphasized">in the</span> Park</a>
+                    </li>
+                </ul>
+            </section>
+			<section>
+                <h3>Contact Information</h3>
+                <address>
+                    <ul>
+                        <li>The Public Theater</li>
+                        <li>425 Lafayette Street</li>
+                        <li>NY, NY 10003</li>
+                        <li>212.967.7555</li>
+                    </ul>
+                </address>
+			</section>
+            <small>&copy;2011 The Public Theater. All rights reserved.</small>
+		</footer>
+   	</div>
+
+	<!--[if lt IE 7 ]>
+	<script src="/js/dd_belatedpng.js"></script>
+	<script> DD_belatedPNG.fix('img, .png_bg');</script>
+	<![endif]-->
+
+    <asp:ContentPlaceHolder ID="EndOfBodyPlaceholder" runat="server" />
+
+
+</body>
+</html>
