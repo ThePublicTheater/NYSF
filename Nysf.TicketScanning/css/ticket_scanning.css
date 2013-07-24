@@ -1,0 +1,170 @@
+﻿a
+{
+	text-decoration: none;
+}
+
+body 
+{
+	color: #eee;
+	background-color: Black;
+	font-size: 175%;
+}
+
+form .ButtonSet
+{
+	margin-top: .5em;
+	text-align: center;
+}
+
+form .Field
+{
+	margin-top: .5em;
+}
+
+form .Field label
+{
+	display: block;
+	width: 47%;
+	text-align: right;
+	float: left;
+	clear: left;
+}
+
+form .Field input, form .Field select
+{
+	margin-left: 1em;
+}
+
+h1
+{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+h1 a
+{
+	color: inherit;
+}
+
+input, select
+{
+	color: #111;
+	background-color: #eee;
+	font: inherit;
+	font-size: .75em;
+	font-weight: bold;
+}
+
+input:focus, select:focus
+{
+	-webkit-box-shadow: 0px 0px .75em .25em #ff9;
+	-moz-box-shadow: 0px 0px .75em .25em #ff9;
+	box-shadow: 0px 0px .75em .25em #ff9;
+}
+
+input[type="submit"]:hover
+{
+	background-color: #ff9;
+	border-color: #990;
+}
+
+#Wrapper
+{
+	width: 75%;
+	min-width: 25em;
+	max-width: 40em;
+	margin: 1em auto;
+}
+
+#Wrapper > form > header
+{
+	padding-bottom: .25em;
+	border-bottom: .5em solid #eee;
+}
+
+.InfoSection
+{
+	width: 46%;
+	float: left;
+}
+
+.InfoSection dd
+{
+	float: left;
+	margin-left: 1em;
+	margin-top: .5em;
+	width: 58%;
+}
+
+.InfoSection dt
+{
+	float: left;
+	clear: left;
+	width: 33%;
+	text-align: right;
+	margin-top: .5em;
+	font-weight: bold;
+}
+
+.InfoSection + .InfoSection
+{
+	margin-left: .5em;
+	padding-left: .5em;
+}
+
+.InfoSection > h3
+{
+	margin: 1em 0 .5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.Warning
+{
+	margin-top: .5em;
+	text-align: center;
+	color: #f99;
+}
+
+.Warning img
+{
+	display: block;
+	margin: 0 auto;
+}
+
+#LogoutSection
+{
+	float: right;
+	background-color: #999;
+	margin: .25em 0;
+}
+
+#MainContent > .Prompt
+{
+	padding: .25em 0;
+	border-bottom: .5em solid #eee;
+}
+
+#ScanControls
+{
+	/*
+	visuallyhidden
+	HTML5 Boilerplate 2.0
+	http://html5boilerplate.com/
+	*/
+
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+#TicketInfo
+{
+	margin-top: .25em;
+}

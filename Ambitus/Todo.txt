@@ -1,0 +1,89 @@
+﻿API methods to implement soon
+	UpdateEAddress
+	UpdatePhone
+	RemovePhone
+API methods to implement later
+	GetProductionCredits
+	GetReturnTickets
+	ReturnTicket
+	GetZonesPerSection
+	GetOrdersEx
+	GetOrdersForDelivery
+	GetOrder
+	GetOrderDetails
+	GetExistingOrdersInfo
+	LoadExistingOrder
+	UpdateCustomOrderData
+		Already implemented for contributions
+	AddOrderCommentsEx2
+		Already implemented for contributions
+	RemoveOrderCommentsEx
+	ChangeModeOfSaleEx
+	ClearCart
+	GetCartBrief
+	UpdatePriceType
+	GetSubLineItems
+	InsertNewShippingAddress
+	GetConstituentInfoEx
+		Already partially implemented
+	SetVariable
+	GetVariables
+	DeleteVariable
+	SmtpListening
+Unimplemented API methods that might be useful
+	GetTicketPrintInformation
+	UpdateEmailStatus
+	RequestReprint
+	GetTicketHistory
+	ValidateLimits
+	PrintTickets
+	(All payment plan methods)
+	CheckoutEx3
+		Checkout with credit card already implemented
+	AddConstituent
+	LoginConstituent
+	GetConstituents
+	UpdateConstituentInterests
+	UpdateRanking
+	UpdateAssociation
+	RemoveAssociation
+	UpdateConstituency
+	RemoveConstituency
+	GetCityStateProvinceByPostalCode
+	GetKeywordsEx
+	GetWebContent
+	AddCustomerServiceIssue
+	GetLocalDataEx
+	GetMailPurposes
+	UpdateLocalData
+Other unimplemented API methods
+	GetPerformanceAvailability
+		Seems like a dumbed-down version of GetProductions
+	(All package and subscription methods)
+		Possibly useful for next year's Under the Radar
+	ReserveTicketsUnseated
+	GetScreens
+	GetGiftAidInfo
+	UpdateGiftAidDeclaration
+	UpdateGiftAidInfo
+	PurchaseGiftCertificate
+	RemoveGiftCertificate
+	GetGiftCertificateInfo
+	ApplyGiftCertificate
+	UpdateOrderDetails
+	ApplyDiscount
+	CalculateFees
+	GetFees
+	UpdateFee
+	RemoveFee
+	GetSubscriptionHistory
+	UpdateSubLineItemPrice
+	GetOnAccountInfo
+	ApplyOnAccount
+	GetOrderConfirmationEmail
+	GetSpecialActivities
+	UpdateSpecialActivity
+	TestOrderConfirmationEmail
+	(All Tessitura administration methods)
+	UpdateAppeal
+	GetSeats

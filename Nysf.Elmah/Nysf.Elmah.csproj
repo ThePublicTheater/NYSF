@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90A7B959-0314-455D-97D4-2CD8AF8D0D16}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nysf.Elmah</RootNamespace>
+    <AssemblyName>Nysf.Elmah</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="mysql.data">
+      <HintPath>lib\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>lib\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.61.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessErrorLog.cs" />
+    <Compile Include="ApplicationException.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Assertions\AssertionFactory.cs" />
+    <Compile Include="Assertions\ComparisonAssertion.cs" />
+    <Compile Include="Assertions\ComparisonResults.cs" />
+    <Compile Include="Assertions\CompositeAssertion.cs" />
+    <Compile Include="Assertions\DataBinder.cs" />
+    <Compile Include="Assertions\DataBoundAssertion.cs" />
+    <Compile Include="Assertions\DelegatedContextExpression.cs" />
+    <Compile Include="Assertions\IAssertion.cs" />
+    <Compile Include="Assertions\IContextExpression.cs" />
+    <Compile Include="Assertions\IsNullAssertion.cs" />
+    <Compile Include="Assertions\JScriptAssertion.cs" />
+    <Compile Include="Assertions\LogicalAssertion.cs" />
+    <Compile Include="Assertions\RegexMatchAssertion.cs" />
+    <Compile Include="Assertions\StaticAssertion.cs" />
+    <Compile Include="Assertions\TypeAssertion.cs" />
+    <Compile Include="Assertions\UnaryNotAssertion.cs" />
+    <Compile Include="Assertions\WebDataBindingExpression.cs" />
+    <Compile Include="Build.cs" />
+    <Compile Include="CdoConfigurationFields.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ConfigurationSectionHelper.cs" />
+    <Compile Include="ConnectionStringHelper.cs" />
+    <Compile Include="TessIntegrationSectionHandler.cs" />
+    <Compile Include="TessIntegrationConfiguration.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorDetailPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorDigestRssHandler.cs" />
+    <Compile Include="ErrorDisplay.cs" />
+    <Compile Include="ErrorFilterConfiguration.cs" />
+    <Compile Include="ErrorFilterModule.cs" />
+    <Compile Include="ErrorFilterSectionHandler.cs" />
+    <Compile Include="ErrorHtmlPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorJson.cs" />
+    <Compile Include="ErrorJsonHandler.cs" />
+    <Compile Include="ErrorLog.cs" />
+    <Compile Include="ErrorLogDataSourceAdapter.cs" />
+    <Compile Include="ErrorLogDownloadHandler.cs" />
+    <Compile Include="ErrorLogEntry.cs" />
+    <Compile Include="ErrorLogModule.cs" />
+    <Compile Include="ErrorLogPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorLogPageFactory.cs" />
+    <Compile Include="ErrorLogSectionHandler.cs" />
+    <Compile Include="ErrorMailHtmlFormatter.cs" />
+    <Compile Include="ErrorMailModule.cs" />
+    <Compile Include="ErrorMailSectionHandler.cs" />
+    <Compile Include="ErrorPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorRssHandler.cs" />
+    <Compile Include="ErrorSignal.cs" />
+    <Compile Include="ErrorTextFormatter.cs" />
+    <Compile Include="ErrorTweetModule.cs" />
+    <Compile Include="ErrorTweetSectionHandler.cs" />
+    <Compile Include="ErrorXml.cs" />
+    <Compile Include="ErrorXmlHandler.cs" />
+    <Compile Include="ExceptionFiltering.cs" />
+    <Compile Include="FixIIS5xWildcardMappingModule.cs" />
+    <Compile Include="HtmlLinkType.cs" />
+    <Compile Include="HttpModuleBase.cs" />
+    <Compile Include="HttpModuleRegistry.cs" />
+    <Compile Include="HttpRequestSecurity.cs" />
+    <Compile Include="HttpStatus.cs" />
+    <Compile Include="InvariantStringArray.cs" />
+    <Compile Include="JetBrains.Annotations.cs" />
+    <Compile Include="JsonTextWriter.cs" />
+    <Compile Include="ManifestResourceHandler.cs" />
+    <Compile Include="ManifestResourceHelper.cs" />
+    <Compile Include="Mask.cs" />
+    <Compile Include="MemoryErrorLog.cs" />
+    <Compile Include="MsAjaxDeltaErrorLogModule.cs" />
+    <Compile Include="MySqlErrorLog.cs" />
+    <Compile Include="OracleErrorLog.cs" />
+    <Compile Include="PgsqlErrorLog.cs" />
+    <Compile Include="PoweredBy.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReverseComparer.cs" />
+    <Compile Include="RichSiteSummary.cs" />
+    <Compile Include="SccAttribute.cs" />
+    <Compile Include="SccStamp.cs" />
+    <Compile Include="SecurityConfiguration.cs" />
+    <Compile Include="SecuritySectionHandler.cs" />
+    <Compile Include="ServiceCenter.cs" />
+    <Compile Include="ServiceContainer.cs" />
+    <Compile Include="SimpleServiceProviderFactory.cs" />
+    <Compile Include="SpeedBar.cs" />
+    <Compile Include="SqlErrorLog.cs" />
+    <Compile Include="SQLiteErrorLog.cs" />
+    <Compile Include="SqlServerCompactErrorLog.cs" />
+    <Compile Include="StringFormatter.cs" />
+    <Compile Include="StringTranslation.cs" />
+    <Compile Include="SynchronousAsyncResult.cs" />
+    <Compile Include="TestException.cs" />
+    <Compile Include="Web References\TessWebApi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="XmlFileErrorLog.cs" />
+    <Compile Include="XmlSerializer.cs" />
+    <Compile Include="XmlText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://tessitura.publictheater.org/tessitura.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TessWebApi\</RelPath>
+      <UpdateFromURL>https://tessitura.publictheater.org/tessitura.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Nysf_Elmah_TessWebApi_Tessitura</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RemoteAccessError.htm" />
+    <EmbeddedResource Include="ErrorLog.css" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TessWebApi\Email.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TessWebApi\Performance.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TessWebApi\PerformanceEx.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TessWebApi\PerformanceEx2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TessWebApi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TessWebApi\tessitura.wsdl" />
+    <Content Include="web.config" />
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\TessWebApi\tessitura.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nysf.Tessitura\Nysf.Tessitura.csproj">
+      <Project>{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}</Project>
+      <Name>Nysf.Tessitura</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55354</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

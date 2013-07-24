@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{005D9C2A-80BA-434A-8CA4-8B751F38552D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nysf.Apps.OldStyleTickets</RootNamespace>
+    <AssemblyName>Nysf.Apps.OldStyleTickets</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\addressAbbreviations.xml" />
+    <Content Include="App_Data\pubSeatingConditions.xml" />
+    <Content Include="bin\Nysf.Apps.OldStyleTickets.dll" />
+    <Content Include="bin\Nysf.Apps.OldStyleTickets.pdb" />
+    <Content Include="bin\Nysf.Tessitura.dll" />
+    <Content Include="bin\Nysf.Tessitura.pdb" />
+    <Content Include="bin\Nysf.Types.dll" />
+    <Content Include="bin\Nysf.Types.pdb" />
+    <Content Include="bin\Nysf.Utility.dll" />
+    <Content Include="bin\Nysf.Utility.pdb" />
+    <Content Include="js\Countdown.js" />
+    <Content Include="js\libs\jQuery\jquery-ui-1.8.14.custom.min.js" />
+    <Content Include="js\libs\Nysf\Apps\OldStyleTickets\OrderWizardSyos.js" />
+    <Content Include="usercontrols\CartCountdown.ascx" />
+    <Content Include="usercontrols\CartViewer.ascx" />
+    <Content Include="usercontrols\cartWidget.ascx" />
+    <Content Include="usercontrols\CheckoutForm.ascx" />
+    <Content Include="usercontrols\CheckoutWizard.ascx" />
+    <Content Include="usercontrols\MembershipForm.ascx" />
+    <Content Include="usercontrols\OrderWizard.ascx" />
+    <Content Include="usercontrols\PartnersForm.ascx" />
+    <Content Include="usercontrols\PerfCalendar.ascx" />
+    <Content Include="usercontrols\ProdDetails.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenericControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProgressTemplate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usercontrols\CartCountdown.ascx.cs">
+      <DependentUpon>CartCountdown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\CartCountdown.ascx.designer.cs">
+      <DependentUpon>CartCountdown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\CartViewer.ascx.cs">
+      <DependentUpon>CartViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\CartViewer.ascx.designer.cs">
+      <DependentUpon>CartViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\cartWidget.ascx.cs">
+      <DependentUpon>cartWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\cartWidget.ascx.designer.cs">
+      <DependentUpon>cartWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\CheckoutForm.ascx.cs">
+      <DependentUpon>CheckoutForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\CheckoutForm.ascx.designer.cs">
+      <DependentUpon>CheckoutForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\CheckoutWizard.ascx.cs">
+      <DependentUpon>CheckoutWizard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\CheckoutWizard.ascx.designer.cs">
+      <DependentUpon>CheckoutWizard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\MembershipForm.ascx.cs">
+      <DependentUpon>MembershipForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\MembershipForm.ascx.designer.cs">
+      <DependentUpon>MembershipForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\OrderWizard.ascx.cs">
+      <DependentUpon>OrderWizard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\OrderWizard.ascx.designer.cs">
+      <DependentUpon>OrderWizard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\PartnersForm.ascx.cs">
+      <DependentUpon>PartnersForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\PartnersForm.ascx.designer.cs">
+      <DependentUpon>PartnersForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\PerfCalendar.ascx.cs">
+      <DependentUpon>PerfCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\PerfCalendar.ascx.designer.cs">
+      <DependentUpon>PerfCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\ProdDetails.ascx.cs">
+      <DependentUpon>ProdDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\ProdDetails.ascx.designer.cs">
+      <DependentUpon>ProdDetails.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nysf.Tessitura\Nysf.Tessitura.csproj">
+      <Project>{3B5A062C-E6A7-4431-8988-C5DA6B4488B0}</Project>
+      <Name>Nysf.Tessitura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nysf.Types\Nysf.Types.csproj">
+      <Project>{200D0946-0E5D-4B3A-83F0-5012C0D76CA6}</Project>
+      <Name>Nysf.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nysf.Utility\Nysf.Utility.csproj">
+      <Project>{F71D90B6-6389-439A-8B2F-EEA52FC6A18C}</Project>
+      <Name>Nysf.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55334</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
