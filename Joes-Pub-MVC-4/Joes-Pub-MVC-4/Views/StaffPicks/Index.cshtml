@@ -1,0 +1,153 @@
+﻿@model string
+<style>
+    #column1 {
+        padding: 10px 0 10px 10px;
+        margin: 0;
+        width: 640px;
+        min-height:400px;
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+    }
+
+    #column2 {
+        vertical-align: top;
+        padding: 10px 10px 10px 0;
+        margin: 0;
+        width: 240px;
+        float: right;
+        display: inline-block;
+    }
+
+    #listingnav {
+        display: block;
+        height: 25px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #listing {
+        display: block;
+        min-height: 400px;
+        margin: 0;
+        padding: 10px;
+        background-color: rgb(0, 0, 0);
+        /* RGBa with 0.6 opacity */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* For IE 5.5 - 7*/
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        /* For IE 8*/
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    }
+
+    .ssas {
+        display: inline-block;
+        width: 65px;
+        height: 25px;
+        text-align: center;
+        vertical-align: central;
+        margin: 0;
+        padding: 5px;
+        font-size: 8pt;
+    }
+
+    #listcont {
+        display: block;
+        width: 100%;
+        min-height: 400px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .pagenav {
+        height: 25px;
+    }
+
+    div.search {
+        text-align: center;
+    }
+
+    input[type="submit"] {
+        display: inline-block;
+        margin: 5px auto;
+    }
+
+    input[type="text"] {
+        display: inline-block;
+        margin: 5px auto;
+    }
+
+    li.item h2 a {
+        text-decoration: none;
+        color: #660000;
+    }
+
+    li.item {
+        text-align: center;
+    }
+
+    #selectable .ui-selecting {
+        background: #F39814;
+    }
+
+    #selectable .ui-selected {
+        background: #FFCC00;
+        color: black;
+    }
+
+    #selectable {
+        list-style-type: none;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+    }
+
+        #selectable li {
+            margin: 3px;
+            padding: 0.4em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+</style>
+<div id="column1">
+    @(new HtmlString(Model))
+</div>
+<div id="column2">
+    <div class="search">
+        <span style="background: black; color: #FC0; font-size: 1.5em; margin: 5px 0 0 0; display: block; text-align: center;">Search</span>
+        @using (Html.BeginForm("SearchSP", "StaffPicks", FormMethod.Get, new { @style = "height:30px;"}))
+        {
+            <input type="text" name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords'){ this.value = '';}" onblur="if(this.value == ''){ this.value = 'Enter Keywords';}" />
+            <input type="submit" value="Search" />
+        }
+    </div>
+    <div class="catagories">
+        <span style="background: black; color: #FC0; font-size: 1.5em; margin: 5px 0; display: block; text-align: center;">Catagories</span>
+        @using (Ajax.BeginForm("SearchCatsSP", "StaffPicks", null, new AjaxOptions { UpdateTargetId = "column1" }, new { @id = "catform" }))
+        {
+            <input id="catres" type="hidden" name="cat" />
+            <ul id="selectable">
+                <li id="show" class="ui-widget-content">Shows</li>
+                <li id="artist" class="ui-widget-content">Artists</li>
+                <li id="venue" class="ui-widget-content">Venues</li>
+            </ul>
+        }
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery("#selectable").selectable(
+                {
+                    stop: function () {
+                        jQuery(".ui-selected").each(function (index, Element) {
+                            jQuery("#catres").val(Element.id);
+                            jQuery("#catform").submit();
+                        });
+                    }
+                }
+            );
+        });
+    </script>
+</div>

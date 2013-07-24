@@ -1,0 +1,73 @@
+﻿@model Joes_Pub_MVC_4.Models.NewsListViewModel
+@section tfeature {
+    @Html.Partial("~/Views/Shared/_ShowSearch.cshtml")
+}
+<div id="newslistheader" style="width:900px;min-width:900px;max-width:900px;background:black;margin:0;height:50px;vertical-align:central;">
+    <h1 style="color:#FC0;width:160px;margin:0 20px;padding:10px 0;height:30px;">News Listing</h1>
+</div>
+<div id="newslist" style="display:inline;margin:0 10px;width:680px;height:auto;float:left">
+@Html.Partial("_newslistpartial", Model)
+</div>
+<div id="sidebar" style="display:inline;margin:0 10px 0 0;width:190px;height:auto;float:left">
+    <ul style="list-style:none;margin:0;padding:0;">
+        <li style="background:black;text-align:center;vertical-align:central;min-width:190px;max-width:190px;width:190px;margin:0;padding:0;">
+            <h2 style="color:#FC0;width:180px;">Navigation</h2>
+        </li>
+        <li style="margin:15px auto;padding:0;min-width:190px;max-width:190px;width:190px;">
+            @using (Ajax.BeginForm("UpdateNewsList", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "newslist" }, new { @id="changepage"}))
+            {
+                <input id="K1" name="Key" type="hidden" value="@Model.Key"/>
+                <input id="K2" name="Key2" type="hidden" value="@Model.From_Date.ToString("yyyy-MM-dd")"/>
+                <input id="K3" name="Key3" type="hidden" value="@Model.To_Date.ToString("yyyy-MM-dd")"/>
+                <input id="P" name="pagenum" type="hidden" value=""/>
+                
+                <input id="FirstVal" type="hidden" value="1"/>
+                <input id="SecondVal" type="hidden" value="@(Model.Page - 1)"/>
+                <input id="ThirdVal" type="hidden" value="@(Model.Page + 1)"/>
+                <input id="FourthVal" type="hidden" value="@Model._articlePages.PageCount"/>
+                
+                <input id="First" type="button" style="display:inline;width:30px;margin:0 0 0 0;padding:0;" value="<<" onclick="setPage(1);"/>
+                <input id="Prev" type="button" style="display:inline;width:30px;margin:0;padding:0;" value="<" onclick="setPage(2);" />
+                <h3 id="Pagenumdisp" style="display:inline;font-size:1em;">@Model.Page of @Model._articlePages.PageCount</h3>
+                <input id="Next" type="button" style="display:inline;width:30px;margin:0;padding:0;" value=">" onclick="setPage(3);" />
+                <input id="Last" type="button" style="display:inline;width:30px;margin:0;padding:0;" value=">>" onclick="setPage(4);" />
+                <script>
+                    function setPage(i) {
+                        if (i == 1) {
+                            jQuery(P).val(jQuery(FirstVal).val());
+                        }
+                        if (i == 2) {
+                            jQuery(P).val(jQuery(SecondVal).val());
+                        }
+                        if (i == 3) {
+                            jQuery(P).val(jQuery(ThirdVal).val());
+                        }
+                        if (i == 4) {
+                            jQuery(P).val(jQuery(FourthVal).val());
+                        }
+                        jQuery(changepage).submit();
+                    }
+                </script>                
+            }
+        </li>
+        <li style="background:black;text-align:center;vertical-align:central;min-width:190px;max-width:190px;width:190px;margin:0;padding:0;">
+            <h2 style="color:#FC0;width:180px;">Search</h2>
+        </li>
+        <li style="margin:0;padding:0;min-width:190px;max-width:190px;width:190px;">
+            @using (Ajax.BeginForm("UpdateNewsList", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "newslist" }))
+            {
+                if(Model.Key != null && Model.Key != "" && Model.Key != "Keyword Search")
+                {
+                    <input type="text" style=" width: 190px; margin: 10px 0;padding:0;" name="Key" id="Key" value="@Model.Key" onfocus="if(this.value == 'Keyword Search')this.value = '';" onblur="if(this.value == '')this.value = 'Keyword Search';"/>
+                }
+                else
+                {
+                    <input type="text" style=" width: 190px; margin: 10px 0;padding:0;" name="Key" id="Key" value="Keyword Search" onfocus="if(this.value == 'Keyword Search')this.value = '';" onblur="if(this.value == '')this.value = 'Keyword Search';"/>
+                }
+                <input type="date" name="Key2" id="Key2" style="width: 190px;margin:10px 0;padding:0;" value="@Model.From_Date.ToString("yyyy-MM-dd")"/>
+                <input type="date" name="Key3" id="Key3" style="width: 190px;margin:10px 0;padding:0;" value="@Model.To_Date.ToString("yyyy-MM-dd")"/>
+                <input type="submit" style="display: inline; width: 100px; margin: 0 45px;" value="Search" />
+            }
+        </li>
+    </ul>
+</div>

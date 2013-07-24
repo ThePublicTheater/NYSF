@@ -1,0 +1,95 @@
+﻿@model Joes_Pub_MVC_4.Models.ProfileViewModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+<style>
+    p {
+        font-size: 10pt;
+    }
+</style>
+<hgroup class="title">
+    <h1 style="margin-left: 20px;">@ViewBag.Title.</h1>
+</hgroup>
+<p class="message-success" style="margin-left: 20px;">@ViewBag.StatusMessage</p>
+<!-- User Information -->
+<div style="margin: 10px 10px 10px 20px; width: 600px; display: inline; float: left;">
+    <h2>Welcome <strong>@Model.CurUser.FirstName  @Model.CurUser.LastName</strong>.</h2>
+    <h3>Bio</h3>
+    <p>
+        @Model.CurUser.Bio
+    </p>
+    @if (Model.CurUser.NyMag)
+    {
+        <h4>- New York Magazine Subscriber</h4>
+    }
+    @if (Model.CurUser.EmailSub)
+    {
+        <h4>- Newsletter Subscritber</h4>
+    }
+</div>
+<!-- Genre List -->
+<div style="margin: 10px 20px 10px 10px; width: 220px; display: inline; float: left;">
+    @(new HtmlString(Model.strings[0]))
+</div>
+<!-- Show Recomendations -->
+<div id="ss" style="margin: 10px 10px 10px 20px; width: 414px; display: inline; float: left;">
+    @(new HtmlString(Model.strings[1]))
+</div>
+<!-- Artist Recomendations -->
+<div id="sa" style="margin: 10px 20px 10px 10px; width: 420px; display: inline; float: left;">
+    @(new HtmlString(Model.strings[2]))
+</div>
+<!-- Comment Table -->
+<table style="width: 100%">
+    <tr>
+        <td style="background-color: black; height: auto">
+            <h2 style="color: #FC0; font-size: 2em; margin: 0; padding-left: 15px; vertical-align: central">News Comments</h2>
+        </td>
+        <td style="background-color: black; height: auto">
+            <h2 style="color: #FC0; font-size: 2em; margin: 0; padding-left: 15px; vertical-align: central">Show Comments</h2>
+        </td>
+    </tr>
+    <tr>
+        <td id="nc" style="border: thick">
+            <!-- news -->
+            @(new HtmlString(Model.strings[3]))
+        </td>
+        <td id="sc" style="border: thick">
+            <!-- shows -->
+            @(new HtmlString(Model.strings[4]))
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: black; height: auto">
+            <h2 style="color: #FC0; font-size: 2em; margin: 0; padding-left: 15px; vertical-align: central">Artist Comments</h2>
+        </td>
+        <td style="background-color: black; height: auto">
+            <h2 style="color: #FC0; font-size: 2em; margin: 0; padding-left: 15px; vertical-align: central">General Comments</h2>
+        </td>
+    </tr>
+    <tr>
+        <td id="ac" style="border: thick">
+            @(new HtmlString(Model.strings[5]))
+        </td>
+        <td id="gc" style="border: thick">
+            @(new HtmlString(Model.strings[6]))
+        </td>
+    </tr>
+</table>
+<div style="margin-left: 20px;">
+    @if (ViewBag.HasLocalPassword)
+    {
+        @Html.Partial("_ChangePasswordPartial", new Joes_Pub_MVC_4.Models.LocalPasswordModel())
+    }
+    else
+    { 
+        @Html.Partial("_SetPasswordPartial", new Joes_Pub_MVC_4.Models.LocalPasswordModel())
+    }
+
+    <section id="externalLogins">
+        @Html.Action("RemoveExternalLogins")
+
+        <h3>Add an external login</h3>
+        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+    </section>
+</div>

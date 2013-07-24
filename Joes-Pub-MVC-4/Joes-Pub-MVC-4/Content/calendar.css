@@ -1,0 +1,531 @@
+div.calendar {
+    overflow:hidden;
+    width:900px;
+    padding:0;
+    margin:0;
+    min-width:900px;
+    max-width:900px;
+    min-height:350px;
+}
+
+.calendar img {
+    float: none;
+}
+    .calendar img.loading {
+        margin:0 442px 0 442px;
+    }
+div.calendar h1 {
+    color: #191809;
+    text-transform: lowercase;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 15px 0 20px 0;
+    padding: 0;
+}
+
+div.calendar ul {
+    list-style: none;
+}
+
+div.calendar table {
+    width: 880px;
+    margin:0 auto;
+}
+
+div.calendar input, div.calendar select {
+    margin: 0 2px 0 0;
+}
+
+table.calendar-inside td {
+    padding: 0;
+    padding-bottom: 10px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+div.calendar th {
+    color: #191809;
+    text-transform: lowercase;
+    font-size: 14px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+td.day {
+    color: #191809;
+    vertical-align: top;
+    margin:0 auto;
+    text-align: center;
+}
+div.today{
+    text-align: left;
+    padding: 0 2px 0 0;
+    color: #191809;
+    background: #ffcc00;
+    padding: 5px;
+    font-size: 15px;
+}
+    td.day a {
+        color: #660000;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+    }
+
+    td.day ul li {
+        text-align: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        td.day ul li a {
+        text-align: center;
+    }
+
+div.day_label {
+    text-align: left;
+    padding: 0 2px 0 0;
+    color: #ffcc00;
+    background: #191809;
+    padding: 5px;
+    font-size: 15px;
+}
+
+div.actions {
+    background: #191809;
+    width: 900px;
+    height:40px;
+    margin: 0 auto;
+}
+
+div.jump {
+    margin: 5px;
+    height: 30px;
+    float: left;
+}
+    div.jump input {
+        height: 20px;
+        margin: 2px;
+        padding: 0;
+    }
+div.step {
+    float: right;
+    position: relative;
+    margin: 5px;
+    height: 30px;
+}
+
+a.tt {
+  position: relative;
+  z-index: 450;
+}
+a.tt span { 
+  display: none; 
+}
+a.tt:hover { 
+  z-index: 900; 
+  color: #111111; 
+}
+a.tt:hover span.tooltip {
+  display: block;
+  position: absolute;
+  font-weight: normal;
+  top: 15px; 
+  left: 0;
+	padding: 4px;
+	width: 200px;
+	filter: alpha(opacity:90);
+    KHTMLOpacity: 0.90;
+	MozOpacity: 0.90;
+	opacity: 0.90;
+    z-index: 900;
+    overflow:hidden;
+}
+a.ttRadioSafe {
+  z-index: auto;
+}
+a.ttRadioSafe span { 
+  display: none; 
+}
+a.ttRadioSafe:hover span.tooltip {
+}
+.artist-imgs a.tt:hover span.tooltip {
+  top: 40px; 
+  left: -40px;
+}
+div.calendar a.tt:hover span.tooltip {
+  top: -40px; 
+  left: -40px;
+}
+
+img.zoomLink {
+	vertical-align: middle;
+	border: 0;
+}
+
+img.zoomImg {
+	position: absolute;
+}
+
+.tooltip {
+	z-index: 9999;
+	width: 180px;
+	text-align:left;
+	color: #000000;
+	background-color:#ffffff;
+	border:1px solid black;
+	margin: 0 0 0 20px;
+	text-indent: 0;
+	padding: 4px;
+}
+.tooltip-tip{
+	z-index: 9999;
+	width: 180px;
+	text-align:left;
+	color: #000000;
+	background-color:#ffffff;
+	border:1px solid black;
+	padding: 4px;
+}
+.tooltip-title {
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0px;
+}
+.tooltip-text {
+	font-size: 11px;
+}
+.tooltip h4 {
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0px;
+}
+.tooltip p {
+	font-size: 11px;
+}
+
+div.show-detail-outer {
+	float:left;
+}
+div.show-detail {
+	margin: 0;
+	_margin: 22px 0 0 0;
+	padding: 0;
+	min-height: 360px;
+}
+div.show-detail p {
+	  margin: 1em 0;
+}
+div.show-detail div.top-bar {
+	float: left;
+	margin: 0 0 15px 0;
+	width: 600px;
+}
+div.show-detail h1 {
+	font-size: 24px;
+	font-weight: normal;
+	color: #ffcc00;
+	background: #191809;	
+	text-transform: normal;
+	float: left;
+	line-height: normal;
+	width: 400px;
+	margin: 0 ;
+	padding: 10px 210px 10px 10px;
+}
+div.show-detail h2 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #660000;	
+	text-transform: uppercase;
+	margin: 0 0 2px 0;
+	padding: 0;
+}
+div.show-right-column div.latest-chatter h4 {
+	color: #336699;
+	margin: 0 0 2px 0;
+	padding: 0;
+}
+div.show-detail div.tickets, div.show-detail div.show-dates, 
+div.show-detail div.artists, div.show-detail div.description {
+	margin: 0 0 40px 0;
+}
+
+div.show-dates {
+	clear: left;
+}
+
+.ticketprice{
+	font-size: 18px;
+color: #191809;
+margin: 10px 0;
+}
+div.show-detail div.show-dates ul {
+  margin: 0 0 10px; 0
+}
+div.show-detail div.show-dates ul li {
+  padding: 0 0 2px 0;
+  vertical-align: middle;
+}
+div.show-detail div.show-dates ul li img {
+  /*margin:-15px 400px 0 0;*/
+  margin: 0 400px 0 0;
+  float: right;
+}
+div.show-right-column {
+	float: right;
+	width: 245px;
+	margin: 10px 15px;
+}
+div.show-right-column div.latest-chatter,
+div.show-right-column div.gallery,
+div.show-right-column div.mp3s,
+div.show-right-column div.videos,
+div.show-right-column div.past-shows {
+	margin: 0 0 13px 0;
+	padding: 0;
+	position: relative;
+	left: -12px;
+	float: right;
+	width: 245px;
+	overflow: hidden;
+}
+.mp3s table tbody tr td ul li nobr img{
+display:block;float:right;height:15px;margin:-13px 2px 0 0;overflow:hidden;padding:0;text-indent:-9999px;width:15px;}
+div.show-right-column div.mp3s ul li {
+	margin-bottom: 10px;
+width: 245px;
+
+}
+div.show-right-column div.videos div.video {
+	margin-bottom: 5px;
+}
+div.show-right-column div.past-shows ul {
+	height: 75px;
+	overflow: auto;
+}
+div.show-right-column h3 {
+	margin: 0 0 4px 0;
+	padding: 5px;
+	color: #ffcc00;
+	background: #191809;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+div.show-right-column table {
+	width: 245px;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+div.gallery table.gallery-nav {
+	width: 215px;
+}
+div.gallery table.gallery-nav td.previous {
+	vertical-align: top;
+	width: 23px;
+	margin: 0 3px 0 0;
+}
+div.gallery table.gallery-nav td.next {
+	vertical-align: top;
+	width: 23px;
+	margin: 0 0 0 3px;
+}
+div.gallery table.gallery-nav td.current {
+	width: 165px;
+}
+div.gallery table.gallery-nav div.gallery-images {
+	width: 165px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+div.gallery table.gallery-nav div.gallery-images img {
+	margin: 0 3px 0 0;
+}
+div.gallery table.gallery-nav div.gallery-images div.caption {
+	white-space: normal;
+	font-size: 10px;
+}
+div.tickets table {
+  width: 600px;
+  border-collapse: collapse;
+  border: 2px solid #310000;
+}
+div.tickets table th {
+  background-color: #310000;
+  color: #FFA51D;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 2px 0 3px 0;
+}
+div.tickets table td {
+  padding: 3px;
+  text-align: center;
+}
+#promo_code {
+  width: 150px;
+}
+#emailshow {
+	position: relative;
+    display:inline;
+    margin:auto 10px;
+}
+#emailshowform {
+	width: 500px;
+	padding: 10px;
+	margin: 0 0 0 12px;
+    border: 2px solid #310000;
+	background-color: #FFFFFF;
+}
+#emailshowform input {
+	
+}
+#emailshowform #your_email, #emailshowform #your_name {
+	width: 190px;
+	_width: 188px;
+}
+#emailshowform #email_1,
+#emailshowform #email_2,
+#emailshowform #email_3,
+#emailshowform #email_4,
+#emailshowform #email_5 {
+	width: 140px;
+	_width: 138px;
+}
+#emailshowform #message {
+	width: 190px;
+	height: 40px;
+	margin: 0 0 1px 2px;
+}
+#emailsentmessage {
+	color: #310000;
+	font-weight: bold;
+}
+div.postchatter p {
+  margin: 0 0 10px 0;
+font-weight: bold;
+}
+div.postchatter ul {
+  margin: 0 0 0 20px;
+}
+
+.artist-boxes,.general-box{
+	width:900px;
+	float:left;
+	display:inline-block;
+	position:relative;
+}
+.artist-descr{
+	width:630px;
+	float:left;
+	min-height:122px;
+}
+.general-box-content{
+	width:510px;
+	float:left;
+	min-height:300px;
+	margin: 10px;
+}
+.general-box-content2{
+	width:610px;
+	float:left;
+	min-height:300px;
+}
+.general-box-content3{
+	width:610px;
+	padding:10px;
+	margin-top:10px;
+	float:left;
+	position: relative;
+	left: -10px;
+}
+.general-box-content5{
+	width:560px;
+	padding:10px 10px 10px 60px;
+	margin-top:10px;
+	float:left;
+	position: relative;
+	left: -60px;
+}
+.general-box-content4{
+	width:881px;
+	padding:10px;
+	margin-top:0;
+	float:left;
+	
+}
+
+div.comments {
+}
+div.comments h2 {
+	color: #ffcc00;
+background: #191809;
+padding: 10px;
+text-transform: normal;
+font-weight: normal;
+}
+div.comments h3, div.comments h4 {
+	color: #660000;
+	margin: 0 0 2px 0;
+	padding: 0;
+}
+div.comments div.comment {
+	margin: 0 0 20px 10px;
+}
+div.comments div.author {
+	font-weight: bold;
+	font-size: 90%;
+}
+div.comments #title {
+  width: 300px;
+  margin-bottom: 7px;
+}
+div.comments #comment {
+  width: 350px;
+  height: 100px;
+}
+div.comments label {
+  margin: 7px 0 2px 0;
+  width: 400px;
+  float: left;
+}
+div.comments span.report {
+  margin-left: 15px;
+}
+div.comments div.actions {
+  margin: 3px 0 5px 0;
+  float: none;
+}
+
+    div.partcal {
+        margin: 0;
+        padding: 0;
+        width: 900px;
+        min-width: 900px;
+        max-width: 900px;
+    }
+    table.calendar-inside {
+        padding: 0;
+        margin: 0 5px;
+        width: 890px;
+        min-width: 890px;
+        max-width: 890px;
+    }
+        table.calendar-inside td {
+            padding: 0;
+            padding-bottom: 10px;
+            margin:0;
+            border-collapse: collapse;
+            text-align: center;
+            min-width: 127px;
+            max-width: 127px;
+            width:127px;
+        }
+    ul.showlist {
+        list-style: none;
+        margin: 0 2px;
+        padding: 0;
+    }
+    

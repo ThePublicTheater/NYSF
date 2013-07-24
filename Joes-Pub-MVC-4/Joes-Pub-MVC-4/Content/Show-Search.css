@@ -1,0 +1,84 @@
+﻿#select {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    background: black;
+}
+
+    #select form.show-search {
+        float: left;
+        margin: 0 10px;
+        padding: 0;
+        width: 880px;
+        height: 30px;
+    }
+
+        #select form.show-search div.freeform,
+        #select form.show-search div.between,
+        #select form.show-search div.dates {
+            float: left;
+            display: inline-block;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        #select form.show-search div.freeform {
+            margin-left:120px;
+        }
+        
+        #select form.show-search label.search-lbl, label.search-lbl2 {
+            float: left;
+            margin: 7px 0;
+            color: #ffcc00;
+            font-size: 11px;
+            height: 15px;
+        }
+
+        #select form.show-search input.search-button {
+            display: inline-block;
+            float: left;
+            margin: 5px 10px;
+            height: 20px;
+            padding: 0;
+            border: none;
+            background-color: black;
+        }
+
+        #select form.show-search input.enter-inp {
+            display: inline-block;
+            float: left;
+            width: 100px;
+            height: 20px;
+            margin: 5px;
+            padding: 0 5px;
+            border: 0;
+            color: #666667;
+            font: 12px Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        #select form.show-search input.enter-date {
+            display: inline-block;
+            float: left;
+            width: 80px;
+            height: 20px;
+            margin: 5px;
+            padding: 0 6px 0 0;
+            border: 0;
+            color: #666667;
+            text-align:right;
+            font: 12px Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        #select form.show-search select.enter-inp {
+            display: inline-block;
+            float: left;
+            width: 125px;
+            height: 20px;
+            margin: 5px 0;
+            padding: 0;
+            border: 0;
+            color: #666667;
+            font: 12px Verdana, Arial, Helvetica, sans-serif;
+        }

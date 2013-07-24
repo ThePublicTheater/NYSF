@@ -1,0 +1,271 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #300;
+}
+
+header {
+    display: block;
+    width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+    header table {
+        border-spacing:0;
+        width: 900px;
+        padding: 0;
+        margin: 0 auto;
+        background-image: url(../../../../Images/bg-page.jpg);
+        background-repeat: repeat-y;
+    }
+
+        header table tr {
+            width: 900px;
+            padding: 0;
+            margin: 0;
+        }
+
+            header table tr td {
+                height: 35px;
+                margin: 0;
+                padding: 0;
+            }
+
+                header table tr td.logo-cell {
+                    background-color: black;
+                }
+
+                header table tr td.spacer {
+                    height: 8px;
+                    background-image: url(../../../../Images/bg-page.jpg);
+                    background-repeat: repeat-y;
+                }
+
+                header table tr td.menu {
+                    display: block;
+                    height: 22px;
+                    background-color: black;
+                    padding: 0;
+                }
+
+    header div.AL {
+        color: #000;
+        font-size: 12px;
+        font-weight:700;
+        margin: 5px 20px 5px 20px;
+        padding: 0;
+        width: 410px;
+        display: inline-block;
+        float: left;
+    }
+    div.AL a.AL{
+        color:#000;
+        }
+        div.AL a.AL:hover {
+            color:#600;
+        }
+    
+    
+    header a.AL {
+        color: #FC0;
+        font-weight:700;
+        font-size:12px;
+        text-decoration:none;
+    }
+
+    header a.logo {
+        padding: 0;
+    }
+
+        header a.logo:hover {
+            border: none;
+            background-color: initial;
+        }
+
+        header a.logo img {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+    header a.socialmedia {
+        display: inline-block;
+        float: right;
+        margin: 5px;
+        padding: 0;
+        border: 0;
+    }
+
+        header a.socialmedia:hover {
+            border: none;
+            background-color: initial;
+        }
+
+    header img.socialmedia {
+        display: inline-block;
+        float: right;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    header ul {
+        list-style: none;
+        margin: 5px 20px 5px 20px;
+        padding: 0;
+        width: 410px;
+        display: inline-block;
+        float: left;
+    }
+
+        header ul li {
+            display: inline;
+            font-size: 12pt;
+        }
+
+        header ul.menu {
+            height: auto;
+            width: auto;
+            float: right;
+            margin: 0;
+            list-style-type: none;
+            padding: 0;
+        }
+
+            header ul.menu li {
+                display: inline-block;
+                height:24px;
+                padding: 0;
+                margin: 0 10px 0 0;
+            }
+
+                header ul.menu li a.AL {
+                    display: inline;
+                    margin: 0;
+                    font-size:14px;
+                    padding: 0;
+                    background: black;
+                    color: #FC0;
+                    text-decoration: none;
+                    -moz-transition: color .5s, background .5s;
+                    -o-transition: color .5s, background .5s;
+                    -webkit-transition: color .5s, background .5s;
+                    transition: color .5s, background .5s;
+                }
+
+                    header ul.menu li a.AL:hover {
+                        background: #FC0;
+                        color: black;
+                    }
+
+body {
+    position: relative;
+    z-index: 300;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-size: .75em;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+}
+
+#body {
+    margin: 0 auto;
+    min-height: 400px;
+    width: 900px;
+    height: auto;
+}
+
+.main-content {
+    padding: 10px 0 0 0;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    background-image: url(../../../../Images/bg-page.jpg);
+    background-repeat: repeat-y;
+}
+
+.clear-fix:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: ".";
+}
+
+footer {
+    clear: both;
+    height: auto;
+    font-size: .8em;
+    background-color: #300;
+    padding: 0;
+    margin: 0;
+}
+
+    footer table {
+        width: 900px;
+        border-spacing:0;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+        footer table tr {
+            width: 900px;
+            background-color: black;
+            text-align: center;
+            vertical-align: central;
+            padding: 0;
+            margin: 0;
+        }
+
+            footer table tr td {
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+
+                footer table tr td img {
+                    float: left;
+                    margin-left: 10px;
+                    margin-top: 5px;
+                }
+
+                footer table tr td.spacer {
+                    height: 8px;
+                    background-image: url(../../../../Images/bg-page.jpg);
+                    background-repeat: repeat-y;
+                }
+
+                footer table tr td a img.left {
+                    border: none;
+                    margin: 0 0 0 20px;
+                    padding: 0;
+                }
+
+                footer table tr td a img.center {
+                    border: none;
+                    margin: 0 20px;
+                    padding: 0;
+                }
+
+                footer table tr td a img.right {
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                }
+    footer table tr td ul {
+        margin: 10px auto;
+    }
+        footer table tr td ul li {
+            display: inline;
+            color: #FC0;
+            font-size: 10pt;
+        }
+            footer table tr td ul li a {
+                text-decoration: none;
+                color: #FC0;
+            }
+        

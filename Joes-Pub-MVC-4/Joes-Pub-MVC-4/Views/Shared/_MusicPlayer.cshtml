@@ -1,0 +1,187 @@
+﻿@model Joes_Pub_MVC_4.Models.Mplayer
+<style>
+    #Mplayer {
+        width:inherit;
+        display:table;
+    }
+        #Mplayer .mp3 {
+            width:220px;
+            height:25px;
+            margin:0 0;
+            padding:6px 0 0 0;
+        }
+        #Mplayer .scrollup {
+            border: 2px solid #FC0;
+            color: #FC0;
+            background: black url("../../Images/up-img.png");
+            background-size: 100px 30px;
+            background-repeat: no-repeat;
+            margin: 5px 60px;
+            padding: 0;
+            min-height:30px;
+            min-width:100px;
+            max-height:30px;
+            max-width:100px;
+            width: 100px;
+            height:30px;
+            border-radius: 10px;
+            transition: background .5s, background-image .5s;
+            -moz-transition: background .5s, background-image .5s;
+            -webkit-transition: background .5s, background-image .5s;
+            -o-transition: background .5s, background-image .5s;
+        }
+
+            #Mplayer .scrollup:hover {
+                background: #FC0;
+                background-image: url("../../Images/up-img-black.png");
+                background-size: 100px 30px;
+                background-repeat: no-repeat;
+            }
+
+        #Mplayer .scrolldown {
+            border: 2px solid #FC0;
+            color: #FC0;
+            background: black url("../../Images/down-img.png");
+            background-size: 100px 30px;
+            background-repeat: no-repeat;
+            margin: 5px 60px;
+            padding: 0;
+            min-height:30px;
+            min-width:100px;
+            max-height:30px;
+            max-width:100px;
+            width: 100px;
+            height:30px;
+            border-radius: 10px;
+            transition: background .5s, background-image .5s;
+            -moz-transition: background .5s, background-image .5s;
+            -webkit-transition: background .5s, background-image .5s;
+            -o-transition: background .5s, background-image .5s;
+        }
+
+            #Mplayer .scrolldown:hover {
+                background: #FC0;
+                background-image: url("../../Images/down-img-black.png");
+                background-size: 100px 30px;
+                background-repeat: no-repeat;
+            }
+        #Mplayer h4 {
+            font-weight:bold;
+            text-align:center;
+            width:206px;
+            height:auto;
+            border:2px solid black;
+            margin:0;
+            padding:5px;
+            border-radius:10px;
+        }
+
+        #Mplayer div {
+            border-radius: 10px;
+            background: black;
+            margin:0;
+            padding:0;
+            display:table;
+            width:220px;
+        }
+
+        #Mplayer ol {
+            list-style: none;
+            width:200px;
+            margin: 0 10px;
+            padding: 0;
+            max-height:200px;
+            overflow-y:hidden;
+            overflow-x:hidden;
+            word-wrap:hyphenate;
+            word-wrap:break-word;
+            background: black;
+            border: 2px solid #FC0;
+            border-radius: 10px;
+        }
+
+            #Mplayer ol li {
+                background: black;
+                width:190px;
+                color: #FC0;
+                margin:5px;
+                padding:0;
+            }
+
+                #Mplayer ol li.selected {
+                    background: #FC0;
+                    color: black;
+                }
+</style>
+<div id="Mplayer">
+    <h4 id="playerlabel"></h4>
+    <span class="mp3" id="player"></span>
+    <div>
+        <div id="topsc" class="scrollup"></div>
+        <ol id="playerlist">
+            @foreach (var item in Model.Songs)
+            {
+                string curid = "M" + item.ID;
+                <li id="@curid" onclick="setSong('@curid', '@item.FullPath', '@item.Filename')">@item.Filename</li>
+            }
+        </ol>
+        <div id="downsc" class="scrolldown"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(player).html("@Model.Songs[0].Filename");
+    jQuery(playerlabel).html("@Model.Songs[0].Filename");
+    jQuery(player).jmp3({
+        filepath: "@Model.Songs[0].FullPath",
+        showfilename: "false",
+        backcolor: "000000",
+        forecolor: "ffcc00",
+        width: "220px",
+        showdownload: "true"
+    });
+    var h = "#M" + "@Model.Songs[0].ID";
+    jQuery(h).addClass("selected");
+
+    var intervalID1;
+    var intervalID2;
+    jQuery(document).ready(function () {
+        jQuery(downsc).hover(function () {
+            var delay = 50;
+            intervalID1 = window.setInterval(scrollDown,delay);
+        }, function (){
+            clearInterval(intervalID1);
+        });
+        jQuery(topsc).hover(function () {
+            var delay = 50;
+            intervalID2 = window.setInterval(scrollUp, delay);
+        }, function () {
+            clearInterval(intervalID2);
+        });
+    });
+
+    function scrollDown() {
+        jQuery(playerlist).scrollTop(jQuery(playerlist).scrollTop() + 5);
+    }
+
+    function scrollUp() {
+        jQuery(playerlist).each(function () {
+            jQuery(playerlist).scrollTop(jQuery(playerlist).scrollTop() - 5);
+        });
+    }
+
+    function setSong(ID, path, filename) {
+        jQuery("#Mplayer li").removeClass("selected");
+        jQuery("#" + ID).addClass("selected");
+        jQuery(player).html(filename);
+        jQuery(playerlabel).html(filename.slice(0,-4));
+        jQuery(player).jmp3({
+            filepath: path,
+            showfilename: "false",
+            backcolor: "000000",
+            forecolor: "ffcc00",
+            width: "220px",
+            showdownload: "true"
+        });
+    }
+</script>

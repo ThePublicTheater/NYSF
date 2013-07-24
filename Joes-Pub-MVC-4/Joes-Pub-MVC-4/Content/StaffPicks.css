@@ -1,0 +1,30 @@
+﻿#listingnav {
+    display:block;
+    height:35px;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+#listing {
+    display:block;
+    min-height:400px;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+.ssas{
+    display:inline-block;
+    width:30px;
+    height:25px;
+    margin:0;
+    padding:5px;
+    font-size:10pt;
+}
+#listcont{
+    display:block;
+    width:100%;
+    min-height:400px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}

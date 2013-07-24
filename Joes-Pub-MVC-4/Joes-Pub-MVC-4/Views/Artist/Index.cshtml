@@ -1,0 +1,474 @@
+﻿@model Joes_Pub_MVC_4.Models.ArtistViewModel
+<table style="width: 880px; margin: 0 10px; max-width: 880px; min-width: 880px;">
+    <tr>
+        <!-- Main Content -->
+        <td style="margin:0 0 0 0;padding:0;vertical-align:top;width:660px">
+            <table style="width: 600px; margin: 0 0 0 0; padding: 0; max-width: 600px; min-width: 600px;">
+                <tr style="height: auto; width: 600px; background-color: #191809; padding: 0 0 0 0;">
+                    <!-- Title Bar -->
+                    <td style="width: 380px; padding: 0 0;">
+                        <h1 style="font-size: 24px; font-weight: normal; color: #FC0; background: #191809; float: left; line-height: normal; width: 380px; margin: 0; padding: 10px 10px 10px 10px;">@Model._artist.Name</h1>
+                    </td>
+                    <!-- Email Form button -->
+                    <td style="width: 180px; padding: 0 10px;">
+                        <a id="Email" style="padding: 0;" onclick="EmailFormToggle();">
+                            <img src="~/Images/emailshow.gif" width="180" /></a>
+                    </td>
+                </tr>
+                <tr style="height: auto; width: 600px; padding: 0 0 0 0;">
+                    <!-- Artist Content -->
+                    <td colspan="2" style="width:580px;padding:0 10px;margin:0;">
+                        @{
+                            if (Model.hasupcoming)
+                            {
+                                foreach (var Prod in Model._prods)
+                                {
+                                    if(Prod!=null)
+                                    {
+                                        Nysf.Tessitura.SeatingZone[] prices = Nysf.Tessitura.WebClient.GetSeatingZonesAndPrices(Prod.Performances[0].Id);                           
+                                        <div class="show-dates" style="width:580px;margin:0;padding:0;">
+                                            <h2>Upcoming Shows</h2>
+                                            @if (prices.Count() > 0 && prices[0].PriceTypes.Count() > 0 && prices[0].PriceTypes[0].Price != null)
+                                            {                                           
+                                                <div class="ticketprice">$@prices[0].PriceTypes[0].Price per ticket.</div>
+                                            }                                            
+                                            <ul style="list-style:none; font-size:9pt; margin:0;padding:0;">
+                                                @foreach (var item in Prod.Performances)
+                                                {
+                                                    <li>
+                                                        @item.StartTime.ToString("h:mm tt - MMMM dd")
+                                                        &nbsp;
+                                                        @if (Prod.IsOnSale && !Prod.IsSoldOut)
+                                                        {
+                                                            <a href="http://tickets.joespub.com/production/?perf=@item.Id" target="_blank" title="Buy Tix"><img src="~/Images/buy-button.gif" alt="Buy Tix"></a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="#" target="_blank" title="Sold Out"><img src="~/Images/out-button.gif" alt="Sold Out"></a>
+                                                        }
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                }
+                            }
+                        }
+                        <h2>Show Description</h2>
+                        @(new HtmlString(Model._artist.Description))
+                        @if(Model._shows.Count >0)
+                        {
+                            <h3>Featured Shows:</h3>
+                            <ul style="list-style:none;padding:0;">
+                                @foreach (var item in Model._shows)
+                                {
+                                    int k = item.TessProdID + 1;
+                                    <li style="margin:10px 0 0 20px;"><a href="~/Show/Index/@k">@item.Title</a></li>
+                                }
+                            </ul>
+                        }
+                        @if (Model._genres.Count > 0)
+                        {
+                            <h3>Genres:</h3>
+                            <ul style="list-style:none;padding:0;">
+                                @{
+                                    List<string> prevnames = new List<string>();
+                                }
+                                @foreach (var item in Model._genres)
+                                {
+                                    Joes_Pub_MVC_4.Models.GenresDBContext GenDB = new Joes_Pub_MVC_4.Models.GenresDBContext();
+                                    var result = GenDB.GenreList.Where(s => s.JoomlaID == item.GenreID).ToList();
+                                    foreach (var item2 in result)
+                                    {
+                                        if (!prevnames.Contains(item2.Name))
+                                        {
+                                            prevnames.Add(item2.Name);
+                                            <li style="margin:10px 0 0 20px;">@item2.Name</li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        }
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <!-- Seperator -->
+        <td style="margin:0 0 0 0;padding:0;vertical-align:top;width:5px;font-size:5px;">
+            <p> </p>
+        </td>
+        <!-- Side Bar -->
+        <td style="margin:0 0 0 0;padding:0;vertical-align:top;width:215px">
+            <table style="width: 215px; margin: 0 0 0 0; padding: 0; max-width: 215px; min-width: 215px;">
+                @if(Model.numPics > 0)
+                {
+                    int n = 0;
+                    <tr>
+                        <!-- Gallery Heading -->
+                        <td style="background:#191809;height:auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">GALLERY</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Gallery Content -->
+                        <td style="width:249px;">
+                            <table style="width:215px;margin:0 0 0 20px;padding:0;">
+                                <tr>
+                                    <td style="width:25px;margin:0;padding:0;">
+                                        <a href="javascript:prev_gallery_photo();">
+                                            <img src="~/Images/gallery-nav-prev.jpg" />
+                                        </a>
+                                    </td>
+                                    <td style="width:165px;margin:0;padding:0;">
+                                        <input type="hidden" id="gallery_count" value="@Model.numPics">
+                                        @foreach (var item in Model._pics)
+                                        {
+                                            if (n == 0)
+                                            {
+                                            <div id="gallery_photo_@n">
+                                                <a href="/artists/@item.ArtistID/photos/medium/@item.FileName" target="_blank" rel="lightbox[gallery]" class="effectable" title="">
+                                                    <img src="/shows/@item.ArtistID/photos/small/@item.FileName" width="165"></a>
+                                            </div>
+                                            }
+                                            else
+                                            {
+                                            <div style="display:none;" id="gallery_photo_@n">
+                                                <a href="/shows/@item.ArtistID/photos/medium/@item.FileName" target="_blank" rel="lightbox[gallery]" class="effectable" title="">
+                                                    <img src="/shows/@item.ArtistID/photos/small/@item.FileName" width="165"></a>
+                                            </div>
+                                            }
+                                            n++;
+                                        }
+                                        @foreach (var item in Model._showsfull)
+                                        {
+                                            foreach (var item2 in item._showpics)
+                                            {
+                                            <div style="display:none;" id="gallery_photo_@n">
+                                            <a href="/artists/@item2.ShowID/photos/medium/@item2.Filename" target="_blank" rel="lightbox[gallery]" class="effectable" title=""><img src="/artists/@item2.ShowID/photos/small/@item2.Filename" width="165"></a>    
+                                            </div>
+                                                n++;
+                                            }
+                                        }
+                                    </td>
+                                    <td style="width:25px;margin:0;padding:0;">
+                                        <a href="javascript:next_gallery_photo();">
+                                            <img src="~/Images/gallery-nav-next.jpg"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                }
+                @if (Model._comments.Count > 0)
+                {
+                    <tr>
+                        <!-- Latest Comment Heading -->
+                        <td style="background:#191809;height:auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">LATEST COMMENT</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Latest Comments -->
+                        <td>
+                            <ul style="list-style:none;margin:10px 10px; padding:0;">
+                                @foreach (var item in Model._recentComments)
+                                {
+                                    <li>
+                                        <h4 style="padding-left: 5px; font-weight: bold;">@item.Title</h4>
+                                        <p style="word-wrap: break-word; padding-left: 25px;">
+                                            @item.Message
+                                        </p>
+                                        <h5 style="padding-left: 5px; font-weight: normal;">Post-Date: @item.PostDate</h5>
+                                        <hr style="margin: 0 auto" />
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+                @if(Model.numSongs > 0)
+                {
+                    <tr>
+                        <!-- Listen/Download Heading -->                        
+                        <td style="background:#191809;height:auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">LISTEN OR DOWNLOAD</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Listen/Download Content -->
+                        <td>
+                            @foreach (var item in Model._songs)
+                            {
+                                string curid = "song" + item.ID;
+                                <h3 style="margin-left: 10px">@item.Name<br>
+                                    <span style="margin-left:10px" id="@curid" class="mp3">@item.FileName</span></h3>
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function () {
+                                        jQuery("#@curid").jmp3({
+                                            filepath: "../../artists/@item.ArtistID/mp3s/",
+                                            showfilename: "false",
+                                            backcolor: "000000",
+                                            forecolor: "ffcc00",
+                                            width: "200px",
+                                            showdownload: "true"
+                                        });
+                                    });
+                                </script>
+                            }
+                            @foreach (var item in Model._showsfull)
+                            {
+                                foreach (var item2 in item._songs)
+                                {
+                                    string curid = "song" + item2.ID;
+                                    <h3 style="margin-left:10px">@item2.Name
+                                        <br>
+                                        <span style="margin-left:10px;" id="@curid" class="mp3">@item2.Filename</span>
+                                    </h3>
+                                    <script type="text/javascript">
+                                        jQuery(document).ready(function () {
+                                            jQuery("#@curid").jmp3({
+                                                filepath: "/shows/@item2.ShowID/mp3s/",
+                                                showfilename: "false",
+                                                backcolor: "000000",
+                                                forecolor: "ffcc00",
+                                                width: "200px",
+                                                showdownload: "true"
+                                            });
+                                        });
+                                    </script>
+                                }
+                            }                           
+                        </td>
+                    </tr>
+                }
+                @if(Model.numVids > 0)
+                {
+                    <tr>
+                        <!-- Video Heading -->
+                        <td style="background:#191809;height:auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">WATCH</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Video Content -->
+                        <td>
+                            <div style="margin-left:20px;padding:0;">
+                                @foreach (var item in Model._vids)
+                                {
+                                    string link = item.YouTubeLink.Replace("watch?v=", "v/");
+                                    <div class="video">
+                                        <object width="230" height="190">
+                                            <param name="movie" value="@link" />
+                                            <param name="wmode" value="transparent" />
+                                            <embed src="@link" width="230" height="190" type="application/x-shockwave-flash" wmode="transparent" />
+                                        </object>
+                                    </div>
+                                    <hr />
+                                }
+                                @foreach (var item in Model._showsfull)
+                                {
+                                    foreach (var item2 in item._vids)
+                                    {
+                                        string link = item2.YoutubeLink.Replace("watch?v=", "v/");
+                                        <div class="video">
+                                            <object width="230" height="190">
+                                                <param name="movie" value="@link" />
+                                                <param name="wmode" value="transparent" />
+                                                <embed src="@link" width="230" height="190" type="application/x-shockwave-flash" wmode="transparent" />
+                                            </object>
+                                        </div>
+                                    }
+                                }                               
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if(Model._shows.Count > 0)
+                {
+                    <tr>
+                        <!-- Past Shows Heading -->
+                        <td style="background:#191809;height:auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">PAST SHOWS</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Past Shows Content -->
+                        <td>
+                            <ul style="list-style:none;overflow:auto;">
+                                @foreach (var item in Model._shows)
+                                {
+                                    if (item.ShowDate < DateTime.Now)
+                                    {
+                                        <li>@item.ShowDate.ToString("h:mm tt - MMMM dd, yyyy")</li>
+                                    }
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- Comment Table -->
+<table  style="width: 600px; margin: 0 10px; padding: 0; text-align: left">
+    <tr style="margin:0;padding:0;width:600px">
+        <td style="background-color: black; height: auto;margin:0;padding:0;">
+            <h2 style="color: #FC0; margin: 5px 0; padding-left: 15px; vertical-align: central">Comments</h2> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul style="list-style:none;">
+                @if (Model._commentPages.Count > 0)
+                {
+                    foreach (var item in Model._commentPages)
+                    {
+                        <li>
+                            <h3>@item.Title</h3>
+                            <p>@item.Message</p>
+                            <p style="font-weight: bold">Posted by @item.Name on @item.PostDate.ToString("d/MM/yyyy h:mm tt")</p>
+                        </li>
+                    }
+                    string path = Request.Url.AbsolutePath;
+                    int r = Model._artist.JoomlaID;
+                    path = path.Remove(11, path.Length - 11);
+                    <li>
+                        @if (Model.commPage != 1 && Model._commentPages.PageCount > 0)
+                        {
+                            string url1 = "location.href='" + path + "/" + r + "/" + "1" + "'";
+                            <input style="display:inline;margin:0 5px;" type="button" value="<< First" onclick="@url1"/>
+                        }
+                        @if (Model.commPage > 1 && Model._commentPages.PageCount > 0)
+                        {
+                            string url2 = "location.href='" + path + "/" + r + "/" + string.Format("{0}", Model.commPage - 1) + "'";
+                            <input style="display:inline;margin:0 5px;" type="button" value="< Previous" onclick="@url2"/>
+                        }
+                        <h3 style="display:inline;margin:0 5px;">Page @Model._commentPages.PageNumber of @Model._commentPages.PageCount</h3>
+                        @if (Model._commentPages.PageCount > Model.commPage && Model.commPage != 0)
+                        {
+                            string url3 = "location.href='" + path + "/" + r + "/" + string.Format("{0}", Model.commPage + 1) + "'";
+                            <input style="display:inline;margin:0 5px;" type="button" value="Next >" onclick="@url3"/>   
+                        }
+                        @if (Model._commentPages.PageCount != Model.commPage)
+                        {
+                            string url4 = "location.href='" + path + "/" + r + "/" + string.Format("{0}", Model._commentPages.PageCount) + "'";
+                            <input style="display:inline;margin:0 5px;" type="button" value="Last >>" onclick="@url4"/>
+                        }
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p>No Comments Found</p>
+                    </li>
+                }
+            </ul>
+        </td>
+    </tr>
+    <tr style="margin:0;padding:0;width:600px">
+        <td style="background-color: black; height: auto;margin:0;padding:0;">
+            @{
+                if (Request.IsAuthenticated)
+                {
+                <h2 style="color: #FC0; margin: 5px 0; padding-left: 15px; vertical-align: central">Post a Comment</h2>
+                }
+                else
+                {
+                <ul style="list-style: none;">
+                    <li class="ALC" style="display: inline;">Please</li>
+                    <li style="display: inline;">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                    <li class="ALC" style="display: inline;">or</li>
+                    <li style="display: inline;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                    <li class="ALC" style="display: inline;">to post a comment! </li>
+                </ul>
+                <style>
+                    li.ALC
+                    {
+                        text-decoration: none;
+                        color: #FC0;
+                        font-size: 1.75em;
+                        margin: 0;
+                        padding: 0;
+                        vertical-align: central;
+                    }
+                </style>
+                }
+            }
+        </td>
+    </tr>
+    @if (Request.IsAuthenticated)
+    {
+    <tr style="margin:0;padding:0;width:600px">
+            <td style="margin:0;padding:0;">
+                @using (Ajax.BeginForm("UpdateShowComments", new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "comlist" }))
+                {
+                    <fieldset>
+                        <legend>AddComment
+                        </legend>
+                        <h4>Title</h4>
+                        <input type="text" name="Title" id="Title" />
+                        <textarea style="width: 600px; height: 350px; resize: none; margin: 0; padding: 0;" name="Message" id="Message" onclick="this.focus();this.select();">Please type your message here.</textarea>
+                        <br />
+                        @{
+                    string user = HttpContext.Current.User.Identity.Name;
+                    Joes_Pub_MVC_4.Models.ProfilesDBContext ProfileDB = new Joes_Pub_MVC_4.Models.ProfilesDBContext();
+                    List<Joes_Pub_MVC_4.Models.Profiles> profilesearch = ProfileDB.ProfileList.Where(s => s.UserName == user).ToList();
+                        }
+                        <input type="hidden" value="@profilesearch[0].ID" name="UserID" id="UserID" />
+                        <input type="hidden" value="@Model._artist.ID" name="ShowID" id="ShowID" />
+                        <input type="submit" value="Post" style="margin-left: 10px;" />
+                    </fieldset>
+                }
+            </td>
+        </tr>
+    }
+</table>
+<!-- Email Form -->
+<div id="emailshowform" style="display: none;z-index:1000;position:absolute;">
+    <form name="emailshow" method="post" onsubmit="return validate_email_form(this);" action="~/Show/">
+        <div class="field">
+            <label for="your_name">Your Name:</label>
+            <input type="text" name="your_name" id="your_name" size="28">
+        </div>
+        <div class="field">
+            <label for="your_email">Your Email:</label>
+            <input type="text" name="your_email" id="your_email" size="28">
+        </div>
+        <div class="field">
+            <label for="email_1">Email 1:</label><input type="text" name="email_1" id="email_1" size="20">
+        </div>
+        <div class="field">
+            <label for="email_2">Email 2:</label><input type="text" name="email_2" id="email_2" size="20">
+        </div>
+        <div class="field">
+            <label for="email_3">Email 3:</label><input type="text" name="email_3" id="email_3" size="20">
+        </div>
+        <div class="field">
+            <label for="email_4">Email 4:</label><input type="text" name="email_4" id="email_4" size="20">
+        </div>
+        <div class="field">
+            <label for="email_5">Email 5:</label><input type="text" name="email_5" id="email_5" size="20">
+        </div>
+        <div class="field">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <input type="submit" value="Send">
+        <input type="button" value="Cancel" onclick="document.getElementById('emailshowform').style.display = 'none';">
+    </form>
+</div>
+<!-- Scripts section -->
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var off = jQuery(Email).offset();
+        off.top = off.top + 22;
+        jQuery(emailshowform).offset({ left: off.left, top: off.top });
+    });
+    function EmailFormToggle() {
+        jQuery(emailshowform).toggle();
+    }
+</script>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

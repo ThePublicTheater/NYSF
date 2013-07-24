@@ -1,0 +1,61 @@
+﻿@model Joes_Pub_MVC_4.Models.Profiles
+
+@{
+    ViewBag.Title = "Create";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<h2>Create</h2>
+@{
+    if (Request.IsAuthenticated) 
+    {
+using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Profiles</legend>
+
+        <input id="UserName" name="UserName" type="text" value="@User.Identity.Name" style="visibility:hidden;" />
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bio)
+        </div>
+        <div class="editor-field">
+            <textarea style="height: 300px; width: 850px; max-height: 300px; max-width: 850px; min-height: 300px; min-width: 850px" id="Bio" name="Bio"></textarea>
+            @Html.ValidationMessageFor(model => model.Bio)
+        </div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+}
+else
+{
+        <p>Please Sign In or Register</p>
+    }
+}

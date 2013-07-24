@@ -1,0 +1,23 @@
+﻿@model Joes_Pub_MVC_4.Models.NewsListViewModel
+<ul style="list-style:none;margin:0;padding:0;">
+    <li>
+        <h1>@Model._articles.Count Articles Found.</h1>
+    </li>
+    @foreach (Joes_Pub_MVC_4.Models.News item in Model._articlePages)
+    {
+        <li>
+            <h2>@item.Title</h2>
+            <h3>Published on: @item.Publish.ToString("MMMM d yyyy h:mm tt")</h3>
+            @Html.ActionLink("Go to Article", "News", new { @id=item.ID})
+            <hr />
+        </li>
+    }
+    <li>
+    </li>
+</ul>
+<script>
+    jQuery(SecondVal).val(@(Model.Page - 1));
+    jQuery(ThirdVal).val(@(Model.Page + 1));
+    jQuery(FourthVal).val(@(Model._articlePages.PageCount));
+    jQuery(Pagenumdisp).html('@Model.Page of @Model._articlePages.PageCount');
+</script>

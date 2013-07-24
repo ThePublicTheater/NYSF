@@ -1,0 +1,364 @@
+﻿@model Joes_Pub_MVC_4.Models.SPViewModel
+@using CaptchaMvc.HtmlHelpers
+<table style="width: 880px; margin: 0 10px; max-width: 880px; min-width: 880px;">
+    <tr>
+        <!-- Main Content -->
+        <td style="margin: 0 0 0 0; padding: 0; vertical-align: top; width: 660px">
+            <table style="width: 600px; margin: 0 0 0 0; padding: 0; max-width: 600px; min-width: 600px;">
+                <tr style="height: auto; width: 600px; background-color: #191809; padding: 0 0 0 0;">
+                    <!-- Title Bar -->
+                    <td style="width: 380px; padding: 0 0;">
+                        <h1 style="font-size: 24px; font-weight: normal; color: #FC0; background: #191809; float: left; line-height: normal; width: 380px; margin: 0; padding: 10px 10px 10px 10px;">@Model._Pick.Title</h1>
+                    </td>
+                    <!-- Email Form Button -->
+                    <td style="width: 180px; padding: 0 10px;">
+                        <a id="Email" style="padding: 0;" onclick="EmailFormToggle();">
+                            <img src="~/Images/emailshow.gif" width="180" /></a>
+                    </td>
+                </tr>
+                <tr style="height: auto; width: 600px; padding: 0 0 0 0;">
+                    <!-- Show Content-->
+                    <td colspan="2" style="width: 580px; padding: 0 10px; margin: 0;">
+                        <h2>@Model._Pick.SubTitle</h2>
+                        <br />
+                        <h3>Description</h3>
+                        @(new HtmlString(Model._Pick.Description))
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <!-- Seperator -->
+        <td style="margin: 0 0 0 0; padding: 0; vertical-align: top; width: 5px; font-size: 5px;">
+            <p></p>
+        </td>
+        <!-- Side Bar -->
+        <td style="margin: 0 0 0 0; padding: 0; vertical-align: top; width: 215px">
+            <table style="width: 215px; margin: 0 0 0 0; padding: 0; max-width: 215px; min-width: 215px;">
+                @if (Model._Pics.Count > 0)
+                {
+                    int n = 0;
+                    <tr>
+                        <!-- Gallery Heading -->
+                        <td style="background: #191809; height: auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">GALLERY</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Gallery Content -->
+                        <td style="width: 249px;">
+                            <table style="width: 215px; margin: 0 0 0 20px; padding: 0;">
+                                <tr>
+                                    <td style="width: 25px; margin: 0; padding: 0;">
+                                        <a href="javascript:prev_gallery_photo();">
+                                            <img src="~/Images/gallery-nav-prev.jpg" />
+                                        </a>
+                                    </td>
+                                    <td style="width: 165px; margin: 0; padding: 0;">
+                                        <input type="hidden" id="gallery_count" value="@Model._Pics.Count">
+                                        @foreach (var item in Model._Pics)
+                                        {
+                                            if (n == 0)
+                                            {
+                                            <div id="gallery_photo_@n">
+                                                <a href="/picks/@item.PickID/photos/@item.Loc" target="_blank" rel="lightbox[gallery]" class="effectable" title="">
+                                                    <img src="/picks/@item.PickID/photos/@item.Loc" width="165"></a>
+                                            </div>
+                                            }
+                                            else
+                                            {
+                                            <div style="display:none;" id="gallery_photo_@n">
+                                                <a href="/picks/@item.PickID/photos/@item.Loc" target="_blank" rel="lightbox[gallery]" class="effectable" title="">
+                                                    <img src="/picks/@item.PickID/photos/@item.Loc" width="165"></a>
+                                            </div>
+                                            }
+                                            n++;
+                                        }
+                                    </td>
+                                    <td style="width: 25px; margin: 0; padding: 0;">
+                                        <a href="javascript:next_gallery_photo();">
+                                            <img src="~/Images/gallery-nav-next.jpg"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                }
+                @if (Model._Comms.Count > 0)
+                {
+                    <tr>
+                        <!-- Latest Comment Heading -->
+                        <td style="background: #191809; height: auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">LATEST COMMENT</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Latest Comments -->
+                        <td>
+                            <ul style="list-style: none; margin: 10px 10px; padding: 0;">
+                                @foreach (var item in Model._Comms)
+                                {
+                                    <li>
+                                        <h4 style="padding-left: 5px; font-weight: bold;">@item.Title</h4>
+                                        <p style="-ms-word-wrap: break-word; word-wrap: break-word; padding-left: 25px;">
+                                            @item.Message
+                                        </p>
+                                        <h5 style="padding-left: 5px; font-weight: normal;">Post-Date: @item.PostDate</h5>
+                                        <hr style="margin: 0 auto" />
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+                @if (Model._Songs.Count > 0)
+                {
+                    <tr>
+                        <!-- Listen/Download Heading -->
+                        <td style="background: #191809; height: auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">LISTEN</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Listen/Download Content -->
+                        <td>
+                            @foreach (var item in Model._Songs)
+                            {
+                                string curid = "song" + item.ID;
+                                <h3 style="margin-left: 10px">@item.Loc<br>
+                                    <span style="margin-left:10px" id="@curid" class="mp3">@item.Loc</span>
+                                </h3>
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function () {
+                                        jQuery("#@curid").jmp3({
+                                            filepath: "../../shows/@item.PickID/mp3s/",
+                                            showfilename: "false",
+                                            backcolor: "000000",
+                                            forecolor: "ffcc00",
+                                            width: "200px",
+                                            showdownload: "false"
+                                        });
+                                    });
+                                </script>
+                            }
+                        </td>
+                    </tr>
+                }
+                @if (Model._Vids.Count > 0)
+                {
+                    <tr>
+                        <!-- Watch Heading -->
+                        <td style="background: #191809; height: auto;">
+                            <h3 style="margin: 0 0 0 0; padding: 5px; color: #FC0; background: #191809; font-weight: normal; text-transform: uppercase; font-size: 12px;">WATCH</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Watch Content -->
+                        <td>
+                            <div style="margin-left: 20px; padding: 0;">
+                                @foreach (var item in Model._Vids)
+                                {
+                                    string link = item.Loc.Replace("watch?v=", "v/");
+                                    <div class="video">
+                                        <object width="230" height="190">
+                                            <param name="movie" value="@link" />
+                                            <param name="wmode" value="transparent" />
+                                            <embed src="@link" width="230" height="190" type="application/x-shockwave-flash" wmode="transparent" />
+                                        </object>
+                                    </div>
+                                    <hr />
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- Comment Table -->
+<table style="width: 600px; margin: 0 10px; padding: 0; text-align: left">
+    <tr style="margin: 0; padding: 0; width: 600px">
+        <td style="background-color: black; height: auto; margin: 0; padding: 0;">
+            <h2 style="color: #FC0; margin: 5px 0; padding-left: 15px; vertical-align: central">Comments</h2>
+        </td>
+    </tr>
+    <tr id="commupdate">
+        <td>
+            <ul style="list-style: none;">
+                @if (Model._CommsPages.Count > 0)
+                {
+                    foreach (var item in Model._CommsPages)
+                    {
+                    <li>
+                        <h3>@item.Title</h3>
+                        <p>@item.Message</p>
+                        <p style="font-weight: bold">Posted by @item.Name on @item.PostDate.ToString("d/MM/yyyy h:mm tt")</p>
+                    </li>
+                    }
+                }
+                else
+                {
+                    <li>
+                        <p>No Comments Found</p>
+                    </li>
+                }
+            </ul>
+        </td>
+    </tr>
+    <tr style="margin: 0; padding: 0; width: 600px">
+        <td style="background-color: black; height: auto; margin: 0; padding: 0;">
+            @{
+                if (Request.IsAuthenticated)
+                {
+                <h2 style="color: #FC0; margin: 5px 0; padding-left: 15px; vertical-align: central">Post a Comment</h2>
+                }
+                else
+                {
+                <ul style="list-style: none;">
+                    <li class="ALC" style="display: inline;">Please</li>
+                    <li style="display: inline;">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                    <li class="ALC" style="display: inline;">or</li>
+                    <li style="display: inline;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                    <li class="ALC" style="display: inline;">to post a comment! </li>
+                </ul>
+                <style>
+                    li.ALC {
+                        text-decoration: none;
+                        color: #FC0;
+                        font-size: 1.75em;
+                        margin: 0;
+                        padding: 0;
+                        vertical-align: central;
+                    }
+                </style>
+                }
+            }
+        </td>
+    </tr>
+    @if (Request.IsAuthenticated)
+    {
+        <tr style="margin: 0; padding: 0; width: 600px">
+            <td style="margin: 0; padding: 0;">
+                @using (Html.BeginForm("UpdatePickComments", "StaffPicks"))
+                {
+                    <h4>Title</h4>
+                    <input type="text" name="Title" id="Title" />
+                    <textarea style="width: 600px; height: 350px; resize: none; margin: 0; padding: 0;" name="Message" id="Message" onclick="this.focus();this.select();">Please type your message here.</textarea>
+                    <br />
+                    string user = HttpContext.Current.User.Identity.Name;
+                    Joes_Pub_MVC_4.Models.ProfilesDBContext ProfileDB = new Joes_Pub_MVC_4.Models.ProfilesDBContext();
+                    List<Joes_Pub_MVC_4.Models.Profiles> profilesearch = ProfileDB.ProfileList.Where(s => s.UserName == user).ToList();
+                    <input type="hidden" value="@profilesearch[0].ID" name="UserID" id="UserID" />
+                    <input type="hidden" value="@profilesearch[0].FirstName @profilesearch[0].LastName" name="Name" />
+                    <input type="hidden" value="@Model._Pick.ID" name="PickID" id="PickID" />
+                    <input type="submit" value="Post" style="margin-left: 10px;" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<!-- Email Form -->
+<div id="emailshowform" style="display: none; z-index: 1000; position: absolute;">
+    <form name="emailshow" method="post" onsubmit="emailfix()" action="~/Show/">
+        <div class="field">
+            <label for="your_name">Your Name:</label>
+            <input type="text" name="your_name" id="your_name" size="28">
+        </div>
+        <div class="field">
+            <label for="your_email">Your Email:</label>
+            <input type="text" name="your_email" id="your_email" size="28">
+        </div>
+        <div id="emailsec">
+            <div class="field">
+                <label for="there_email">First Email:</label>
+                <input type="text" name="email1" id="email1" size="28">
+                <a onclick="Addemail()">Add Emails</a>
+            </div>
+        </div>
+        <div class="field">
+            <label for="message">Message:</label>
+            <textarea name="message" style="resize: none; margin: 0 5px;" id="message"></textarea>
+        </div>
+        @Html.Captcha(4)
+        <input type="hidden" value="" id="emailstring" name="emailstring" />
+        <input type="button" value="Send" onclick="emailfix()">
+        <input type="button" value="Cancel" onclick="document.getElementById('emailshowform').style.display = 'none';">
+    </form>
+</div>
+<!-- Scripts Section -->
+<script type="text/javascript">
+    fields = 1;
+    function Addemail() {
+        var h = jQuery("#emailsec").children().val();
+        if (fields < 5) {
+            fields += 1;
+            document.getElementById("emailsec").innerHTML += "<div class='field'><label for='there_email'>Email " + fields + ":</label><input type='text' name='email' id='email" + fields + "' size='28'></div>";
+        } else {
+            if (fields != 6) {
+                document.getElementById("emailsec").innerHTML += "<h4>Only 5 email fields allowed.</h4>";
+                fields += 1;
+            }
+        }
+        jQuery("#emailsec").children().val(h);
+    }
+    function emailfix() {
+        var h = "";
+        var count = jQuery("#emailsec").children().length;
+        for (var i = 1; i < count + 1; i++) {
+            h += jQuery("#email" + i).val() + ";";
+        }
+        jQuery("#emailstring").val(h);
+    }
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var off = jQuery(Email).offset();
+        off.top = off.top + 22;
+        jQuery(emailshowform).offset({ left: off.left, top: off.top });
+    });
+    function EmailFormToggle() {
+        jQuery(emailshowform).toggle();
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(message).cleditor({
+            width: 500, // width not including margins, borders or padding
+            height: 250, // height not including margins, borders or padding
+            controls:     // controls to add to the toolbar
+                          "bold italic underline | font size " +
+                          "style | color highlight removeformat | bullets numbering | outdent " +
+                          "indent | alignleft center alignright justify | undo redo | " +
+                          "rule | cut copy paste pastetext",
+            colors:       // colors in the color popup
+                          "FFF FCC FC9 FF9 FFC 9F9 9FF CFF CCF FCF " +
+                          "CCC F66 F96 FF6 FF3 6F9 3FF 6FF 99F F9F " +
+                          "BBB F00 F90 FC6 FF0 3F3 6CC 3CF 66C C6C " +
+                          "999 C00 F60 FC3 FC0 3C0 0CC 36F 63F C3C " +
+                          "666 900 C60 C93 990 090 399 33F 60C 939 " +
+                          "333 600 930 963 660 060 366 009 339 636 " +
+                          "000 300 630 633 330 030 033 006 309 303",
+            fonts:        // font names in the font popup
+                          "Arial,Arial Black,Comic Sans MS,Courier New,Narrow,Garamond," +
+                          "Georgia,Impact,Sans Serif,Serif,Tahoma,Trebuchet MS,Verdana",
+            sizes:        // sizes in the font size popup
+                          "1,2,3,4,5,6,7",
+            styles:       // styles in the style popup
+                          [["Paragraph", "<p>"], ["Header 1", "<h1>"], ["Header 2", "<h2>"],
+                          ["Header 3", "<h3>"], ["Header 4", "<h4>"], ["Header 5", "<h5>"],
+                          ["Header 6", "<h6>"]],
+            useCSS: false, // use CSS to style HTML when possible (not supported in ie)
+            docType:      // Document type contained within the editor
+                          '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+            docCSSFile:   // CSS file used to style the document contained within the editor
+                          "",
+            bodyStyle:    // style to assign to document body contained within the editor
+                          "margin:4px; font:10pt Arial,Verdana; cursor:text"
+        });
+    });
+</script>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/cledit/jquery.cleditor.js")
+    @Styles.Render("~/Scripts/cledit/jquery.cleditor.css")
+}

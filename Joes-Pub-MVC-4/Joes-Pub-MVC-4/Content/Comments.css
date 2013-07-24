@@ -1,0 +1,79 @@
+﻿table.comments {
+    width: 900px;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+    table.comments tr {
+    }
+
+        table.comments tr td.black {
+            background-color: black;
+            height: auto;
+        }
+
+            table.comments tr td.black h2 {
+                color: #FC0;
+                font-size: 1.8em;
+                margin: 0;
+                padding-left: 15px;
+                vertical-align: central;
+            }
+
+        table.comments tr td ul {
+            list-style: none;
+            margin: 0 auto;
+        }
+        table.comments tr td ul li{
+            display:inline;
+        }
+            table.comments tr td ul li.ALC {
+                text-decoration: none;
+                color: #FC0;
+                font-size: 1.8em;
+                display: inline;
+                margin: 0;
+                padding: 0;
+                vertical-align: central;
+            }
+
+            table.comments tr td ul li h3 {
+                padding-left: 5px;
+                font-size: 13pt;
+                font-weight: bold;
+            }
+
+            table.comments tr td ul li p {
+                -ms-word-wrap: break-word;
+                word-wrap: break-word;
+                padding-left: 25px;
+                font-size: 10pt;
+            }
+
+            table.comments tr td ul li h5 {
+                padding-left: 5px;
+                font-size: 9pt;
+                font-weight: normal;
+            }
+
+            table.comments tr td ul li hr {
+                margin: 0 auto;
+            }
+
+            table.comments tr td ul li a.ALC {
+                text-decoration: none;
+                color: #FC0;
+                font-size: 1.8em;
+                display: inline;
+                margin: 0;
+                padding: 0;
+                vertical-align: central;
+            }
+
+    table.comments .in {
+        display: block;
+        margin: 10px;
+        padding: 0;
+    }

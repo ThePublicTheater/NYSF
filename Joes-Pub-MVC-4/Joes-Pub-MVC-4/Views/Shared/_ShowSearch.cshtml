@@ -1,0 +1,56 @@
+﻿@Styles.Render("~/Content/Show-Search.css")
+<div id="select" >
+    <form class="show-search" method="get" action="~/Show/Showlist">
+        <div class="freeform">
+            <input class="enter-inp" type="text" name="keyword" value="Enter Keyword" onfocus="if(this.value=='Enter Keyword')this.value='';" onblur="if(this.value=='')this.value='Enter Keyword';">
+            <select class="enter-inp" id="search_genre" name="genre">
+                <option value="">Select Genre</option>
+                <option>Country, Bluegrass, Americana</option>
+                <option>Blues, Gospel</option>
+                <option>Jazz</option>
+                <option>Comedy, Burlesque</option>
+                <option>Theater, Performance</option>
+                <option>Dance, Performance</option>
+                <option>Electronic</option>
+                <option>Hybrid, Experimental</option>
+                <option>Family Friendly</option>
+                <option>Folk, Singer-Songwriter</option>
+                <option>Gay, Lesbian</option>
+                <option>Classical, New Music, Opera</option>
+                <option>Jewish</option>
+                <option>Latin</option>
+                <option>Pop, Rock</option>
+                <option>R&B, Hip-Hop</option>
+                <option>Literary, Spoken Word</option>
+                <option>World</option>
+                <option>Traditional</option>
+                <option>Soul, Funk</option>
+                <option>Reggae</option>
+                <option>Blues</option>
+                <option>Opera</option>
+                <option>Broadway, Musical Theater</option>
+                <option>Variety</option>
+                <option>Cabaret</option>
+                <option>Comedy</option>
+            </select>
+            <input class="enter-inp" id="search_artist" name="artist" type="text" value="Enter Artist" onfocus="if(this.value=='Enter Artist')this.value='';" onblur="if(this.value=='')this.value='Enter Artist';" />
+        </div>
+        <div class="between">
+            <label class="search-lbl">
+                Between:
+            </label>
+        </div>
+        <div class="dates">
+            <input class="enter-date" type="text" name="from_date" id="from_date" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+            <label class="search-lbl2">and</label>
+            <input class="enter-date" type="text" name="to_date" id="to_date" value="@DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd")" />
+            <input src="~/Images/go.gif" class="search-button" type="image" height="20" width="20" />
+        </div>
+    </form>
+</div>
+<script>
+    
+    jQuery("#from_date").datepicker();
+    jQuery("#to_date").datepicker();
+  
+</script>

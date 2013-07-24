@@ -1,0 +1,18 @@
+﻿@{
+if (Request.IsAuthenticated) {
+    <div  class = "AL", style = "color:#000;font-size:12pt;margin:0 20px 0 20px;padding:0;width:410px;">
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @style = "color:#000;font-size:12pt;", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a style = "color:#000;font-size:12pt;" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </div>
+}
+ else {
+    <ul style="list-style:none;margin:0 20px 0 20px;padding:0;width:410px;">
+        <li style="display:inline;">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @style = "color:#000;font-size:12pt;"})</li>
+        <li class="AL" style="display:inline;font-size:12pt">|</li>
+        <li style="display:inline;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @style = "color:#000;font-size:12pt;" })</li>
+    </ul>
+}
+}

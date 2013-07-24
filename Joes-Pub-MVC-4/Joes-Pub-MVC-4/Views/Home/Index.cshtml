@@ -1,0 +1,129 @@
+﻿@section btfeature {
+    @Html.Partial("~/Views/Shared/_ShowSearch.cshtml")
+}
+@Styles.Render("~/Content/Homepage.css")
+<div id="column1">
+    <div class="visual">
+        <div id="slider">
+            @{
+                string[] AltsHR = {
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                };
+            }
+                <img src="~/Images/Homepage_Rotator/1/pic.jpg" border="0" alt="@AltsHR[0]"  width="520" height="480"/>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="radio">
+            <p>
+                Listen to
+                <br />
+                Joes' Pub Radio
+            </p>
+            <a href="~/" onclick="">
+                <img src="~/Images/radio.gif" alt="Not Implemented Here"></a>
+        </div>
+        <div class="mail-form">
+            <a href="http://join.joespub.com/" title="Email updates signup">Subscribe for weekly updates</a>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="col1">
+            <iframe class="Facebook" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fjoespub&amp;send=false&amp;layout=standard&amp;width=250&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=80" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/JoesPub" data-link-color="#ffcc00" data-widget-id="293772034675179520">Tweets by @@JoesPub</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+            <style>
+                .thm-dark .customisable, .thm-dark .customisable:link, .thm-dark .customisable:visited, .thm-dark .customisable:hover, .thm-dark .customisable:active, .thm-dark .customisable-highlight:hover, .thm-dark a:hover .customisable-highlight, .thm-dark a:focus .customisable-highlight {
+                    color: #FC0;
+                }
+            </style>
+        </div>
+        <div class="col2">
+            <div class="chatter-box">
+                <div class="chatter-head">
+                    <h2>JOE'S PUB NEWS</h2>
+                    <a href="~/News/NewsList">Read All News</a>
+                </div>
+                <ul class="chatters">
+                    @{
+                        Joes_Pub_MVC_4.Models.NewsDBcontext NewsDB = new Joes_Pub_MVC_4.Models.NewsDBcontext();
+                        List<Joes_Pub_MVC_4.Models.News> NewsListHome = NewsDB.MasterNewsListing.OrderBy(s => s.ID).ToList();
+                        for (int i = 0; i < 6; i++)
+                        {
+                            if (NewsListHome[i].Important)
+                            {
+                                <li>
+                                    <h4 class="alert">@NewsListHome[i].Title</h4>
+                                    <a href="~/News/Index/@NewsListHome[i].ID">More>></a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <h4>@NewsListHome[i].Title</h4>
+                                    <a href="~/News/Index/@NewsListHome[i].ID">More>></a>
+                                </li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="column2">
+    <h1>This Week at Joe's Pub</h1>
+    <div class="week">
+        <a href="~/Calendar/Calendar" class="week">View All of This Month’s Shows</a>
+        @{
+            List<Nysf.Tessitura.Performance> PerfList = new List<Nysf.Tessitura.Performance>(Nysf.Tessitura.WebClient.GetPerformances(DateTime.Now, DateTime.Now.AddDays(7), Nysf.Types.Organization.JoesPub));
+        }
+        <ul class="playing-list">
+                @for (int i = 0; i < 7; i++)
+                {
+                    <li>
+                        <strong>@DateTime.Now.AddDays(i).ToString("ddd MMM d")</strong>
+                        @{
+                            var CurrDayPerfs = PerfList.Where(s => s.StartTime.Day == DateTime.Now.AddDays(i).Day);
+                            foreach (Nysf.Tessitura.Performance item in CurrDayPerfs)
+                            {
+                                Nysf.Tessitura.Production tProd = Nysf.Tessitura.WebClient.GetProduction(item.ProductionId);
+                                string desc = tProd.Synopsis;
+                                string descformatted = System.Text.RegularExpressions.Regex.Replace(desc, "<.*?>", string.Empty);
+                                if (descformatted.Length > 200)
+                                {
+                                    descformatted = descformatted.Remove(199);
+                                }
+                                descformatted = descformatted + "...";
+                                <span class="showlink">@item.StartTime.ToString("h:mmtt") – <a href="~/Show/Index/@item.ProductionId" class="tt" onmouseover="ToggleCaption('@item.Id')" onmouseout="ToggleCaption('@item.Id')">@item.Name</a></span>                                
+                                if (tProd.IsOnSale && !tProd.IsSoldOut)
+                                {
+                                    <a href="http://tickets.joespub.com/production/?perf=@item.Id" target="_blank" class="buy">BUY</a>
+                                }
+                                else
+                                {
+                                    <a href="#" target="_blank" class="buy" style="background-image: url('../../../../Images/out-button.gif')">OUT</a>
+                                }
+                                <div class="showcaption" id="@item.Id">
+                                    <h4>@tProd.Title</h4>
+                                    <br />
+                                    <p>@descformatted</p>
+                                </div>
+                            }
+                            <script type="text/javascript">
+                                function ToggleCaption(id) {
+                                    jQuery("#" + id).toggle(350);
+                                }
+                            </script>
+                        }
+                    </li>       
+                }
+        </ul>
+        <a href="~/Calendar/Calendar">View All Joe's Pub Shows</a>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery(slider).jqFancyTransitions({ width: 520, height: 480, navigation: true, delay: 10000, strips: 20 });
+    });
+</script>

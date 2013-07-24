@@ -1,0 +1,244 @@
+﻿@section scripts{
+    <script>
+        var numShows = 0;
+        jQuery(document).ready(function () {
+            jQuery(slider).jqFancyTransitions({ width: 850, height: 480, navigation: true, delay: 10000, strips: 20 });
+            var subfrmoff = jQuery(subimg).offset();
+            jQuery(subfrm).offset({ left: (subfrmoff.left), top: (subfrmoff.top + 75) });
+        });
+
+        function toggleShowDesc(id) {
+            jQuery("#" + id).slideToggle(250);
+        }
+
+        function toggleSubscribe() {
+            jQuery(subfrm).slideToggle(250);
+        }
+        function Subscribe() {
+            //subscribe stuff basically a call to the server
+
+            //
+            jQuery(subfrm).slideUp(250);
+        }
+        function showPlaylist() {
+            jQuery(playlistcust).slideToggle(250);
+        }
+    </script>
+    @Styles.Render("~/Content/New_Index.css")
+    @Scripts.Render("~/Scripts/audio/audio.min.js")
+    <script>
+        jQuery(function () {
+            // Setup the player to autoplay the next track
+            jQuery("#playlistcust ol li").first().addClass('playing').siblings().removeClass('playing')
+            jQuery("#startaudio").data("src", jQuery("#playlistcust ol li").first().children().first().data('src'));
+            jQuery("#songname").text(jQuery("#playlistcust ol li").first().children().first().text());
+            var a = audiojs.createAll({
+                trackEnded: function () {
+                    var next = jQuery('ol li.playing').next();
+                    if (!next.length) next = jQuery('ol li').first();
+                    next.addClass('playing').siblings().removeClass('playing');
+                    jQuery("#songname").text(jQuery('a', next).text());
+                    audio.load(jQuery('a', next).attr('data-src'));
+                    audio.play();
+                }
+            });
+
+            // Load in the first track
+            var audio = a[0];
+            first = jQuery('ol a').attr('data-src');
+            jQuery('ol li').first().addClass('playing');
+            audio.load(first);
+
+            // Load in a track on click
+            var playlistoff = jQuery("#audiojs_wrapper0").offset();
+            jQuery(playlistcust).offset({ left: playlistoff.left, top: playlistoff.top + 36 });
+
+            jQuery('ol li').click(function (e) {
+                e.preventDefault();
+                jQuery(this).addClass('playing').siblings().removeClass('playing');
+                jQuery("#songname").text(jQuery('a', this).text());
+                audio.load(jQuery('a', this).attr('data-src'));
+                audio.play();
+            });
+            // Keyboard shortcuts
+            jQuery(document).keydown(function (e) {
+                var unicode = e.charCode ? e.charCode : e.keyCode;
+                // right arrow
+                if (unicode == 39) {
+                    var next = jQuery('li.playing').next();
+                    if (!next.length) next = jQuery('ol li').first();
+                    next.click();
+                    // back arrow
+                } else if (unicode == 37) {
+                    var prev = jQuery('li.playing').prev();
+                    if (!prev.length) prev = jQuery('ol li').last();
+                    prev.click();
+                    // spacebar
+                } else if (unicode == 32) {
+                    audio.playPause();
+                }
+            })
+        });
+    </script>
+}
+<div class="sliderHolder">
+    <div id="slider">
+        @{
+            #region
+            string[] AltsHR = {
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",  
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time.",
+                    "Never Sleep Alone - This is a Caption for the Images almost anything can be put here and it will auto scale the content for a proper fit. Also the images can link to things, pretty much anything from a webpage to a video this is completely database driven as well once the CMS has been uploaded you will be able to change all of the features of this slider. A few main ones being Timings, This caption, the images and how many are to be listed at any given time."
+                };
+            #endregion
+        }
+        @for (int i = 1; i < 14; i++)
+        {
+            <img src="~/Images/Homepage_Rotator/@i/pic.jpg" border="0" alt="@AltsHR[i - 1]"  width="520" height="480"/>
+        }
+    </div>
+</div>
+<div id="mid">
+    <div class="back">
+        <div class="miditem" id="item1">
+            <h2 style="margin: 5px; color: #FC0;" id="songname"></h2>
+            <audio id="startaudio" preload="auto" src=""></audio>
+            <div class="playlist">
+                <map name="playerActions">
+                    <area shape="rect" coords="0,0,25,36" onclick="showPlaylist()" />
+                    <area shape="rect" coords="26,0,60,36" onclick="popOut()" />
+                </map>
+                <img src="~/Images/mplayerbt.png" height="36" width="50" alt="Open Playlist/Pop Out" usemap="playerActions" />
+            </div>
+        </div>
+        <div class="miditem" id="item2">
+            <img id="subimg" src="~/Images/Subscribe-Image.png" height="75" width="250" alt="Subscribe To Our News Letter" onclick="toggleSubscribe();" />
+        </div>
+    </div>
+</div>
+<div id="curweek">
+    <div class="back">
+        <div class="upcoming">
+            <img src="~/Images/bg-h1.png" />
+        </div>
+        @{
+            List<Nysf.Tessitura.Performance> PerfList = new List<Nysf.Tessitura.Performance>(Nysf.Tessitura.WebClient.GetPerformances(DateTime.Now, DateTime.Now.AddDays(7), Nysf.Types.Organization.JoesPub));
+            for (int i = 0; i < 7; i++)
+            {
+                var res = PerfList.Where(s => s.StartTime.Date == DateTime.Now.AddDays(i).Date);
+                <div class="day" id="day @i">
+                <h1>@DateTime.Now.AddDays(i).ToString("ddd MMM d")</h1>
+                @foreach (var item in res)
+                {
+                    Nysf.Tessitura.Production res2 = Nysf.Tessitura.WebClient.GetProduction(item.ProductionId);
+                    if (res2 != null)
+                    {
+                        <h2><a class="show" href="~/Show/Index/@item.ProductionId" onmouseover="toggleShowDesc('@item.ProductionId');" onmouseout="toggleShowDesc('@item.ProductionId');">@item.Name</a> - @item.StartTime.ToString("h:mmtt") 
+                            @if (res2.IsOnSale && !res2.IsSoldOut)
+                            {
+                                <a href="http://tickets.joespub.com/production/?perf=@item.Id" target="_blank" class="buy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            }
+                            else
+                            {
+                                <a href="#" target="_blank" class="buy" style="background-image: url('../../../../Images/out-button.gif')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            }
+                        </h2>
+                        string desc;
+                        if (res2.Synopsis.Length > 400)
+                        {
+                            char[] tempca = new char[400];
+                            res2.Synopsis.CopyTo(0, tempca, 0, 400);
+                            desc = new string(tempca);
+                            desc += "...";
+                        }
+                        else
+                        {
+                            desc = res2.Synopsis + "...";
+                        }
+                        desc = System.Text.RegularExpressions.Regex.Replace(desc, "<.*?>", string.Empty);
+                        desc = System.Text.RegularExpressions.Regex.Replace(desc, "&.*?;", string.Empty);
+                        <div class="showdesc" id="@res2.Id">
+                           @desc                        </div>
+                    }
+                }
+            </div>
+            }
+        }
+    </div>
+</div>
+<div id="feeds">
+    <div class="back">
+        <div class="feed" id="feedid1">
+        <a class="twitter-timeline" href="https://twitter.com/JoesPub" data-widget-id="293772034675179520">Tweets by @@JoesPub</a>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+            <style>
+                .thm-dark .customisable, .thm-dark .customisable:link, .thm-dark .customisable:visited, .thm-dark .customisable:hover, .thm-dark .customisable:active, .thm-dark .customisable-highlight:hover, .thm-dark a:hover .customisable-highlight, .thm-dark a:focus .customisable-highlight {
+                    color: #FC0;
+                }
+            </style>
+        </div>
+        <div class="feed" id="feedid2">
+            <div class="chatter-head">
+                <img src="~/Images/jp-news.png" />
+                <a href="~/News/NewsList">Read All News</a>
+            </div>
+            <ul class="chatters">
+                @{
+                    Joes_Pub_MVC_4.Models.NewsDBcontext NewsDB = new Joes_Pub_MVC_4.Models.NewsDBcontext();
+                    List<Joes_Pub_MVC_4.Models.News> NewsListHome = NewsDB.MasterNewsListing.OrderBy(s => s.ID).ToList();
+                    for (int i = 0; i < 9; i++)
+                    {
+                        if (NewsListHome[i].Important)
+                        {
+                    <li>
+                        <h4 class="alert">@NewsListHome[i].Title</h4>
+                        <a href="~/News/Index/@NewsListHome[i].ID">More>></a>
+                    </li>
+                        }
+                        else
+                        {
+                    <li>
+                        <h4>@NewsListHome[i].Title</h4>
+                        <a href="~/News/Index/@NewsListHome[i].ID">More>></a>
+                    </li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Subscribe form -->
+<div id="subfrm">
+    <h3>Email News Letter Subscription</h3>
+    <p>Sign up for our weekly News Letter and stay up to date on everything Joes' Pub.</p>
+    <input type="text" name="email" id="email" value="Please Enter Your Email" onfocus="if(this.value == 'Please Enter Your Email'){ this.value = ''; }" onblur="if(this.value == ''){this.value = 'Please Enter Your Email';}" />
+    <input type="button" name="subscribe" id="subscribe" value="Subscribe" onclick="Subscribe();" />
+</div>
+<!-- play list form -->
+<div id="playlistcust">
+    <ol>
+        @{
+            List<Joes_Pub_MVC_4.Models.ArtistMp3s> artSongs = Joes_Pub_MVC_4.Models.Utilities.ArtDB.MasterArtistMp3List.ToList();
+            List<Joes_Pub_MVC_4.Models.ShowMp3s> showSongs = Joes_Pub_MVC_4.Models.Utilities.ShowDB.MasterShowSongList.ToList();
+            foreach (var item in artSongs)
+            {
+                <li><a href="#" data-src="@Url.Content("~/artists/" + item.ArtistID + "/mp3s/" + item.FileName)">@item.Name</a></li>
+            }
+            foreach (var item in showSongs)
+            {
+                <li><a href="#" data-src="@Url.Content("~/shows/" + item.ShowID + "/mp3s/" + item.Filename)">@item.Name</a></li>
+            }
+        }
+    </ol>
+</div>

@@ -1,0 +1,61 @@
+﻿@model Joes_Pub_MVC_4.Models.Comment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comment</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Anonymous)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Anonymous)
+            @Html.ValidationMessageFor(model => model.Anonymous)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostDate)
+            @Html.ValidationMessageFor(model => model.PostDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Message)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

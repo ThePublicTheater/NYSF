@@ -1,0 +1,40 @@
+﻿@model Joes_Pub_MVC_4.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1 style="margin-left:5px">Details</h1>
+
+<fieldset>
+    <legend>Comment</legend>
+
+    <div class="display-label" style="margin-left:10px;">
+        <h2>Name</h2>
+    </div>
+    <div class="display-field" style="margin-left:20px;">
+        <h3>@Model.Name</h3>
+    </div>
+
+    <div class="display-label" style="margin-left:10px;">
+        <h2>Post Date</h2>
+    </div>
+    <div class="display-field" style="margin-left:20px;">
+        <h3>@Model.PostDate</h3>
+    </div>
+
+    <div class="display-label" style="margin-left:10px;">
+         <h2>Message</h2>
+    </div>
+    <div class="display-field" style="margin-left:20px;">
+        <h3>@Model.Message</h3>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @{
+        Uri tempUri = Request.UrlReferrer;
+        string tempString = tempUri.AbsolutePath;
+        <a href="@tempString" class="ALC"> Back</a>
+    }
+</p>

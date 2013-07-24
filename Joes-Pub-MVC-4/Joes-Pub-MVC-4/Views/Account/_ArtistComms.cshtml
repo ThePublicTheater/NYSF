@@ -1,0 +1,37 @@
+﻿@model IPagedList<Joes_Pub_MVC_4.Models.ArtistComment>
+<ul style="list-style:none;">
+    @foreach (var item in Model)
+    {
+        <li>
+            <h2>@item.Title</h2>
+            <p>@item.Message</p>
+            <p>Post Date: @item.PostDate</p>
+            <hr />
+        </li>
+    }
+</ul>
+@using (Ajax.BeginForm("ChangeACpage", null, new AjaxOptions { UpdateTargetId = "ac" }, new { @id="acform"}))
+{
+    <input type="hidden" id="actopage" name="topage" />
+    <div class="pagenav">
+        @if (!Model.IsFirstPage)
+        {
+            int p = Model.PageNumber - 1;
+            <input class="ssas" type="button" onclick="setpageac(1);" value="<< First" />
+            <input class="ssas" type="button" onclick="setpageac(this.name);" value="< Previous" name="@p"/>
+        }
+        <h4 class="ssas">@Model.PageNumber of @Model.PageCount</h4>
+        @if (!Model.IsLastPage)
+        {
+            int n = Model.PageNumber + 1;
+            <input class="ssas" type="button" onclick="setpageac(this.name)" value="Next >" name="@n"/>
+            <input class="ssas" type="button" onclick="setpageac(this.name)" value="Last >>" name="@Model.PageCount"/>
+        }
+    </div>
+}
+<script type="text/javascript">
+    function setpageac(page) {
+        jQuery(actopage).val(page);
+        jQuery("#acform").submit();
+    }
+</script>

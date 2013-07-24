@@ -1,0 +1,44 @@
+﻿@model IPagedList<Joes_Pub_MVC_4.Models.SPViewModel>
+<span style="background:black;color:#FC0;font-size:1.5em;margin:5px 0;display:block; text-align:center;">Staff Picks</span>
+<div id="listingnav">
+    @using (Ajax.BeginForm("ChangeSPpage", null, new AjaxOptions { UpdateTargetId = "column1" }, new { @id = "spform" }))
+    {
+        <input type="hidden" id="sptopage" name="topage" />
+        <div class="pagenav">
+            @if (!Model.IsFirstPage)
+            {
+                int p = Model.PageNumber - 1;
+                <input class="ssas" type="button" onclick="setpagesp(1);" value="<< First" />
+                <input class="ssas" type="button" onclick="setpagesp(this.name);" value="< Previous" name="@p"/>
+            }
+            <h4 class="ssas" style="padding:0;">@Model.PageNumber of @Model.PageCount</h4>
+            @if (!Model.IsLastPage)
+            {
+                int n = Model.PageNumber + 1;
+                <input class="ssas" type="button" onclick="setpagesp(this.name)" value="Next >" name="@n"/>
+                <input class="ssas" type="button" onclick="setpagesp(this.name)" value="Last >>" name="@Model.PageCount"/>
+            }
+        </div>
+    }
+    <script type="text/javascript">
+        function setpagesp(page) {
+            jQuery(sptopage).val(page);
+            jQuery("#spform").submit();
+        }
+</script>
+</div>
+<span style="background:black;color:#FC0;font-size:1.5em;margin:5px 0 0 0;display:block; text-align:center;">&nbsp;</span>
+<div id="listing">
+    <ul id="listcont">
+        @foreach (var item in Model)
+        {
+            <li class="item">
+                <img src="~/Images/temp.png"  height="150" width="450"/>
+                <h2><a href="~/StaffPicks/Pick/@item._Pick.ID">@item._Pick.Title</a></h2>
+                <h3 style="text-align:left;">@item._Pick.SubTitle</h3>
+                <p style="text-align:left;">@item._Pick.Caption</p>
+                <hr />
+            </li>
+        }
+    </ul>
+</div>

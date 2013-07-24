@@ -1,0 +1,52 @@
+﻿@model Joes_Pub_MVC_4.Models.Comment
+
+@{
+    ViewBag.Title = "Joe's Pub - Create Comment";
+    Joes_Pub_MVC_4.Models.ProfilesDBContext ProfileDB = new Joes_Pub_MVC_4.Models.ProfilesDBContext();
+    List<Joes_Pub_MVC_4.Models.Profiles> ProfileList = ProfileDB.ProfileList.ToList();
+    var CurUserProfile = ProfileList.Where(s => s.UserName == User.Identity.Name);
+    Joes_Pub_MVC_4.Models.Profiles CurUser = CurUserProfile.ElementAt(0);
+    }
+
+<h2 style="margin-left:20px">Create a New Comment</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comment</legend>
+        <input type="text" id="UserID" name="UserID" value="@CurUser.ID" style="visibility:hidden;"/>
+        <input type="text" id="Name" name="Name" value="@CurUser.FirstName @CurUser.LastName"  style="visibility:hidden;"/>
+        <input type="checkbox" id="Anonymous" name="Anonymous" style="visibility:hidden;"/>
+        <div class="editor-label" style="margin-left:20px">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field" style="margin-left:20px">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label" style="margin-left:20px">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field" style="margin-left:20px">
+            <textarea style="height:300px;width:850px;max-height:300px;max-width:850px;min-height:300px;min-width:850px"id="Message" name="Message"></textarea>
+            <span class="field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true"></span>
+        </div>
+
+        <p>
+
+            <input type="submit" value="Create" style="margin-left:30px"/>
+            @{
+                
+                Uri tempUri = Request.UrlReferrer;
+                string tempString = tempUri.AbsolutePath;
+                <a href="@tempString" style="text-decoration:none;font-weight:900; font-size:11pt; ">Back</a>
+            
+            }
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,332 @@
+﻿#column1 {
+    position: relative;
+    display: inline-block;
+    width: 540px;
+    float: left;
+    margin: 0 0 20px 20px;
+}
+
+    #column1 div.visual {
+        position: relative;
+        float: left;
+        width: 520px;
+        height: auto;
+        border: 10px solid #191809;
+        margin: 0;
+        padding: 0;
+        background: #000;
+    }
+
+        #column1 div.visual img {
+            float: left;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+    #column1 div.holder {
+        display: inline-block;
+        width: 540px;
+        margin: 5px 0 5px 0;
+        overflow: hidden;
+    }
+
+    #column1 div.radio {
+        display: inline;
+        float: left;
+        background: #191809;
+        color: #ffcc00;
+        font-size: 14px;
+    }
+
+        #column1 div.radio p {
+            display: inline;
+            float: left;
+            margin: 9px 0 0 11px;
+        }
+
+        #column1 div.radio a {
+            float: right;
+            overflow: hidden;
+            width: 60px;
+            height: 50px;
+            background: #600 url(../../../../Images/radio.gif) no-repeat 50% 50%;
+            text-indent: -999px;
+        }
+
+        #column1 div.radio img {
+            float: none;
+        }
+
+    #column1 div.mail-form {
+        float: left;
+        overflow: hidden;
+        margin: 0 0 0 50px;
+        height: 30px;
+        width: 300px;
+        padding: 10px;
+        background: #191809;
+        color: #ffcc00;
+        font-size: 15px;
+        vertical-align: central;
+    }
+
+        #column1 div.mail-form label {
+            display: block;
+            margin: 5px 0 3px 10px;
+            text-transform: uppercase;
+            word-spacing: 1px;
+            letter-spacing: -1px;
+        }
+
+        #column1 div.mail-form input {
+            float: left;
+        }
+
+        #column1 div.mail-form .text {
+            margin: 0 6px 0 10px;
+            padding: 0 4px;
+            width: 213px;
+            height: 18px;
+            border: none;
+            color: #333;
+        }
+
+        #column1 div.mail-form a {
+            color: #fc0;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+    #column1 div.col1 {
+        display: inline;
+        float: left;
+        margin: 0 5px 0 0;
+        padding: 5px 0 5px 0;
+        border-bottom: 20px solid #191809;
+        height: 400px;
+    }
+
+        #column1 div.col1 .Facebook {
+            border: none;
+            overflow: hidden;
+            display: block;
+            height: 35px;
+        }
+
+    #column1 div.col2 {
+        display: inline;
+        float: right;
+        margin: 0 0 0 5px;
+        padding: 5px 0 5px 0;
+        border-bottom: 20px solid #191809;
+    }
+
+        #column1 div.col2 div.chatter-box {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }        
+
+        #column1 div.col2 div.chatter-head a {
+            color: #600;
+            text-align: left;
+            font: 12px Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            line-height: 30px;
+        }
+
+        #column1 div.col2 div.chatter-head h2 {
+            margin: 0;
+            padding: 3px 5px 3px 5px;
+            color: #FC0;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 15pt;
+            background-color:#191809;
+        }
+
+        #column1 div.col2 ul.chatters {
+            float: left;
+            width: 230px;
+            list-style: none;
+            padding: 0;
+            margin: 11px 0;
+        }
+            #column1 div.col2 ul.chatters a {
+                color:#600;
+                margin:5px 0 5px 0;
+            }
+        
+            #column1 div.col2 ul.chatters li {
+                float: left;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                width: 230px;
+                color: #330000;
+            }
+
+            #column1 div.col2 ul.chatters h4 {
+                margin:0;
+                padding:0;
+            }
+            
+            #column1 div.col2 ul.chatters h4.alert {
+                color:red;
+            }
+            
+
+#column2 {
+    display: inline-block;
+    float: right;
+    margin: 0 20px 20px 0;
+    padding: 0 0 0 0;
+    border-bottom: 40px solid #191809;
+}
+
+    #column2 h1 {
+        display: block;
+        overflow: hidden;
+        margin: 0 0 5px 0;
+        height: 99px;
+        background: url(../../../../Images/bg-h1.gif);
+        text-indent: -9999px;
+    }
+
+    #column2 a {
+        color: #600;
+        font-weight: bold;
+    }
+
+        #column2 a:hover {
+            text-decoration: none;
+        }
+
+    #column2 div.week {
+        float: left;
+        margin: 0 0 15px 0;
+        width: 300px;
+        text-align: left;
+    }
+
+    #column2 a.week {
+        color: #330000;
+        display: block;
+    }
+
+    #column2 h3 {
+        margin: 11px 0;
+        padding: 5px 0 3px 10px;
+        background: #191809;
+        color: #ffcc00;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+        #column2 h3.last {
+            padding: 5px 0;
+            text-transform: none;
+        }
+
+        #column2 h3 a {
+            padding: 0 0 0 7px;
+            color: #ffcc00;
+        }
+
+    #column2 p {
+        margin: 0;
+        color: #600;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+        #column2 p span {
+            color: #300;
+            text-transform: none;
+            font-weight: normal;
+        }
+
+
+    #column2 ul.playing-list {
+        display: block;
+        margin: 0 0 0 0;
+        padding: 0;
+        border-bottom: 10px solid #191809;
+        list-style: none;
+        text-align: left;
+    }
+
+        #column2 ul.playing-list li {
+            float: left;
+            padding: 4px 0 0 0;
+            width: 300px;
+        }
+
+            #column2 ul.playing-list li strong {
+                float: left;
+                margin-bottom: 5px;
+                padding: 10px 0px 0px 10px;
+                width: 290px;
+                height: 20px;
+                background: #191809;
+                color: #FFCC00;
+            }
+
+            #column2 ul.playing-list li span.showlink {
+                float: left;
+                margin: 0 0 5px 5px;
+                padding-left: 55px;
+                width: 200px;
+                color: #330000;
+                text-indent: -55px;
+                font-weight: bold;
+            }
+
+            #column2 ul.playing-list li div.showcaption {
+                display:none;
+                margin:10px;
+                height:150px;
+                padding:0;
+            }            
+                #column2 ul.playing-list li div.showcaption h4 {
+                    display:inline-block;
+                    float:left;
+                    margin:0;
+                    padding:0;
+                    background:none;
+                    font:bold 12px arial, verdana;
+                }
+                #column2 ul.playing-list li div.showcaption p {
+                    display:inline-block;
+                    float:left;
+                    margin:0;
+                    padding:0;
+                    background:none;
+                    font:normal 10px arial, verdana;
+                }                                    
+
+            #column2 ul.playing-list li span a {
+                color: #660000;
+            }
+
+            #column2 ul.playing-list li a.buy {
+                float: right;
+                overflow: hidden;
+                margin: 0 0 0 0;
+                width: 40px;
+                height: 12px;
+                background: url(../images/buy-button.gif) no-repeat 0 0;
+                text-indent: -9999px;
+            }
+
+            #column2 ul.playing-list li a.buy-not-yet {
+                float: left;
+                overflow: hidden;
+                margin: 4px 0 0 0;
+                padding: 0;
+                width: 40px;
+                height: 15px;
+                background: url(../../joespub/images/notyet-button.gif) no-repeat 0 0;
+                text-indent: -9999px;
+            }

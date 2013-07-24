@@ -1,0 +1,207 @@
+﻿@model Joes_Pub_MVC_4.Models.CalendarViewModel
+@{
+    int n = 0;
+}
+<div class="actions">
+    <div class="jump">
+        @using (Ajax.BeginForm("CalendarGet", null, new AjaxOptions { UpdateTargetId = "cal", HttpMethod = "Post" }, new { @id = "jumpcal" }))
+        {
+            <input id="jumper" name="Date" type="text" value="@Model.SelectedMonth.ToString("MMMM yyyy")" />
+        }
+        <script type="text/javascript">
+            $(jumper).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'MM yy',
+                onClose: function (dateText, inst) {
+                    var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, month, 1));
+                    //$('#cal').replaceWith("<div id='cal'><h3 class='loadinghead'>Loading please wait...</h3><img src='../../../Images/ajax-loader.gif' class='loading' height='16' width='16' /></div>");
+                    $("#jumpcal").submit();
+                }
+            });
+        </script>
+        <style>
+            .ui-datepicker-calendar {
+                display: none;
+            }
+        </style>
+    </div>
+    <div class="step">
+        @using (Ajax.BeginForm("CalendarGet", null, new AjaxOptions { UpdateTargetId = "cal", HttpMethod = "Post" }, new { @id = "stepcal" }))
+        {
+            <map name="calActions">
+                <area shape="rect" coords="0,0,73,27" onclick="step('@Model.SelectedMonth.AddMonths(-1).ToString("M/dd/yyyy h:mm:ss tt")')" />
+                <area shape="rect" coords="74,0,173,27" onclick="step('@Model.Today.ToString("M/dd/yyyy h:mm:ss tt")')" />
+                <area shape="rect" coords="174,0,237,27" onclick="step('@Model.SelectedMonth.AddMonths(1).ToString("M/dd/yyyy h:mm:ss tt")')" />
+            </map>
+            <input type="hidden" name="Date" id="datecont" value="" />
+            <img src="../../../../Images/datebar-actions.jpg" alt="Step" usemap="#calActions" />
+        }
+    </div>
+</div>
+<div class="partcal">
+    <table class="calendar-inside">
+        <tbody>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            @for (int i = 0; i < 6; i++)
+            {
+                if (n == 0)
+                {
+                <tr>
+                    @if (Model.FirstDay != 0)
+                    {
+                        <td colspan="@Model.FirstDay">&nbsp;</td>
+                    }
+                    @for (int j = 0; j < 7 - Model.FirstDay; j++)
+                    {
+                        <td class="day">
+                            @if (Model.CurDay == Model.Today.Day && Model.SelectedMonth.Month == Model.Today.Month)
+                            {
+                                <div class="today">@Model.CurDay</div>
+                            }
+                            else
+                            {
+                                <div class="day_label">@Model.CurDay</div>
+                            }
+                            <ul class="showlist">
+                                @if (Model.pastshows != null && Model.pastshows.Count() != 0 && Model.WorkingDate < Model.Today)
+                                {
+                                    var res = Model.pastshows.Where(s => s.StartTime.Day == Model.CurDay );
+                                    foreach (var item in res)
+                                    {
+                                    <li>
+                                        @Html.ActionLink(item.Name, "Show", "Home", new { id = @item.ProductionId }, new { @class = "ALCAL" })
+                                        <div class="time">@item.StartTime.ToString("h:mm tt")</div>
+                                    </li>
+                                    }
+                                }
+                                else if (Model.perfs != null && Model.perfs.Count() != 0)
+                                {
+                                    var res = Model.perfs.Where(s => s.StartTime.Day == Model.CurDay && s.StartTime.Month==DateTime.Now.Month).OrderBy(s => s.StartTime);
+                                    foreach (var item in res)
+                                    {
+                                        Nysf.Tessitura.Production Prod = Nysf.Tessitura.WebClient.GetProduction(item.ProductionId);
+                                    <li>
+                                        @Html.ActionLink(item.Name, "Show", "Home", new { id = @item.ProductionId }, new { @class = "ALCAL" })
+                                        <div class="time">@item.StartTime.ToString("h:mm tt")</div>
+                                        @if (Prod != null)
+                                        {
+                                            if (Prod.IsOnSale && !Prod.IsSoldOut)
+                                            {
+                                            <a href="http://tickets.joespub.com/production/?perf=@item.Id" target="_blank" title="Buy Tix">
+                                                <img src="~/Images/buy-button.gif" alt="Buy Tix"></a> 
+                                            }
+                                            else if (Prod.IsSoldOut)
+                                            {
+                                            <a onclick="" title="Sold Out">
+                                                <img src="~/Images/out-button.gif" alt="Sold Out"></a>
+                                            }
+                                        }
+                                    </li>
+                                    }
+                                }
+                            </ul>
+                        </td>
+                                Model.CurDay++;
+                                Model.WorkingDate.AddDays(1);
+                                n = 1;
+                    }
+                </tr>
+                }
+                else if (n > 0)
+                {
+                <tr>
+                    @for (int j = 0; j < 7; j++)
+                    {
+                        if (Model.CurDay <= Model.NumDays)
+                        {
+                        <td class="day">
+                            @if (Model.CurDay == Model.Today.Day)
+                            {
+                                <div class="today">@Model.CurDay</div>
+                            }
+                            else
+                            {
+                                <div class="day_label">@Model.CurDay</div>
+                            }
+                            <ul class="showlist">
+                                @if (Model.pastshows != null && Model.pastshows.Count() != 0 && Model.WorkingDate < Model.Today)
+                                {
+                                     var res = Model.pastshows.Where(s => s.StartTime.Day == Model.CurDay).OrderBy(s => s.StartTime);
+                                    foreach (var item in res)
+                                    {
+                                    <li>
+                                        @Html.ActionLink(item.Name, "Show", "Home", new { id = @item.ProductionId }, new { @class = "ALCAL" })
+                                        <div class="time">@item.StartTime.ToString("h:mm tt")</div>
+                                    </li>
+                                    }
+                                }
+                                else if (Model.perfs != null && Model.perfs.Count() != 0)
+                                {
+                                    var res = Model.perfs.Where(s => s.StartTime.Day == Model.CurDay).OrderBy(s => s.StartTime);
+                                    foreach (var item in res)
+                                    {
+                                        Nysf.Tessitura.Production Prod = Nysf.Tessitura.WebClient.GetProduction(item.ProductionId);
+                                    <li>
+                                        @Html.ActionLink(item.Name, "Show", "Home", new { id = @item.ProductionId }, new { @class = "ALCAL" })
+                                        <div class="time">@item.StartTime.ToString("h:mm tt")</div>
+                                        @if (Prod != null)
+                                        {
+                                            if (Prod.IsOnSale && !Prod.IsSoldOut)
+                                            {
+                                            <a href="http://tickets.joespub.com/production/?perf=@item.Id" target="_blank" title="Buy Tix">
+                                                <img src="~/Images/buy-button.gif" alt="Buy Tix"></a> 
+                                            }
+                                            else if (Prod.IsSoldOut)
+                                            {
+                                            <a onclick="" title="Sold Out">
+                                                <img src="~/Images/out-button.gif" alt="Sold Out"></a>
+                                            }
+                                        }
+                                    </li>
+                                    }
+                                }
+                            </ul>
+                        </td>
+                                Model.CurDay++;
+                                Model.WorkingDate.AddDays(1);
+                        }
+                        else
+                        {
+                            int Trail = 7 - i;
+                        <td colspan="@Trail">&nbsp;</td>
+                        }
+                    }
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

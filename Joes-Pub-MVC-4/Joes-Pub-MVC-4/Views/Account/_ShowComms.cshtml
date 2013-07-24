@@ -1,0 +1,37 @@
+﻿@model IPagedList<Joes_Pub_MVC_4.Models.ShowComment>
+<ul style="list-style:none;">
+    @foreach (var item in Model)
+    {
+        <li>
+            <h2>@item.Title</h2>
+            <p>@item.Message</p>
+            <p>Post Date: @item.PostDate</p>
+            <hr />
+        </li>
+    }
+</ul>
+@using (Ajax.BeginForm("ChangeSCpage", null, new AjaxOptions { UpdateTargetId = "sc" }, new { @id="scform"}))
+{
+    <input type="hidden" id="sctopage" name="topage" />
+    <div class="pagenav">
+        @if (!Model.IsFirstPage)
+        {
+            int p = Model.PageNumber - 1;
+            <input class="ssas" type="button" onclick="setpagesc(1);" value="<< First" />
+            <input class="ssas" type="button" onclick="setpagesc(this.name);" value="< Previous" name="@p"/>
+        }
+        <h4 class="ssas">@Model.PageNumber of @Model.PageCount</h4>
+        @if (!Model.IsLastPage)
+        {
+            int n = Model.PageNumber + 1;
+            <input class="ssas" type="button" onclick="setpagesc(this.name)" value="Next >" name="@n"/>
+            <input class="ssas" type="button" onclick="setpagesc(this.name)" value="Last >>" name="@Model.PageCount"/>
+        }
+    </div>
+}
+<script type="text/javascript">
+    function setpagesc(page) {
+        jQuery(sctopage).val(page);
+        jQuery("#scform").submit();
+    }
+</script>

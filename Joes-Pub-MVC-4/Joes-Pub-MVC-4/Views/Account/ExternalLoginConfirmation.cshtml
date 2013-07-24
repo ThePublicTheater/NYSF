@@ -1,0 +1,107 @@
+﻿@model Joes_Pub_MVC_4.Models.RegisterExternalLoginModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title" style="margin:0 5px">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
+</hgroup>
+<style>
+</style>
+<div style="margin:0 auto;padding:0;width:880px">
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Association Form</legend>
+        <p>
+            You've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
+            Please enter your information for this site below and click the Confirm button to finish
+            logging in.
+        </p>
+        <div style="display:inline;float:left;width:450px;margin:0;padding:0;">
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.NewPassword)
+                    @Html.PasswordFor(m => m.NewPassword)
+                    @Html.ValidationMessageFor(m => m.NewPassword)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Fname)
+                    @Html.TextBoxFor(m => m.Fname)
+                    @Html.ValidationMessageFor(m => m.Fname)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Lname)
+                    @Html.TextBoxFor(m => m.Lname)
+                    @Html.ValidationMessageFor(m => m.Lname)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Email)
+                    <input type="checkbox" id="Email" value="true" name="Email" />
+                    <input type="hidden" name="Email" value="false" />
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Nymag)
+                    <input type="checkbox" id="Nymag" value="true" name="Nymag" />
+                    <input type="hidden" name="Nymag" value="false" />
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Bio)
+                    <textarea name="Bio" style="resize: none; margin: 0 10px; height: 250px; width: 400px;" id="Bio"></textarea>
+                </li>
+            </ol>
+        </div>
+        <div style="display: inline; float: left; width: 400px; margin:0;padding:0;">
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.genrestring)
+                    <h4>We'll Contact you weekly by email to let you know when we book shows that match your selections.</h4>
+                </li>
+                @{
+                    Joes_Pub_MVC_4.Models.GenresDBContext GenDB = new Joes_Pub_MVC_4.Models.GenresDBContext();
+                    var Genlist = GenDB.GenreList.OrderBy(s => s.JoomlaID);
+                    foreach (var item in GenDB.GenreList)
+                    {
+                        <li style="margin: 0 0 0 5px;">
+                            <input class="gen" type="checkbox" name="@item.JoomlaID" id="@item.JoomlaID" style="display:inline;" onclick="getGenres()"/>
+                            @item.Name
+                        </li>
+                    }
+                    <script>
+                        function getGenres() {
+                            var h = jQuery(".gen:checked").map(function () { return this.name; }).get().join(';');
+                            jQuery(genrestring).val(h);
+                        }
+                    </script>
+                }
+            </ol>
+        </div>
+        @Html.HiddenFor(m => m.ExternalLoginData)
+        <input type="hidden" name="genrestring" id="genrestring" />
+        <input type="button" value="Cancel" style="display:inline;float:right;" onclick="cancel()"/><input type="submit" value="Register" style="display:inline;float:right;"/>
+        <script type="text/javascript">
+            function cancel() {
+                window.location.href = '@(Url.Content("/Account/Login"))';
+            }
+        </script>
+    </fieldset>
+}
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,116 @@
+﻿@model Joes_Pub_MVC_4.Models.NewsViewModel
+@{
+    ViewBag.Title = "News";
+}
+@section tfeature {
+    @Html.Partial("~/Views/Shared/_ShowSearch.cshtml")
+}
+<h2 style="margin:0 20px;">@Model._news.Title</h2>
+<div style="text-align:center;font-size:10pt;">
+    @(new HtmlString(Model._news.IntroText))
+</div>
+<table id="comlist" style="width: 900px; margin: 0 auto; text-align: left">
+    <tr>
+        <td style="background-color: black; height: auto">
+            <h2 style="color: #FC0; font-size: 2.5em; margin: 0; padding-left: 15px; vertical-align: central">Comments</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul style="list-style: none; margin: 0 auto">
+                @{
+                    if (Model._comments.Count == 0)
+                    {
+                        <li>
+                            <p>No comments found</p>
+                        </li>
+                    }
+                    else
+                    {
+                        for (int i = 0; i < Model._comments.Count; i++)
+                        {
+                            if (i != Model._comments.Count - 1)
+                            {
+                                <li>
+                                    <h3 style="padding-left: 5px; font-size: 13pt; font-weight: bold;">@Model._comments[i].Title</h3>
+                                    <p style="word-wrap: break-word; padding-left: 25px; font-size: 10pt">
+                                        @Model._comments[i].Message
+                                    </p>
+                                    <h5 style="padding-left: 5px; font-size: 9pt; font-weight: normal;">Post-Date: @Model._comments[i].PostDate</h5>
+                                    <hr style="margin: 0 auto" />
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <h3 style="padding-left: 5px; font-size: 13pt; font-weight: bold;">@Model._comments[i].Title</h3>
+                                    <p style="word-wrap: break-word; padding-left: 25px; font-size: 10pt">
+                                        @Model._comments[i].Message
+                                    </p>
+                                    <h5 style="padding-left: 5px; padding-bottom: 10px; font-size: 9pt; font-weight: normal;">Post-Date: @Model._comments[i].PostDate</h5>
+                                </li>
+                            }
+                        }
+                    }
+                }
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: black; height: auto;">
+            @{
+                if (Request.IsAuthenticated)
+                {
+                <h2 style="color: #FC0; font-size: 2.5em; margin: 0; padding-left: 15px; vertical-align: central">Post a Comment</h2>
+                }
+                else
+                {
+                    <ul style="list-style: none;">
+                        <li class="ALC" style="display: inline;">Please </li>
+                        <li style="display: inline;">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                        <li class="ALC" style="display: inline;">or </li>
+                        <li style="display: inline;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                        <li class="ALC" style="display: inline;">to post a comment! </li>
+                    </ul>
+                    <style>
+                        li.ALC {
+                            text-decoration: none;
+                            color: #FC0;
+                            font-size: 2.5em;
+                            margin: 0;
+                            padding: 0;
+                            vertical-align: central;
+                        }
+                    </style>
+                }
+            }
+        </td>
+    </tr>
+    @if (Request.IsAuthenticated)
+    {
+        <tr>
+            <td>
+                @using (Ajax.BeginForm("UpdateNewsComment", new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "comlist" }))
+                {
+                    <fieldset style="margin-left: 20px">
+                        <legend>AddComment
+                        </legend>
+                        <h4>Title</h4>
+                        <input type="text" name="Title" id="Title" />
+                        <textarea style="width: 650px; height: 350px; resize: none;" name="Message" id="Message">Please type your message here.</textarea>
+                        <br />
+                        @{
+                        string user = HttpContext.Current.User.Identity.Name;
+                        Joes_Pub_MVC_4.Models.ProfilesDBContext ProfileDB = new Joes_Pub_MVC_4.Models.ProfilesDBContext();
+                        List<Joes_Pub_MVC_4.Models.Profiles> profilesearch = ProfileDB.ProfileList.Where(s => s.UserName == user).ToList();
+                        ViewBag.User_ID = profilesearch[0].ID;
+                        }
+                        <input type="hidden" value="@profilesearch[0].ID" name="UserID" id="UserID" />
+                        <input type="hidden" value="@Model._news.ID" name="NewsID" id="NewsID" />
+                        <input type="submit" value="Post" style="margin-left: 10px;" />
+                    </fieldset>
+                }
+            </td>
+        </tr>
+    }
+</table>

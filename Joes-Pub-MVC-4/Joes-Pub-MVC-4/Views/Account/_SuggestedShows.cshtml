@@ -1,0 +1,57 @@
+﻿@model IPagedList<Joes_Pub_MVC_4.Models.Show>
+<h3 class="ss">Suggested Shows</h3>
+<div id="acc">
+    @foreach (var item in Model)
+    {
+        <h3 class="sstitle">@item.Title</h3>
+        <div>
+            @{
+                var resultphoto = Joes_Pub_MVC_4.Models.Utilities.ShowDB.MasterShowPhotoList.Where(s => s.ShowID == item.JoomlaID);
+            }
+            @if(resultphoto.Count() > 0)
+            {
+                <div class="imgs">
+                    @foreach (var item2 in resultphoto)
+	                {
+		                <img class="gal" src="/shows/@item2.ShowID/photos/small/@item2.Filename" alt="@item2.Caption" />
+	                }
+                </div>
+            }
+            <h4>Description:</h4>
+            @(new HtmlString(item.description))
+        </div>
+    }
+</div>
+@using (Ajax.BeginForm("ChangeSSpage", null, new AjaxOptions { UpdateTargetId = "ss" }, new { @id="ssform"}))
+{
+    <input type="hidden" id="sstopage" name="topage" />
+    <div class="pagenav">
+        @if (!Model.IsFirstPage)
+        {
+            int p = Model.PageNumber - 1;
+            <input class="ssas" type="button" onclick="setpagess(1);" value="<< First" />
+            <input class="ssas" type="button" onclick="setpagess(this.name);" value="< Previous" name="@p"/>
+        }
+        <h4 class="ssas">@Model.PageNumber of @Model.PageCount</h4>
+        @if (!Model.IsLastPage)
+        {
+            int n = Model.PageNumber + 1;
+            <input class="ssas" type="button" onclick="setpagess(this.name)" value="Next >" name="@n"/>
+            <input class="ssas" type="button" onclick="setpagess(this.name)" value="Last >>" name="@Model.PageCount"/>
+        }
+    </div>
+}
+<script type="text/javascript">
+    function setpagess(page){
+        jQuery(sstopage).val(page);
+        jQuery("#ssform").submit();
+    }
+</script>
+<script type="text/javascript">
+    jQuery(acc).accordion({
+        active: false,
+        collapsible: true,
+        heightStyle: "content",
+        icons: { "header": "ui-icon-plus", "headerSelected": "ui-icon-minus" }
+    });
+</script>

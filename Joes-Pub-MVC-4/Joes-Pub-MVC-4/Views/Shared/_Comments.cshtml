@@ -1,0 +1,89 @@
+﻿@Styles.Render("~/Content/Comments.css")
+<table class="comments">
+    <tr>
+        <td class="black">
+            <h2>Comments</h2>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-image: url(../../../../Images/bg-page.jpg); background-repeat: repeat-y;">
+            @{
+                Joes_Pub_MVC_4.Models.CommentDBContext db = new Joes_Pub_MVC_4.Models.CommentDBContext();
+                List<Joes_Pub_MVC_4.Models.Comment> CommList = db.Comments.ToList();
+            }
+            <ul>
+                @{
+                    if (CommList.Count == 0)
+                    {
+                        <li>
+                            <p>No comments found</p>
+                        </li>
+                    }
+                    else
+                    {
+                        for (int i = 0; i < CommList.Count; i++)
+                        {
+                            Joes_Pub_MVC_4.Models.Comment Comm = CommList[i];
+                            if (i != CommList.Count - 1)
+                            {
+                                <li>
+                                    <h3>@Comm.Title</h3>
+                                    <p>
+                                        @Comm.Message
+                                    </p>
+                                    <h5>Post-Date: @Comm.PostDate</h5>
+                                    <hr />
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <h3>@Comm.Title</h3>
+                                    <p>
+                                        @Comm.Message
+                                    </p>
+                                    <h5>Post-Date: @Comm.PostDate by @Comm.Name</h5>
+                                </li>
+                            }
+                        }
+                    }
+                }
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td class="black">
+            @{
+                if (Request.IsAuthenticated)
+                {
+                    <ul>
+                        <li class="ALC">Post a Comment</li>
+                    </ul>
+                }
+                else
+                {
+                    <ul>
+                        <li class="ALC">Please </li>
+                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                        <li class="ALC">or </li>
+                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "ALC", @style = "padding:0 15px" })</li>
+                        <li class="ALC">to post a comment! </li>
+                    </ul>
+                }
+            }
+        </td>
+    </tr>
+    <tr>
+        @if (Request.IsAuthenticated)
+        {
+            <td>
+                @using (Ajax.BeginForm("UpdateGenComment", null, new AjaxOptions { UpdateTargetId = "gencomms" }, new { @id = "gencommform" }))
+                {
+                    <input class="in" type="text" id="Title" name="Title" value="Title" onfocus="if(this.value=='Title')this.value='';" onblur="if(this.value=='')this.value='Title';" />
+                    <textarea class="in" id="Message" name="Message" style="height: 250px; width: 400px;" onclick="if(this.value=='Message')this.value='';if(this.value=='')this.value='Message';">Message</textarea>
+                    <input class="in" type="submit" value="Post New Comment" />
+                }
+            </td>
+        }
+    </tr>
+</table>

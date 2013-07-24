@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Layout.css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/calendar.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <header>
+        <table>
+            <tr>
+                <td>
+                    @{
+                        if (Request.IsAuthenticated)
+                        {
+                        <div class="AL">
+                            Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "AL", title = "Manage" })!
+                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <a class="AL" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                    }
+                        </div>
+                        }
+                        else
+                        {
+                        <ul>
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "AL", @style = "color:black;" })</li>
+                            <li class="AL">|</li>
+                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "AL", @style = "color:black;" })</li>
+                        </ul>
+                        }
+                    }
+                    <a href="http://twitter.com/JoesPub" id="Twitter" class="socialmedia">
+                        <img class="socialmedia" src="~/Images/Social_Media/Twitter.png" height="25" width="25" /></a>
+                    <a href="http://www.facebook.com/joespub" id="Facebook" class="socialmedia">
+                        <img class="socialmedia" src="~/Images/Social_Media/Facebook.png" height="25" width="25" /></a>
+                    <a href="http://instagram.com/joespub/" style="margin: 7px;" id="Instagram" class="socialmedia">
+                        <img class="socialmedia" src="~/Images/Social_Media/Instagram.png" height="23" width="23" /></a>
+                    <a href="#" id="Spotify" class="socialmedia">
+                        <img class="socialmedia" src="~/Images/Social_Media/Spotify.png" height="25" width="25" /></a>
+                    <a href="#" id="Tumblr" class="socialmedia">
+                        <img class="socialmedia" src="~/Images/Social_Media/Tumblr.png" height="25" width="25" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="logo-cell">
+                    <a class="logo" href="/">
+                        <img src="~/Images/JoesPubatPublic600x150bw.jpg" alt="Joe's Pub at the Public" width="900" height="150" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="spacer"></td>
+            </tr>
+            <tr>
+                <td class="menu">
+                    <ul class="menu">
+                        <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @class = "AL" })</li>
+                        <li>@Html.ActionLink("CALENDAR", "Calendar", "Calendar", null, new { @class = "AL" })</li>
+                        <li>@Html.ActionLink("ABOUT US", "AboutUs", "Home", null, new { @class = "AL", @id = "AboutUsLink" })</li>
+                        <li>@Html.ActionLink("PRESS", "Press", "Home", null, new { @class = "AL" })</li>
+                        <li>@Html.ActionLink("GALLERY", "Gallery", "Home", null, new { @class = "AL" })</li>
+                        <li>@Html.ActionLink("STAFF PICKS", "Index", "StaffPicks", null, new { @class = "AL" })</li>
+                        <li>@Html.ActionLink("SUPPORT JOE'S PUB", "Support", "Home", null, new { @class = "AL" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="spacer"></td>
+            </tr>
+        </table>
+        <div id="Aboutuslist" style="display: none; z-index: 1000; position: absolute; background: #Fc0; border: 1px solid #333;">
+            <ul style="list-style: square; margin: 0; padding: 0; width: 200px">
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Tickets" style=" text-decoration: none;">Tickets</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Booking" style=" text-decoration: none;">Booking Information</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Rooms" style=" text-decoration: none;">Room Rentals</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555">@Html.ActionLink("Dining & Drinks", "Information", "Home", null, new { @style = "" })</li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Internships" style=" text-decoration: none;">Internships</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Staff" style="text-decoration: none;">Staff</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#History" style=" text-decoration: none;">History</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Press" style=" text-decoration: none;">Press</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Location" style=" text-decoration: none;">Location & Parking</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#Directions" style=" text-decoration: none;">Directions</a></li>
+                <li class="listmenuitem" style="padding: 0 5px; color: #000; display: block; border: 1px solid #555"><a href="~/Home/AboutUs#FAQ" style=" text-decoration: none;">FAQ</a></li>
+            </ul>
+            <style>
+                .listmenuitem {
+                    background: #FC0;
+                    color: black;
+                    -moz-transition: background .5s, color .5s;
+                    -o-transition: background .5s, color .5s;
+                    -webkit-transition: background .5s, color .5s;
+                    transition: background .5s, color .5s;
+                }
+                    .listmenuitem:hover {
+                        background:black;
+                        color:#FC0;
+                    }
+                    .listmenuitem a {
+                        color:black;
+                        text-decoration: none;
+                    }
+                        .listmenuitem a:hover {
+                            color:#FC0;
+                        }
+            </style>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("tfeature", required: false)
+        <div class="content-wrapper main-content clear-fix">
+            @RenderBody()
+            @RenderSection("comments", required: false)
+        </div>
+        @RenderSection("btfeature", required: false)
+    </div>
+    <footer>
+        <table>
+            <tr>
+                <td class="spacer"></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../../Images/public.gif" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://www.publictheater.org">
+                        <img src="~/Images/4.gif" class="left" alt="The Public Theater" />
+                    </a>
+                    <a href="http://www.thelibraryatthepublic.com">
+                        <img src="~/Images/3.gif" class="center" alt="The Library at the Public" />
+                    </a>
+                    <a href="http://www.shakespeareinthepark.org">
+                        <img src="~/Images/2.gif" class="right" alt="Shakespeare in the park" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>425 LAFAYETTE STREET, NEW YORK, NY 10003
+                        </li>
+                        <li>| <a href="#">DIRECTIONS</a>
+                        </li>
+                        <li>| <a href="mailto:#">INFO@JOESPUB.COM</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="spacer"></td>
+            </tr>
+        </table>
+    </footer>
+</body>
+<script type="text/javascript">
+    var monid = -1;
+    jQuery(document).ready(function () {
+        var off2 = jQuery(AboutUsLink).offset();
+        off2.top = off2.top + 18;
+        jQuery(Aboutuslist).offset({ left: off2.left, top: off2.top });
+
+        jQuery(AboutUsLink).hover(
+            function () { AboutUsListOn(); },
+            function () { monid = setTimeout(function () { AboutUsListOff(); }, 500); }
+            );
+
+        jQuery(Aboutuslist).hover(
+            function () { clearTimeout(monid); },
+            function () { AboutUsListOff(); }
+            );
+    });
+
+    function AboutUsListOn() {
+        jQuery(Aboutuslist).slideDown(500);
+    }
+    function AboutUsListOff() {
+        jQuery(Aboutuslist).slideUp(500);
+    }
+</script>
+</html>

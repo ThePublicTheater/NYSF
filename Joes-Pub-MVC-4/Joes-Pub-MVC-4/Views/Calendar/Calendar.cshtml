@@ -1,0 +1,38 @@
+﻿@model string
+@section tfeature {
+    @Html.Partial("~/Views/Shared/_ShowSearch.cshtml")
+}
+<style>
+    div.calendar h1.Head {
+        margin-left: 20px
+    }
+</style>
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fjoespub&amp;send=false&amp;layout=standard&amp;width=800&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=80" style="border: medium none; overflow: hidden; width: 800px; height: 30px; margin-left: 10px" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+<div class="calendar">
+    <h1 class="Head">Playing At Joe's Pub</h1>
+    <div id="cal">
+        <h3 id="LoadingHead" class="loadinghead">Loading please wait...</h3>
+        <img id="Loading" src="~/Images/ajax-loader.gif" class="loading" height="16" width="16" />
+    </div>
+    @using (Ajax.BeginForm("CalendarGet", null, new AjaxOptions { UpdateTargetId = "cal",InsertionMode = InsertionMode.Replace,HttpMethod = "Post" }, new { @id="startcal"}))
+    {
+        <input id="jumper" name="Date" type="hidden" value="@DateTime.Now" />
+    }
+</div>
+<script type="text/javascript">
+   jQuery(document).ready(function () { jQuery("#startcal").submit(); });    
+</script>
+<script type="text/javascript">
+    function step(Date) {
+        jQuery("#datecont").val( Date );
+        jQuery("#stepcal").submit();
+        jQuery('#cal').replaceWith("<div id='cal'><h3 class='loadinghead'>Loading please wait...</h3><img src='../../../Images/ajax-loader.gif' class='loading' height='16' width='16' /></div>");
+        //document.getElementById('cal').innerHTML = "<h3 class='loadinghead'>Loading please wait...</h3><img src='../../../Images/ajax-loader.gif' class='loading' height='16' width='16' />";
+    };
+</script>
+<style>
+    h3.loadinghead {
+        width:145px;
+        margin: 120px auto 5px auto;
+    }
+</style>

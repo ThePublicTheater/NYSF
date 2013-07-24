@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" %>
+<%@ Register TagPrefix="nysf" TagName="SessionHandler"
+		Src="~/UserControls/SessionHandler.ascx" %>
+<%@ Register TagPrefix="nysf" TagName="AccountWidget"
+		Src="~/UserControls/AccountWidget.ascx" %>
+<asp:ContentPlaceHolder ID="SessionHandlerPlaceHolder" runat="server">
+	<nysf:SessionHandler runat="server" />
+</asp:ContentPlaceHolder>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>
+		<asp:ContentPlaceHolder ID="TitlePlaceHolder" runat="server">
+			Support the Public
+		</asp:ContentPlaceHolder>
+	</title>
+	<link rel="shortcut icon" href="/media/unmanaged/images/icons/favicon.ico"
+			type="image/x-icon" />
+    <link href="/css/site.css" rel="stylesheet" />
+    
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<asp:ContentPlaceHolder ID="EndOfHeadPlaceHolder" runat="server" />
+</head>
+<body id="<asp:ContentPlaceHolder ID="BodyIdPlaceHolder" runat="server" />"
+		<asp:ContentPlaceHolder ID="BodyOpenTagEndPlaceHolder" runat="server" />">
+	
+
+		
+	<nav class="SelfEvident">
+		<h3>Accessibility Links</h3>
+		<ul>
+			<li>
+				<a href="#MainContent">Main content</a>
+			</li>
+			<li>
+				<a href="#SessionOptions">Session options</a>
+			</li>
+			<li>
+				<a href="#QuickLinks">Site menu</a>
+			</li>
+		</ul>
+	</nav>
+	<div id="Wrapper">
+		<header id="SiteHeader">
+			<h1>
+				<a href="/">Support The Public Theater</a>
+			</h1>
+			<asp:ContentPlaceHolder ID="SessionOptionsPlaceHolder" runat="server">
+				<nav id="SessionOptions">
+					<h3 class="SelfEvident">Session options</h3>
+					<nysf:AccountWidget ShowPromoLink="false" ShowAccountLink="false"
+							runat="server" />
+				</nav>
+			</asp:ContentPlaceHolder>
+		</header>
+		<nav id="QuickLinks">
+			<h2 class="SelfEvident">Giving Programs</h2>
+			<ul class="Parallels5">
+                <li>
+					<a href="/partners" title="Public Theater Partners">Partners</a>
+				</li>
+                <li>
+					<a href="http://youngpartners.publictheater.org" title="Young Partners Program">Young Partners</a>
+				</li>
+				<li>
+					<a href="/fellows" title="50th Anniversary Fellows">Fellows</a>
+				</li>
+				
+				
+			
+			</ul>
+		</nav>
+		<article id="MainContent" class="Content">
+			<asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+		</article>
+		<footer id="SiteFooter">
+            <small>&copy;2011 The Public Theater. All rights reserved.</small>
+			<section id="ContactInformationSection">
+                <h3 class="SelfEvident">Contact Information</h3>
+                <address>
+                    <ul>
+                        <li>425 Lafayette Street</li>
+                        <li>NY, NY 10003</li>
+                        <li>212.967.7555</li>
+                    </ul>
+                </address>
+			</section>
+		</footer>
+	</div>
+	<asp:ContentPlaceHolder ID="EndOfBodyPlaceHolder" runat="server" />
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22943198-7']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+ 
+	</script>
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-RDQP"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-RDQP');</script>
+
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 998421924;
+		var google_conversion_label = "LBy5CLz6_gMQpOuK3AM";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js&quot;&gt;>
+		</script>
+		<noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/998421924/?value=0&label=LBy5CLz6_gMQpOuK3AM&guid=ON&script=0"/>
+		</div>
+		</noscript>
+<!-- End Google Tag Manager -->
+</body>
+</html>

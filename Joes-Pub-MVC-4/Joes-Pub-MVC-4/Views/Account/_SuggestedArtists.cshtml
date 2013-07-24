@@ -1,0 +1,167 @@
+﻿@model IPagedList<Joes_Pub_MVC_4.Models.Artist>
+<style>
+    h3.ss {
+        font-size:1.8em;
+        text-align:center;
+        background:black;
+        margin:10px -5px;
+        color:#FC0;
+        padding:10px;
+    }
+    h4.ssps {
+        margin:5px 0 5px -10px;
+    }
+    h3.sstitle {
+        font-size:1em;
+        font-weight:bold;
+        
+    }
+    div.sstitle {
+        width: 400px;
+        margin: 0;
+        padding: 0;
+        font-size:1.3em;
+        font-weight:bold;
+    }
+    div.ssSpan {
+        width: 400px;
+        margin: 0;
+        padding: 0;
+        display: none;
+        max-height: 300px;
+        overflow: auto;
+        border:3px solid black;
+    }
+    div.imgs {
+        border:2px solid;
+        border-color:lightgray;
+        margin:0;
+        padding:0;
+        height:150px;
+        overflow-x:scroll;
+        overflow-y:hidden;
+    }
+    div.songs {
+        border:2px solid;
+        border-color:lightgray;
+        margin:0;
+        padding:0;
+        height:75px;
+        overflow-y:hidden;
+        overflow-x:scroll;
+    }
+    div.pagenav {
+        margin:0 auto;
+        padding:5px 0 0 0;
+        display:table;
+    }
+    img.gal {
+        display:inline;
+        float:left;
+        margin:10px;
+        padding:0;
+        border:0;
+        width:100px;
+        height:100px;
+    }
+    span.mp3 {
+        margin:10px 15px;
+        padding:0;
+        display:inline;
+        float:left;
+    }
+    input.ssas {
+        display:inline;
+        float:left;
+        margin:5px 5px;
+        padding:3px;
+    }
+    h4.ssas {
+        text-align:center;
+        margin: 5px 10px;
+        padding:3px;
+        display:inline;
+        float:left;
+    }
+</style>
+<h3 class="ss">Suggested Artists</h3>
+<div id="acc2">
+    @foreach (var item in Model)
+    {
+        <h3 class="sstitle">@item.Name</h3>
+        <div>
+            @{
+                var resultphoto = Joes_Pub_MVC_4.Models.Utilities.ArtDB.MasterArtistPhotoList.Where(s => s.ArtistID == item.JoomlaID);
+                var resultsong = Joes_Pub_MVC_4.Models.Utilities.ArtDB.MasterArtistMp3List.Where(s => s.ArtistID == item.JoomlaID);
+            }
+            @if(resultphoto.Count() > 0)
+            {
+                <h4 class="ssps">Photos:</h4>
+                <div class="imgs">
+                    @foreach (var item2 in resultphoto)
+	                {
+		                <img class="gal" src="/artists/@item2.ArtistID/photos/small/@item2.FileName" alt="@item2.Caption" />
+	                }
+                </div>
+            }
+            @if (resultsong.Count() > 0)
+            {
+                <h4 class="ssps">Songs:</h4>
+                <div class="songs">
+                    @foreach (var item3 in resultsong)
+	                {
+                        string curid = "song" + item3.ID;
+                        <span class="mp3" id="@curid">@item3.FileName</span>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function () {
+                                jQuery("#@curid").jmp3({
+                                    filepath: "../../artists/@item3.ArtistID/mp3s/",
+                                    showfilename: "true",
+                                    backcolor: "000000",
+                                    forecolor: "ffcc00",
+                                    width: "150px",
+                                    showdownload: "true"
+                                });
+                            });
+                        </script>
+                    }
+                </div>
+            }
+            <h4 class="ssps">Description:</h4>
+            @(new HtmlString(item.Description))
+        </div>
+    }
+</div>
+@using (Ajax.BeginForm("ChangeSApage", null, new AjaxOptions { UpdateTargetId = "sa" }, new { @id="saform"}))
+{
+    <input type="hidden" id="satopage" name="topage" />
+    <div class="pagenav">
+        @if (!Model.IsFirstPage)
+        {
+            int p = Model.PageNumber - 1;
+            <input class="ssas" type="button" onclick="setpagesa(1);" value="<< First" />
+            <input class="ssas" type="button" onclick="setpagesa(this.name);" value="< Previous" name="@p"/>
+        }
+        <h4 class="ssas">@Model.PageNumber of @Model.PageCount</h4>
+        @if (!Model.IsLastPage)
+        {
+            int n = Model.PageNumber + 1;
+            <input class="ssas" type="button" onclick="setpagesa(this.name)" value="Next >" name="@n"/>
+            <input class="ssas" type="button" onclick="setpagesa(this.name)" value="Last >>" name="@Model.PageCount"/>
+        }
+    </div>
+}
+<script type="text/javascript">
+    function setpagesa(page) {
+        jQuery(satopage).val(page);
+        jQuery("#saform").submit();
+    }
+</script>
+<script type="text/javascript">
+    jQuery(acc2).accordion({
+        active: false,
+        collapsible: true,
+        heightStyle: "content",
+        icons: { "header": "ui-icon-plus", "headerSelected": "ui-icon-minus" }
+    });
+</script>

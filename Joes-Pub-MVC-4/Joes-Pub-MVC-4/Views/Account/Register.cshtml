@@ -1,0 +1,90 @@
+﻿@model Joes_Pub_MVC_4.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1 style="margin:0 5px;">@ViewBag.Title</h1>
+</hgroup>
+<div style="margin:0 10px;width:880px;padding:0;">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <div style="display:inline;float:left;width:450px">
+            <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @style="margin-left:10px;"})
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @style="margin-left:10px;"})
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @style="margin-left:10px;"})
+            </li>
+            <li>
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName, new { @style="margin-left:10px;"})
+            </li>
+            <li>
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName, new { @style="margin-left:10px;"})
+            </li>
+            <li>
+                @Html.LabelFor(m => m.EmailSub)
+                <input type="checkbox" value="true" name="EmailSub" id="EmailSub" style="margin-left:10px;"/>
+                <input type="hidden" value="false" name="EmailSub" />
+            </li>
+            <li>
+                @Html.LabelFor(m => m.NyMagSub)
+                <input type="checkbox" value="true" name="NyMagSub" id="NyMagSub"  style="margin-left:10px;"/>
+                <input type="hidden" value="false" name="NyMagSub" />
+            </li>
+                <li>
+                    @Html.LabelFor(m => m.Bio)
+                    <textarea name="Bio" style="resize:none;margin:0 10px;height:250px;width:400px;" id="Bio"></textarea>
+                </li>
+        </ol>
+        </div>
+        <div style="display:inline;float:left;width:400px;margin-left:15px;">
+            <ol>
+            <li>
+                @Html.LabelFor(m => m.Genres)
+                <h4> We'll Contact you weekly by email to let you know when we book shows that match your selections.</h4>
+            </li>
+            @{
+                Joes_Pub_MVC_4.Models.GenresDBContext GenDB = new Joes_Pub_MVC_4.Models.GenresDBContext();
+                var Genlist = GenDB.GenreList.OrderBy(s => s.JoomlaID);
+                foreach(var item in GenDB.GenreList)
+                {
+                    <li style="margin:0 0 0 5px;">
+                        <input class="gen" type="checkbox" name="@item.JoomlaID" id="@item.JoomlaID" style="display:inline;" onclick="getGenres()"/> @item.Name
+                    </li>
+                }
+                <script>
+                    function getGenres() {
+                        var h = jQuery(".gen:checked").map(function () { return this.name;}).get().join(';');
+                        jQuery(Genres).val(h);
+                    }
+                </script>
+            }
+        </ol>
+        </div>
+        <input type="hidden" name="Genres" id="Genres" />
+        <input type="button" value="Cancel" style="display:inline;float:right;" onclick="cancel()"/><input type="submit" value="Register" style="display:inline;float:right;"/>
+        <script type="text/javascript">
+            function cancel() {
+                window.location.href = '@(Url.Content("/Home"))';
+                    }
+        </script>
+    </fieldset>
+}
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
